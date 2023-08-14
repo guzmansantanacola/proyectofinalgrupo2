@@ -17,8 +17,8 @@ fetch ("https://japceibal.github.io/emercado-api/cats_products/101.json")
                            </div>
                            <div class="col">
                                <div class="d-flex w-100 justify-content-between">
-                                   <h4 class="mb-1">${products.name}</h4>
-                                   <small class="text-muted">${products.productCount} artículos</small>
+                                   <h4 class="mb-1">${products.name} - ${products.currency} ${products.cost}</h4>
+                                   <small class="text-muted">${products.soldCount} vendidos</small>
                                </div>
                                <p class="mb-1">${products.description}</p>
                            </div>
