@@ -97,7 +97,8 @@ footer p {
 
 .alert {
   position: fixed;
-  top: 80px;
+  padding: 40px; /* Padding agregado */
+  top: 120px; /* top modificado, original 80px */
   width: 50%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -187,4 +188,44 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.recuadros{
+  width: 100%;
+}
+
+#username, #password {
+  text-align: center;
+  padding: 5px;
+  margin-top: 5px;
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+#username:hover, #password:hover {
+  box-shadow: 3px 2px 4px #393939;
+}
+
+#login {
+  position: relative;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 5px;
+  text-align: center;
+  width: 30%;
+}
+
+.login a {
+  font-size: 13px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-decoration: none;
+  color: rgb(45, 5, 145);
+}
+
+.login a:hover {
+  color: rgb(109, 65, 219);
+  font-size: 14px;
+  text-decoration: none;
+  transition-duration: 200ms;
 }
