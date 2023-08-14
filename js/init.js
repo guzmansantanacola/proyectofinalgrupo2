@@ -39,3 +39,11 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+// verificamos si encuentra una sesion guardada
+if (JSON.parse(localStorage.getItem("sesionIniciada")) == null) {
+  // si no la encuentra, guardo el valor de la sesion en el Local Storage convirtiendolo en texto antes
+  localStorage.setItem("sesionIniciada", JSON.stringify(false));
+}
+
+
