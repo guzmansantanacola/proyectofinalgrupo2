@@ -10,7 +10,7 @@ fetch ("https://japceibal.github.io/emercado-api/cats_products/101.json")
         let htmlContentToAppend = "";
         autos.forEach(products => {
                    htmlContentToAppend += `
-                   <div onclick="setCatID(${products.id})" class="list-group-item list-group-item-action cursor-active">
+                   <div setCatID(${products.id})" class="list-group-item list-group-item-action cursor-active">
                        <div class="row">
                            <div class="col-3">
                                <img src="${products.image}" alt="${products.description}" class="img-thumbnail">
