@@ -303,3 +303,72 @@ span {
   margin-top: 280px;
   margin-left: 155px;
 }
+
+
+/* LISTAS DE PRODUCTOS*/
+
+.titulo {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  color: #9d4edd;
+  text-shadow: 0px 0px 4px #ac5cee;
+  font-size: 50px;
+}
+.subtitulo{
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #9d4edd;
+  font-size: 25px;
+}
+
+  #bodyproducts{
+  background-image: url("../img/fondo_product.jpg");
+  background-color: #101012;
+  background-attachment: fixed;
+} 
+
+.fondolista {
+  background-color: #151518;
+  color:whitesmoke;
+  padding: 10px;
+  box-shadow: 0px 0px 5px #E0aaff;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 10px;
+  border-radius: 100px;
+  display: flex;
+  transition: 0.5s;
+}
+.description{
+  margin-top: 9px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+.nombreproductos{
+  margin-top: 9px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+}
+
+.fondolista img {
+  display: flex;
+  justify-content: left;
+  width: 300px;
+  border-radius: 100px;
+}
+
+.precio{
+  display:flex;
+  float:right;
+  font-size:22px;
+  margin-top: -15px;
+}
+.fondolista:hover{
+  box-shadow: 0px 0px 20px #97DFFC;
+  transition-duration: 400ms;
+  
+}
