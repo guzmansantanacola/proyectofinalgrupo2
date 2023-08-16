@@ -10,22 +10,25 @@ fetch ("https://japceibal.github.io/emercado-api/cats_products/101.json")
         let htmlContentToAppend = "";
         autos.forEach(products => {
                    htmlContentToAppend += `
-                   <div setCatID(${products.id})" class="list-group-item list-group-item-action cursor-active">
+                   <div setCatID(${products.id})" class="fondolista">
                        <div class="row">
                            <div class="col-3">
-                               <img src="${products.image}" alt="${products.description}" class="img-thumbnail">
+                               <img src="${products.image}" alt="${products.description}" >
                            </div>
                            <div class="col">
                                <div class="d-flex w-100 justify-content-between">
-                                   <h4 class="mb-1">${products.name} - ${products.currency} ${products.cost}</h4>
+                                   <h4 class="nombreproductos">${products.name} </h4>
                                    <small class="text-muted">${products.soldCount} vendidos</small>
                                </div>
-                               <p class="mb-1">${products.description}</p>
+                               <p class="description">${products.description}</p>
+                               
                            </div>
                        </div>
+                       <p class="precio">${products.currency} ${products.cost}</p>
                    </div>
                    `
                document.getElementById("productos").innerHTML = htmlContentToAppend;
         })
    }
-  
+   /*" class="list-group-item list-group-item-action cursor-active"*/
+ /*class="mb-1"*/
