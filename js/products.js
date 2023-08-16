@@ -4,7 +4,10 @@ fetch ("https://japceibal.github.io/emercado-api/cats_products/101.json")
         console.log(data);
         categoriaautos(data);
     })
-
+    //a ver si funciona esto
+           function setCatId(catID){
+           console.log("Categoria seleccionada:, catId");}
+           //..
     function categoriaautos(data){
         const autos = data.products;
         let htmlContentToAppend = "";
