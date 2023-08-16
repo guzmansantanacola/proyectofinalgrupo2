@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+
 .jumbotron,
 .card-body,
 .container,
@@ -190,37 +192,61 @@ a.custom-card:hover {
   color: orange;
 }
 
+
+/* LOGIN */
 .recuadros{
   width: 100%;
 }
 
+#iniciosesion{
+  margin-bottom: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 #username, #password {
   text-align: center;
+  color: white;
   padding: 5px;
   margin-top: 5px;
   width: 80%;
   margin-bottom: 5px;
+  background: none;
+  border-style: solid;
+  border-color: white;
+  border-radius: 20px;
+}
+
+#password {
+  margin-bottom: 15px;
 }
 
 #username:hover, #password:hover {
-  box-shadow: 3px 2px 4px #393939;
+  box-shadow: 0px 0px 7px #7b2cbf;
 }
 
 #login {
+  background-color: #fcfcfc;
+  color: #3c096c;
   position: relative;
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 5px;
   text-align: center;
-  width: 30%;
+  border-style: none;
+  border-radius: 20px;
+  width: 80%;
+  margin-top: 20px;
+  padding: 5px;
 }
-
+#login:hover{
+   box-shadow: 0px 0px 7px #7b2cbf;
+}
 .login a {
   font-size: 13px;
   margin-left: 50px;
   margin-right: 50px;
   text-decoration: none;
-  color: rgb(45, 5, 145);
+  color: rgb(255, 255, 255);
 }
 
 .login a:hover {
@@ -229,3 +255,23 @@ a.custom-card:hover {
   text-decoration: none;
   transition-duration: 200ms;
 }
+
+.estilologin {
+  background-image: url("../img/fondo_login.jpg");
+  background-size: cover;
+ }
+
+.login{
+  text-align: center;
+  color: white;
+  float: left;
+  width: 400px;
+  height: 350px;
+  margin-top: 300px;
+  margin-left: 235px;
+  /*border-style: solid;
+  border-width: 1px;
+  border-color: #3c096c;
+  border-radius: 15px;*/
+}
+
