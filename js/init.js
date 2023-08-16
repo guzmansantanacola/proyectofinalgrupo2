@@ -46,4 +46,9 @@ if (JSON.parse(localStorage.getItem("sesionIniciada")) == null) {
   localStorage.setItem("sesionIniciada", JSON.stringify(false));
 }
 
+let botonCerrarSesion = document.getElementById('cerrarSesion');
 
+botonCerrarSesion.addEventListener("click", () => {
+  localStorage.clear();
+  window.location.href = "login.html";
+})
