@@ -200,6 +200,7 @@ a.custom-card:hover {
 #iniciosesion {
   margin-bottom: 60px;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 input {
   background: none;
@@ -252,6 +253,7 @@ input {
 span {
   margin-left: 10px;
   margin-top: 2px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .login a {
