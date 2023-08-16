@@ -5,8 +5,8 @@ fetch ("https://japceibal.github.io/emercado-api/cats_products/101.json")
         categoriaautos(data);
     })
     //a ver si funciona esto
-           function setCatId(catID){
-           console.log("Categoria seleccionada:, catId");}
+           function setCatID(CatID){
+           console.log("Categoria seleccionada:, CatID");}
            //..
     function categoriaautos(data){
         const autos = data.products;
