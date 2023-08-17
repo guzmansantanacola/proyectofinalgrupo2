@@ -313,10 +313,18 @@ span {
 .socialImg {
   width: 30px;
   margin-right: 8px;
+  display: inline-block;
+  position:relative;
 }
+.socialImg img{
+  transition: transform 0.3s ease-in-out;
+}
+
 
 .socialImg:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  filter:drop-shadow(0px 0px 5px #E0aaff)
 }
 
 /*BOTON DE CERRAR SESIÓN*/
@@ -333,10 +341,11 @@ span {
 .titulo {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 50px;
   color: #9d4edd;
   text-shadow: 0px 0px 4px #ac5cee;
   font-size: 50px;
+
 }
 .subtitulo{
   font-family: 'Montserrat', sans-serif;
@@ -350,22 +359,27 @@ span {
 }
 
   #bodyproducts{
-  background-image: url("../img/fondo_product.jpg");
+  background-image: url("../img/fondo_products.jpg");
   background-color: #101012;
   background-attachment: fixed;
+  background-position: center;
+
 } 
 
 .fondolista {
-  background-color: #151518;
-  color:whitesmoke;
-  padding: 10px;
-  box-shadow: 0px 0px 5px #E0aaff;
-  font-family: 'Montserrat', sans-serif;
-  margin-top: 10px;
-  border-radius: 100px;
-  display: flex;
-  transition: 0.5s;
+    margin-top: 40px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    transition: box-shadow 0.4s ease;
+    border-radius: 14px;
+    position: relative;
+    color: #fcfcfc;
+    background: transparent;
+    backdrop-filter: blur(6px);
+    border: solid 0.5px #E0aaff;
 }
+
 .description{
   margin-top: 9px;
   font-family: 'Montserrat', sans-serif;
@@ -378,20 +392,43 @@ span {
 }
 
 .fondolista img {
-  display: flex;
-  justify-content: left;
-  width: 300px;
-  border-radius: 100px;
+  width: 80%;
+  display: block;
+  margin: 0 auto; 
+  border-radius: 30px;
+  padding: 10px;
 }
 
 .precio{
-  display:flex;
-  float:right;
+
   font-size:22px;
   margin-top: -15px;
 }
-.fondolista:hover{
-  box-shadow: 0px 0px 20px #97DFFC;
-  transition-duration: 400ms;
-  
+.fondolista:hover {
+  box-shadow: 0px 0px 20px #E0aaff;
+}
+
+#productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+
+.nombreproductos,
+.precio {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.vendidos {
+  font-size: 15px;
+  text-align: center;
+
 }
