@@ -7,6 +7,27 @@ document
     window.location.href = "index.html";
   });
 
+  document
+  .getElementById("googleImg")
+  .addEventListener("click", function () {
+    localStorage.setItem("sesionIniciada", "true");
+    window.location.href = "index.html";
+  });
+
+  document
+  .getElementById("instagramImg")
+  .addEventListener("click", function () {
+    localStorage.setItem("sesionIniciada", "true");
+    window.location.href = "index.html";
+  });
+
+  document
+  .getElementById("facebookImg")
+  .addEventListener("click", function () {
+    localStorage.setItem("sesionIniciada", "true");
+    window.location.href = "index.html";
+  });
+
   
 
 
