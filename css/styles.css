@@ -304,6 +304,20 @@ span {
   margin-left: 155px;
 }
 
+#socialSesion,
+#socialImg {
+  margin-top: 20px;
+}
+
+
+.socialImg {
+  width: 30px;
+  margin-right: 8px;
+}
+
+.socialImg:hover {
+  cursor: pointer;
+}
 
 /* LISTAS DE PRODUCTOS*/
 
