@@ -13,14 +13,14 @@ fetch ("https://japceibal.github.io/emercado-api/cats_products/101.json")
                    <div setCatID(${products.id})" class="fondolista">
                        <div class="fila">
                            <div class=imagenes>
-                               <img src="${products.image}" alt="${products.description}" >
+                               <img src="${products.image}">
                            </div>
                            <div class="item">
                                <div>
                                    <h4 class="nombreproductos">${products.name} </h4>
                                    <p class="precio">${products.currency} ${products.cost}</p>
                                </div>
-                               <p>${products.description}</p>
+                               <p class="description">${products.description}</p>
                                
                            </div>
                        </div>
