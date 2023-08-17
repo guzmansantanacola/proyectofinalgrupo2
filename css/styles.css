@@ -195,8 +195,30 @@ a.custom-card:hover {
 /* LOGIN */
 
 .estilologin {
-  background-image: url("../img/fondo_login.jpg");
+  /*background-image: url("../img/fondo_login.jpg");*/
+  background-image: url("../img/fondo_login_2.jpg");
 }
+
+#imgLogo {
+  width: 450px;
+  position: absolute;
+  right: 21%;
+  top: 32%;
+  animation: zoom 5s infinite;
+}
+
+@keyframes zoom {
+  0%{
+    scale: 1;
+  }
+  50%{
+    scale: 1.1;
+  }
+  100%{
+    scale: 1;
+  }
+}
+
 #iniciosesion {
   margin-bottom: 60px;
   color: white;
