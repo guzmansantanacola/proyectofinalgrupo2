@@ -319,6 +319,15 @@ span {
   cursor: pointer;
 }
 
+/*BOTON DE CERRAR SESIÓN*/
+
+#cerrarSesion {
+  margin-top: 5px;
+  background-color: #0000000f;
+  color: white;
+  border-radius: 8px;
+
+
 /* LISTAS DE PRODUCTOS*/
 
 .titulo {
