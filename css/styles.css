@@ -385,8 +385,8 @@ span {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   margin-top: 50px;
-  color: #eedaff;
-  text-shadow: 0px 0px 4px #ac5cee;
+  color: #551794;
+  text-shadow: 0px  0px 50px #551794;
   font-size: 50px;
 
 }
@@ -394,10 +394,10 @@ span {
   font-family: 'Montserrat', sans-serif;
   display: block;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  color:#eedaff;
+  color:#823bc9;
   font-size: 25px;
 }
 
@@ -418,7 +418,7 @@ span {
     color: #fcfcfc;
     background: transparent;
     backdrop-filter: blur(6px);
-    border: solid 0.5px #E0aaff;
+    border: solid 0.5px #551794;
     transition: 0.6s;
     margin-inline: 10px;
 }
@@ -445,7 +445,7 @@ span {
 
 
 .fondolista:hover {
-  box-shadow: 0px 0px 20px #7b2cbf;
+  box-shadow: 0px 0px 20px #551794;
   transform: scale(1.05);
 }
 
