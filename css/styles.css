@@ -413,8 +413,7 @@ span {
     margin-top: 40px;
     width: calc(33.33% - 20px);
     box-sizing: border-box;
-    margin-bottom: 20px;
-    border-radius: 14px;
+    border-radius: 3px;
     position: relative;
     color: #fcfcfc;
     background: transparent;
@@ -452,7 +451,7 @@ span {
 #productos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-width: 1100px;
   width: 100%;
   margin: 40px auto;
