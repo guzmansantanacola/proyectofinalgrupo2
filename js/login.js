@@ -15,7 +15,7 @@ document
   });
 
   document
-  .getElementById("instagramImg")
+  .getElementById("githubImg")
   .addEventListener("click", function () {
     localStorage.setItem("sesionIniciada", "true");
     window.location.href = "index.html";
