@@ -380,15 +380,19 @@ span {
 }
 
 /* LISTAS DE PRODUCTOS*/
-
 .titulo {
+  margin-inline: 700px;
+  justify-content: center;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   margin-top: 50px;
-  color: #551794;
+  color: #ecdcfc;
   text-shadow: 0px  0px 50px #551794;
   font-size: 50px;
-
+  border-bottom:solid 5px #551794;
+}
+.punto{
+  color: #E0aaff;
 }
 .subtitulo{
   font-family: 'Montserrat', sans-serif;
@@ -397,8 +401,8 @@ span {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  color:#823bc9;
-  font-size: 25px;
+  color:#ffffff;
+  font-size: 20px;
 }
 
   #bodyproducts{
@@ -415,7 +419,7 @@ span {
     box-sizing: border-box;
     border-radius: 3px;
     position: relative;
-    color: #fcfcfc;
+    color: #e3c9f1;
     background: transparent;
     backdrop-filter: blur(6px);
     border: solid 0.5px #551794;
