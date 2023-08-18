@@ -420,6 +420,7 @@ span {
     backdrop-filter: blur(6px);
     border: solid 0.5px #E0aaff;
     transition: 0.6s;
+    margin-inline: 10px;
 }
 
 .description{
