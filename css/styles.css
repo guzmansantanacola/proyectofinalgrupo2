@@ -413,13 +413,13 @@ span {
     width: calc(33.33% - 20px);
     box-sizing: border-box;
     margin-bottom: 20px;
-    transition: box-shadow 0.4s ease;
     border-radius: 14px;
     position: relative;
     color: #fcfcfc;
     background: transparent;
     backdrop-filter: blur(6px);
     border: solid 0.5px #E0aaff;
+    transition: 0.6s;
 }
 
 .description{
@@ -445,6 +445,7 @@ span {
 
 .fondolista:hover {
   box-shadow: 0px 0px 20px #7b2cbf;
+  transform: scale(1.05);
 }
 
 #productos {
