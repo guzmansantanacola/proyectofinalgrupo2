@@ -357,6 +357,7 @@ span {
   margin-right: 8px;
   display: inline-block;
   position:relative;
+  transition: all 300ms;
 }
 .socialImg img{
   transition: transform 0.3s ease-in-out;
