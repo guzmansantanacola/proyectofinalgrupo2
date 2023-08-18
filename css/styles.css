@@ -381,15 +381,14 @@ span {
 
 /* LISTAS DE PRODUCTOS*/
 .titulo {
-  margin-inline: 700px;
-  justify-content: center;
-  font-family: 'Montserrat', sans-serif;
   text-align: center;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
   margin-top: 50px;
   color: #ecdcfc;
   text-shadow: 0px  0px 50px #551794;
   font-size: 50px;
-  border-bottom:solid 5px #551794;
+  text-decoration: underline 4px #551794;
 }
 .punto{
   color: #E0aaff;
