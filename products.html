@@ -12,7 +12,7 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="bodyproducts">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -32,25 +32,27 @@
           </li>
           <li class="nav-item">
           </li>
+          <li class="nav-item">
+            <button id="cerrarSesion">Cerrar Sesión</button>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main class="pb-5 container">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+  <main class="mainproductos">
+    <h2 class="titulo">PRODUCTOS</h2>
+    <p class="subtitulo">Verás aquí todos los productos de la categoría <span class="punto">Autos.</span></p>
+    <div class="container" id="productos">
     </div>
   </main>
-  <footer class="text-muted">
+  <!-- <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
-  </footer>
+  </footer> -->
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -62,6 +64,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/redireccion.js" defer></script>
 </body>
 
 </html>
