@@ -20,7 +20,7 @@ fetch ("https://japceibal.github.io/emercado-api/cats_products/101.json")
                                    <h4 class="nombreproductos">${products.name} </h4>
                                    <p class="precio">${products.currency} ${products.cost}</p>
                                </div>
-                               <p class="description">${products.description}</p>
+            
                                
                            </div>
                        </div>

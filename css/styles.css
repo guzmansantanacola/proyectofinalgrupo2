@@ -463,6 +463,11 @@ span {
   margin-top: 10px;
   text-align: center;
   padding: 10px;
+  
+}
+.precio{
+  font-weight: bold;
+  color: white;
 }
 @media (max-width: 768px) {
   .fondolista {
