@@ -225,7 +225,6 @@ a.custom-card:hover {
   width: 60%;
   text-align: center;
 }
-
 #imgLogo {
   width: 80%;
   max-width: 450px;
@@ -407,29 +406,26 @@ span {
   #bodyproducts{
   background-image: url("../img/fondo_products.jpg");
   background-color: #101012;
-  background-attachment: fixed;
-  background-position: center;
 
 } 
 
 .fondolista {
+    width: 100%; /* Ancho al 100% para que se adapte al contenedor padre */
+    max-width: 250px; /* Ancho máximo para evitar que los cuadros se vuelvan demasiado grandes en pantallas grandes */
+    height: auto;
     margin-top: 40px;
-    width: calc(33.33% - 20px);
-    box-sizing: border-box;
     border-radius: 3px;
-    position: relative;
     color: #e3c9f1;
     background: transparent;
     backdrop-filter: blur(6px);
     border: solid 0.5px #551794;
     transition: 0.6s;
-    margin-inline: 10px;
 }
 
 .description{
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 10px;
 }
 .nombreproductos {
   font-family: 'Montserrat', sans-serif;
@@ -439,13 +435,12 @@ span {
 }
 
 .fondolista img {
-  width: 98%;
-  display: block;
-  margin: 0 auto; 
+  width: 100%;
+  height: auto;
   border-radius: 30px;
   padding: 10px;
-}
 
+}
 
 .fondolista:hover {
   box-shadow: 0px 0px 20px #551794;
@@ -454,12 +449,11 @@ span {
 
 #productos {
   display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 32px;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 1100px;
-  width: 100%;
-  margin: 40px auto;
-  box-sizing: border-box;
+  justify-content: center;
+
 }
 
 .nombreproductos,
@@ -470,9 +464,16 @@ span {
   text-align: center;
   padding: 10px;
 }
+@media (max-width: 768px) {
+  .fondolista {
+    max-width: 100%;
+    height: auto; 
+ } }
 
 .vendidos {
   font-size: 15px;
   text-align: center;
   margin-top: 0; 
 }
+
+
