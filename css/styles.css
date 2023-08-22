@@ -195,44 +195,44 @@ a.custom-card:hover {
 /* LOGIN */
 
 .estilologin {
-  /*background-image: url("../img/fondo_login.jpg");*/
-  background-image: url("../img/fondo_login_2.jpg");
+  background-image: url("../img/loginprueba.png");
   width: 100%;
   min-height: 100vh;
-  max-height: 100vh;
   display: flex;
+  justify-content: center; 
   align-items: center;
-  justify-content: space-between;
 }
-
+.login .logo {
+  width: 40%;
+  margin-bottom: 50px;
+}
 .login {
+  width: 30%;
+  align-items: center;
   text-align: center;
-  color: white;
-
-  /* float: left; */
-  width: 600px;
-  height: 70%;
-  /* margin-top: 280px; */
-  /* margin-top: 15%; */
-  margin-left: 4%;  
+  margin: 5px auto;
+  background: #000000c2;
+  backdrop-filter: blur(2px);
+  padding: 40px;
+  min-width: 400px;
+  max-width: 600px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
-#formlogin {
-  width: 90%;
+#socialSesion{
+  margin-top: 20px;
 }
-
 #sectionImg {
   width: 60%;
   text-align: center;
 }
-#imgLogo {
+/* #imgLogo {
   width: 80%;
   max-width: 450px;
-  /* position: absolute; */
-  /* right: 21%;
-  top: 32%; */
   animation: zoom 5s infinite;
-}
+} */
 
 @keyframes zoom {
   0%{
@@ -247,6 +247,8 @@ a.custom-card:hover {
 }
 
 #iniciosesion {
+  min-width: 300px;
+  max-width: 600px;
   margin-bottom: 60px;
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -323,8 +325,6 @@ span {
 #login {
   background-color: #b05ff1;
   color: #3c096c;
-  /* margin-left: 40px;
-  margin-right: 40px; */
   margin-top: 5px;
   text-align: center;
   border-color: #00000000;
@@ -344,11 +344,6 @@ span {
 
 }
 
-
-#socialSesion {
-  margin-top: 20px;
-  width: 90%;
-}
 
 
 .socialImg {
