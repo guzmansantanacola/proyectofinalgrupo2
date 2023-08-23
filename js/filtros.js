@@ -7,12 +7,14 @@ const botonVendidos = document.getElementById("ordenVendidos");
 //let divProductos = document.getElementById("productos")
 //console.log(divProductos);
 
-// Traigo los datos del fetch guardados en el Local Storage
-let resultFetch = JSON.parse(localStorage.getItem("resultFetch"))
+
 
 
 // agrego un escuchador de eventos con una funcino para ordenar e insertar en el HTML los datos
 botonVendidos.addEventListener("click", function ordenarVendidos() {
+
+    // Traigo los datos del fetch guardados en el Local Storage
+    let resultFetch = JSON.parse(localStorage.getItem("resultFetch"));
 
     // guardo los productos que traje del Local Storage en la variable "products"
     const products = resultFetch.products;
