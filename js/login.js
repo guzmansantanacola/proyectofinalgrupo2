@@ -4,16 +4,10 @@ document
   .getElementById("formlogin")
   .addEventListener("submit", function () {
     localStorage.setItem("sesionIniciada", "true");
-<<<<<<< Updated upstream
-    window.location.href = "index.html";
-  });
-=======
     localStorage.setItem("nombredeusuario", document.getElementById("guardarusuario").value);
     window.location.href = "index.html";
-    usuarioguardado = localStorage.getItem("nombredeusuario");
-    document.getElementById("nombreusuario").innerHTML = usuarioguardado;
   }); 
->>>>>>> Stashed changes
+
 
   document
   .getElementById("googleImg")
