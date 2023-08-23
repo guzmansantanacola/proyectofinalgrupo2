@@ -195,7 +195,7 @@ a.custom-card:hover {
 /* LOGIN */
 
 .estilologin {
-  background-image: url("../img/loginprueba.png");
+  background-image: url("../img/fondo_login_para_responsive.jpg");
   width: 100%;
   min-height: 100vh;
   display: flex;
