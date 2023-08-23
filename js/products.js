@@ -22,7 +22,7 @@ function categoriaautos(data) {
                                    <h4 class="nombreproductos">${products.name} </h4>
                                    <p class="precio">${products.currency} ${products.cost}</p>
                                </div>
-            
+                               <p class="description">${products.description}</p>
                                
                            </div>
                        </div>

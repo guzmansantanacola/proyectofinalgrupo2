@@ -211,7 +211,7 @@ a.custom-card:hover {
   align-items: center;
   text-align: center;
   margin: 5px auto;
-  background: #000000c2;
+  background: #000000dc;
   backdrop-filter: blur(2px);
   padding: 40px;
   min-width: 400px;
@@ -276,7 +276,7 @@ input {
   font-size: 0.65rem;
   font-weight: 600;
   padding: 0 10px;
-  background: #101012;
+  background: #000000;
   letter-spacing: 0.1rem;
 }
 
@@ -352,21 +352,25 @@ span {
 
 #cerrarSesion {
   margin-top: 5px;
-  background-color: #0000000f;
+  background-color: #3C0A6D;
   color: white;
-  border-radius: 8px;
+  border-radius: 20px;
+  border-color: #ffffff;
 }
 
 /* LISTAS DE PRODUCTOS*/
 .titulo {
-  text-align: center;
+  min-width: 200px;
+  max-width: 400px;
   width: 100%;
+  justify-content: center ;
+  margin: auto;
+  display: flex;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 50px;
-  color: #ecdcfc;
+  padding-top: 20px;
+  color: #ffffff;
   text-shadow: 0px  0px 50px #551794;
-  font-size: 50px;
-  text-decoration: underline 4px #551794;
+  border-bottom: solid 5px #E0aaff;
 }
 .punto{
   color: #E0aaff;
@@ -379,24 +383,18 @@ span {
   margin-bottom: 20px;
   text-align: center;
   color:#ffffff;
-  font-size: 20px;
+  font-size: 15px;
 }
 
   #bodyproducts{
-  background-image: url("../img/fondo_products.jpg");
+  background-image: url("../img/fondo_login_para_responsive.jpg");
   background-color: #101012;
-
 } 
 
 .fondolista {
-    width: 100%; /* Ancho al 100% para que se adapte al contenedor padre */
-    max-width: 250px; /* Ancho máximo para evitar que los cuadros se vuelvan demasiado grandes en pantallas grandes */
-    height: auto;
+    max-width: 250px;
     margin-top: 40px;
-    border-radius: 3px;
-    color: #e3c9f1;
-    background: transparent;
-    backdrop-filter: blur(6px);
+    color: #ffffff;
     border: solid 0.5px #551794;
     transition: 0.6s;
 }
@@ -415,8 +413,7 @@ span {
 
 .fondolista img {
   width: 100%;
-  height: auto;
-  border-radius: 30px;
+  height: auto; 
   padding: 10px;
 
 }
@@ -428,11 +425,12 @@ span {
 
 #productos {
   display: flex;
+  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
   gap: 32px;
   flex-wrap: wrap;
   justify-content: center;
-
+  border-radius: 0px;
 }
 
 .nombreproductos,
@@ -446,7 +444,7 @@ span {
 }
 .precio{
   font-weight: bold;
-  color: white;
+  color: #E0aaff;
 }
 @media (max-width: 768px) {
   .fondolista {
@@ -461,3 +459,29 @@ span {
 }
 
 
+#filtros {
+  margin:auto;
+  width: 50%; 
+  
+}
+
+.mainproductos{
+  max-width: 2000px;
+  min-width: 300px;
+  margin: auto;
+  width: 60%;
+  justify-content: center;
+  background-color: #000000;
+  box-shadow: 0px 0px 30px #000000 ;
+}
+
+#nombreusuario{
+  color: white;
+}
+
+/* Barra de navegación */
+.navbar{
+  background-color: #000000;
+  color: white;
+  display: flex;
+}
