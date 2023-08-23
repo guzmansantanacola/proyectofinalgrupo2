@@ -480,8 +480,3 @@ span {
 }
 
 /* Barra de navegación */
-.navbar{
-  background-color: #000000;
-  color: white;
-  display: flex;
-}
