@@ -5,3 +5,4 @@ const inputElement=document.querySelector(input-bx);
 const nombre=inputElement.value;
 /* Guardo en el localStorage*/
 localStorage.setItem(usuario, nombre);
+/* crear un div en el index.html */
