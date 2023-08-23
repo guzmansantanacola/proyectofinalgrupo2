@@ -42,15 +42,17 @@
   <main class="mainproductos">
     <h2 class="titulo">PRODUCTOS</h2>
     <p class="subtitulo">Verás aquí todos los productos de la categoría <span class="punto">Autos.</span></p>
+
+    <!-- inicio de botones de filtros -->
     <div id="filtros">
 
       <section id="filtrosOrden">
-        <input type="radio" class="btn-check" name="options" id="ordenAsc">
-        <label class="btn btn-light" for="sortAsc">A-Z</label>
-        <input type="radio" class="btn-check" name="options" id="ordenDesc">
-        <label class="btn btn-light" for="sortDesc">Z-A</label>
-        <input type="radio" class="btn-check" name="options" id="ordenVendidos" checked>
-        <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
+        <input type="button" class="btn-check" name="ordenAsc" id="ordenAsc">
+        <label class="btn btn-light" for="ordenAsc">A-Z</label>
+        <input type="button" class="btn-check" name="ordenDesc" id="ordenDesc">
+        <label class="btn btn-light" for="ordenDesc">Z-A</label>
+        <input type="button" class="btn-check" name="ordenVendidos" id="ordenVendidos">
+       <label class="btn btn-light" for="ordenVendidos"><i class="fas fa-sort-amount-down mr-1"></i></label>
       </section>
 
 
@@ -74,6 +76,8 @@
 
 
     </div>
+    <!-- fin de botones de filtros -->
+
     <div class="container" id="productos">
     </div>
   </main>
@@ -97,7 +101,7 @@
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
   <script src="js/redireccion.js" defer></script>
-  <!-- <script src="js/filtros.js" defer></script> -->
+ <script src="js/filtros.js"></script>
 </body>
 
 </html>

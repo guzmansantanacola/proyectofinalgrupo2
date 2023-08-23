@@ -1,7 +1,9 @@
 fetch("https://japceibal.github.io/emercado-api/cats_products/101.json")
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        //console.log(data);
+        //Guardo los datos en el Local storage
+        localStorage.setItem("resultFetch", JSON.stringify(data));
         categoriaautos(data);
     })
 
