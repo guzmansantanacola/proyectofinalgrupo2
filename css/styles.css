@@ -482,8 +482,8 @@ span {
 /* Barra de navegación */
 
  #nombreusuario{
-  background-color: #3C0A6D;
-  color: white;
+  background-color:  white;
+  color: #3C0A6D; 
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
