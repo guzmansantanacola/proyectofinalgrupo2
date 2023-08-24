@@ -494,8 +494,8 @@ span {
   margin-top: 5px;
   background-color: #efe9f5;
   color: rgb(58, 7, 68);
-  border-radius: 20px;
-  border-color: #ffffff;
+ /** border-radius: 20px;*/
+ /* border-color: #ffffff; */
  }
   
   /**box-shadow: 0 0 10px #461a30, 0 0 20px #8f1d56, 0 0 30px #461a30; }
