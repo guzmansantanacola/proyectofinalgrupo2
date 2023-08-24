@@ -480,3 +480,16 @@ span {
 }
 
 /* Barra de navegación */
+
+#guardarusuario{
+  background-color: #3C0A6D;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* ejemplo*/
+}
+
+
+
