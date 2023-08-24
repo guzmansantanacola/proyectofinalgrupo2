@@ -132,6 +132,19 @@ botonDescendente.addEventListener("click", function ordenarDescendente() {
 })
 
 
+// Filtro para el rango de precios
+
+const precioMax = document.getElementById("precioMax").value;
+
+const boton1 = document.getElementById("rangeFilterCount");
+
+
+boton1.addEventListener("click", () => {
+    const precioMin = parseInt(document.getElementById("precioMin").value);
+    console.log(typeof precioMin)
+}
+);
+
 
 
 // function hacerFetch(url, callback) {
