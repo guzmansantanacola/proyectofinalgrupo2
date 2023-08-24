@@ -352,9 +352,9 @@ span {
 
 #cerrarSesion {
   margin-top: 5px;
-  background-color: #e6e1ec;
+ /** background-color: #e6e1ec;**/
   color: rgb(58, 7, 68);
-  border-radius: 20px;
+  /** border-radius: 20px; *//
   border-color: #ffffff;
 }
 
@@ -482,12 +482,13 @@ span {
 /* Barra de navegación */
 
  #nombreusuario{
+  margin-top: 5px;
+   background-color: #e6e1ec;
+   color: rgb(58, 7, 68);
+    border-radius: 20px; 
+   border-color: #ffffff;
 
-   margin-top: 5px;
- /* background-color: #efe9f5; */
-  color: white;
- /* border-radius: 20px; */
-  border-color: #ffffff;
+  
  }
 
  .barra{
