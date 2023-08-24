@@ -352,8 +352,8 @@ span {
 
 #cerrarSesion {
   margin-top: 5px;
-  background-color: #3C0A6D;
-  color: white;
+  background-color: #e6e1ec;
+  color: rgb(58, 7, 68);
   border-radius: 20px;
   border-color: #ffffff;
 }
@@ -484,8 +484,16 @@ span {
  #nombreusuario{
 
    margin-top: 5px;
-  background-color: #3C0A6D;
-  color: white;
+  background-color: #efe9f5;
+  color: rgb(58, 7, 68);
+  border-radius: 20px;
+  border-color: #ffffff;
+ }
+
+ .barra{
+  margin-top: 5px;
+  background-color: #efe9f5;
+  color: rgb(58, 7, 68);
   border-radius: 20px;
   border-color: #ffffff;
  }
