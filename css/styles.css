@@ -488,7 +488,7 @@ span {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 0 10px #461a30, 0 0 20px #8f1d56, 0 0 30px #461a30; }
+  /**box-shadow: 0 0 10px #461a30, 0 0 20px #8f1d56, 0 0 30px #461a30; }
   /* ejemplo*/
 
 
