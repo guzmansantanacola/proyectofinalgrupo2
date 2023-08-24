@@ -482,14 +482,18 @@ span {
 /* Barra de navegación */
 
  #nombreusuario{
-  background-color:  white;
-  color: #3C0A6D; 
-  padding: 10px 20px;
-  border: none;
+
+
+   margin-top: 5px;
+  background-color: #3C0A6D;
+  color: white;
   border-radius: 20px;
-  cursor: pointer;
+  border-color: #ffffff
+  background-color:  white;}
+  
   /**box-shadow: 0 0 10px #461a30, 0 0 20px #8f1d56, 0 0 30px #461a30; }
   /* ejemplo*/
+  
 
 
 
