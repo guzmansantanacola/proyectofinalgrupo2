@@ -134,25 +134,46 @@ botonDescendente.addEventListener("click", function ordenarDescendente() {
 
 // Filtro para el rango de precios
 
-const precioMax = document.getElementById("precioMax").value;
+
 
 const boton1 = document.getElementById("rangeFilterCount");
 
 
 boton1.addEventListener("click", () => {
+    let resultFetch = JSON.parse(localStorage.getItem("resultFetch"));
     const precioMin = parseInt(document.getElementById("precioMin").value);
-    console.log(typeof precioMin)
+    console.log(typeof precioMin);
+    const precioMax = parseInt(document.getElementById("precioMax").value);
+    
+    console.log(typeof precioMax);
+    const producto = resultFetch.products
+    //console.log(costo);
+    let agregar = "";
+    producto.forEach(products => {
+        if(precioMin <= products.cost && products.cost <= precioMax){
+            //console.log(element);
+            agregar += `
+        <div setCatID(${products.id})" class="fondolista">
+            <div class="fila">
+                <div class=imagenes>
+                    <img src="${products.image}">
+                </div>
+                <div class="item">
+                    <div>
+                        <h4 class="nombreproductos">${products.name} </h4>
+                        <p class="precio">${products.currency} ${products.cost}</p>
+                    </div>
+
+
+                </div>
+            </div>
+            <h5 class="vendidos">${products.soldCount} vendidos</h5>
+        </div>
+        `
+        } 
+    });
+
+    document.getElementById("productos").innerHTML = agregar;
+    
 }
 );
-
-
-
-// function hacerFetch(url, callback) {
-//     return fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data);
-//             callback(data);
-//             //ordenarVendidos(data);
-//         })
-// }
