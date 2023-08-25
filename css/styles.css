@@ -475,17 +475,21 @@ span {
   box-shadow: 0px 0px 30px #000000 ;
 }
 
-#nombreusuario{
-  color: white;
-}
+
 
 /* Barra de navegación */
 
  #nombreusuario{
-  margin-top: 5px;
+  /**margin-top: 5px;
   /** background-color: #e6e1ec;**/
-   color: white;
+   color: black;
    /** border-radius: 20px; */
+   background-color: white; /* Color de fondo */
+  padding: 10px 20px; /* Espaciado interno para dar espacio al "botón" */
+  border-radius: 5px; /* Bordes redondeados */
+  display: inline-block; /* Para que ocupe solo el espacio necesario */
+  cursor: pointer; 
+  color: #fff;
    
    
   
