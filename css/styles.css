@@ -351,10 +351,10 @@ span {
 /*BOTON DE CERRAR SESIÓN*/
 
 #cerrarSesion {
-   margin-top: 5px;
- /** background-color: #e6e1ec;**/
-  color: rgb(58, 7, 68);
-  /** border-radius: 20px; */
+margin-top: auto;
+/** background-color: #e6e1ec;**/
+  color: #4c1297;
+/** border-radius: 20px; */
  /** border-color: #ffffff; **/
 }
 
@@ -415,7 +415,6 @@ span {
   width: 100%;
   height: auto; 
   padding: 10px;
-
 }
 
 .fondolista:hover {
@@ -450,7 +449,7 @@ span {
   .fondolista {
     max-width: 100%;
     height: auto; 
- } }
+} }
 
 .vendidos {
   font-size: 15px;
@@ -478,28 +477,42 @@ span {
 
 /* Barra de navegación */
 
- #nombreusuario{ 
+#nombreusuario{ 
 
-  
-
-   color: white;
-   /** border-radius: 20px; */
-   background-color: #000000; /* Color de fondo */
-  padding: 5px 10px; /* Espaciado interno para dar espacio al "botón" */
-  border-radius: 5px; /* Bordes redondeados */
-  display: inline-block; /* Para que ocupe solo el espacio necesario */
-  cursor: pointer; 
-  width: 80px; /* Ancho del botón */
-  height: 35px;
-  align-items: center; 
-  display: flex;
-  border:2px solid white;
-  
+  background-color: #b05ff1;
+  color: #3c096c;
+  margin-top: 5px;
+  text-align: center;
+  border-color: #00000000;
+  border-radius: 20px;
+  width: 50%;
+  margin-top: 20px;
+  padding: 5px;
 }
 
+.inicio {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color:#4c1297;
+  color:#4c1297;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.inicio a {
+  color: #ffffff;
+}
+
+#cerrarSesion:hover{
+  color: #db71db;
+}
 
 .posicion{
   display: flex; 
+  margin:auto;
 }
 
 .general {
@@ -508,23 +521,13 @@ span {
   font-family: 'Times New Roman', Times, serif;
 }
 
-
-
-
 .list {
   list-style: none;
   display: flex;
 }
 
 .list li {
-  margin-right: 400px;
-}
-
-
-
-a {
-  text-decoration: none;
-  color: white;
+  margin-right: 250px;
 }
 
 #cerrarSesion {
@@ -535,16 +538,13 @@ a {
   
 }
 
-/* Cambiar color del enlace al pasar el mouse */
 a:hover {
-  color: #db71db; /* Color dorado */
+  color: #db71db;
+  transform: scale(1.05);
+  transition: 400ms;
+
 }
 
-   
- 
- 
-
- 
 
 
 
