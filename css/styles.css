@@ -488,16 +488,16 @@ span {
   display: inline-block; /* Para que ocupe solo el espacio necesario */
   cursor: pointer; 
   width: 80px; /* Ancho del botón */
-  height: 35px;}
+  height: 35px;
+  align-items: center; 
+  display: flex;
+  border:2px solid white;
+  
+}
 
 
-   .nav-link  {
-    margin-top: 5px;
-  /** background-color: #e6e1ec;**/
-   color: rgb(58, 7, 68);
-   /** border-radius: 20px; */
-  /** border-color: #ffffff; **/
- }
+   
+ 
  
 
  
