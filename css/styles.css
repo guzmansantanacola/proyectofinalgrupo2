@@ -475,41 +475,22 @@ span {
   box-shadow: 0px 0px 30px #000000 ;
 }
 
-#productosNoEncontrados{
-  color: white;
-  text-align: center;
-  font-size: 20px;
-  margin-top: 50px;
-}
-
-
-#nombreusuario{
-  color: white;
-}
 
 /* Barra de navegación */
 
  #nombreusuario{
-  margin-top: 5px;
+  /**margin-top: 5px;
   /** background-color: #e6e1ec;**/
-   color: white;
+   color: black;
    /** border-radius: 20px; */
-   
-   
-  
- }
-
- .barra{
-  margin-top: 5px;
- /* background-color: #efe9f5; */
-  color:white;
- /** border-radius: 20px;*/
- /* border-color: #ffffff; */
- }
-  
-  /**box-shadow: 0 0 10px #461a30, 0 0 20px #8f1d56, 0 0 30px #461a30; }
-  /* ejemplo*/
-  
+   background-color: white; /* Color de fondo */
+  padding: 5px 10px; /* Espaciado interno para dar espacio al "botón" */
+  border-radius: 5px; /* Bordes redondeados */
+  display: inline-block; /* Para que ocupe solo el espacio necesario */
+  cursor: pointer; 
+  width: 80px; /* Ancho del botón */
+  height: 35px; }
+ 
 
 
 
