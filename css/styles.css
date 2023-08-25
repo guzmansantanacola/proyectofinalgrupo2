@@ -490,24 +490,8 @@ span {
   display: inline-block; /* Para que ocupe solo el espacio necesario */
   cursor: pointer; 
   width: 80px; /* Ancho del botón */
-  height: 35px;
- /** text-align: center;
+  height: 35px; }
  
-   
-   
-  
- }
-
- .barra{
-  margin-top: 5px;
- 
- /** border-radius: 20px;*/
- /* border-color: #ffffff; */
- }
-  
-  /**box-shadow: 0 0 10px #461a30, 0 0 20px #8f1d56, 0 0 30px #461a30; }
-  /* ejemplo*/
-  
 
 
 
