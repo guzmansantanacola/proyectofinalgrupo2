@@ -351,11 +351,11 @@ span {
 /*BOTON DE CERRAR SESIÓN*/
 
 #cerrarSesion {
-  margin-top: 5px;
+   margin-top: 5px;
  /** background-color: #e6e1ec;**/
   color: rgb(58, 7, 68);
   /** border-radius: 20px; */
-  border-color: #ffffff;
+ /** border-color: #ffffff; **/
 }
 
 /* LISTAS DE PRODUCTOS*/
@@ -479,17 +479,27 @@ span {
 /* Barra de navegación */
 
  #nombreusuario{
-  /**margin-top: 5px;
-  /** background-color: #e6e1ec;**/
-   color: black;
+
+   color: white;
    /** border-radius: 20px; */
-   background-color: white; /* Color de fondo */
+   background-color: #800080; /* Color de fondo */
   padding: 5px 10px; /* Espaciado interno para dar espacio al "botón" */
   border-radius: 5px; /* Bordes redondeados */
   display: inline-block; /* Para que ocupe solo el espacio necesario */
   cursor: pointer; 
   width: 80px; /* Ancho del botón */
-  height: 35px; }
+  height: 35px;}
+
+
+   .nav-link  {
+    margin-top: 5px;
+  /** background-color: #e6e1ec;**/
+   color: rgb(58, 7, 68);
+   /** border-radius: 20px; */
+  /** border-color: #ffffff; **/
+ }
+ 
+
  
 
 
