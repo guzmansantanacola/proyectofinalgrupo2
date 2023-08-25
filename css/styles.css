@@ -496,7 +496,9 @@ span {
 }
 
 
-
+.posicion{
+  display: flex; 
+}
 
 .general {
   background-color: #4c1297;
@@ -531,7 +533,7 @@ a {
 
 /* Cambiar color del enlace al pasar el mouse */
 a:hover {
-  color: #800080; /* Color dorado */
+  color: #db71db; /* Color dorado */
 }
 
    
