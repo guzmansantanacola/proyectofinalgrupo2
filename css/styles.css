@@ -496,6 +496,44 @@ span {
 }
 
 
+
+
+.general {
+  background-color: #4c1297;
+  color: white;
+}
+
+
+
+.list {
+  list-style: none;
+  display: flex;
+}
+
+.list li {
+  margin-right: 20px;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#cerrarSesion {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  
+}
+
+/* Cambiar color del enlace al pasar el mouse */
+a:hover {
+  color: #800080; /* Color dorado */
+}
+
    
  
  
