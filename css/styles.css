@@ -482,7 +482,7 @@ span {
 
    color: white;
    /** border-radius: 20px; */
-   background-color: #800080; /* Color de fondo */
+   background-color: #000000; /* Color de fondo */
   padding: 5px 10px; /* Espaciado interno para dar espacio al "botón" */
   border-radius: 5px; /* Bordes redondeados */
   display: inline-block; /* Para que ocupe solo el espacio necesario */
