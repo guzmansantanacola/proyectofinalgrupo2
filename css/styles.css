@@ -478,7 +478,9 @@ span {
 
 /* Barra de navegación */
 
- #nombreusuario{
+ #nombreusuario{ 
+
+  
 
    color: white;
    /** border-radius: 20px; */
@@ -503,6 +505,7 @@ span {
 .general {
   background-color: #4c1297;
   color: white;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -514,7 +517,7 @@ span {
 }
 
 .list li {
-  margin-right: 200px;
+  margin-right: 400px;
 }
 
 
