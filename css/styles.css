@@ -475,6 +475,14 @@ span {
   box-shadow: 0px 0px 30px #000000 ;
 }
 
+#productosNoEncontrados{
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+
 #nombreusuario{
   color: white;
 }
@@ -502,7 +510,6 @@ span {
   /**box-shadow: 0 0 10px #461a30, 0 0 20px #8f1d56, 0 0 30px #461a30; }
   /* ejemplo*/
   
-
 
 
 
