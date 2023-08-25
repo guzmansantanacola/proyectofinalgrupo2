@@ -486,9 +486,12 @@ span {
    /** border-radius: 20px; */
    background-color: white; /* Color de fondo */
   padding: 5px 10px; /* Espaciado interno para dar espacio al "botón" */
-  border-radius: 3px; /* Bordes redondeados */
+  border-radius: 5px; /* Bordes redondeados */
   display: inline-block; /* Para que ocupe solo el espacio necesario */
   cursor: pointer; 
+  width: 80px; /* Ancho del botón */
+  height: 35px;
+ /** text-align: center;
  
    
    
@@ -497,8 +500,7 @@ span {
 
  .barra{
   margin-top: 5px;
- /* background-color: #efe9f5; */
-  color:white;
+ 
  /** border-radius: 20px;*/
  /* border-color: #ffffff; */
  }
