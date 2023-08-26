@@ -477,6 +477,8 @@ margin-top: auto;
 
 /* Barra de navegación */
 
+
+
 #nombreusuario{ 
 
   background-color: #b05ff1;
@@ -484,10 +486,13 @@ margin-top: auto;
   margin-top: 5px;
   text-align: center;
   border-color: #00000000;
-  border-radius: 20px;
-  width: 50%;
+  border-radius: 10px;
+  width: 30%;
   margin-top: 20px;
-  padding: 5px;
+  padding: 2px 4px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  margin-bottom: 9px;
 }
 
 .inicio {
@@ -500,6 +505,8 @@ margin-top: auto;
   cursor: pointer;
   margin: auto;
   font-family: 'Montserrat', sans-serif;
+  border: 2px solid white;  /**encuadre blanco*//
+
 }
 
 .inicio a {
