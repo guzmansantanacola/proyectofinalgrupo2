@@ -37,6 +37,7 @@ function agregarProductos(element) {
                 <h4 class="nombreproductos">${element.name} </h4>
                 <p class="precio">${element.currency} ${element.cost}</p>
             </div>
+            <p class="description">${element.description}</p>
         </div>
     </div>
     <h5 class="vendidos">${element.soldCount} vendidos</h5>
