@@ -5,6 +5,9 @@ const ORDENAR_ASCENDENTE = "ordenarAscendente";
 const ORDENAR_DESCENDENTE = "ordenarDescendente";
 
 
+const productosNoEncontrados = document.getElementById("productosNoEncontrados")
+
+
 // Variables del fetch
 
 let resultFetch = JSON.parse(localStorage.getItem("resultFetch"));
@@ -34,6 +37,7 @@ function agregarProductos(element) {
                 <h4 class="nombreproductos">${element.name} </h4>
                 <p class="precio">${element.currency} ${element.cost}</p>
             </div>
+            <p class="description">${element.description}</p>
         </div>
     </div>
     <h5 class="vendidos">${element.soldCount} vendidos</h5>
@@ -93,15 +97,23 @@ botonFiltrar.addEventListener("click", () => {
 
     const precioMin = parseInt(document.getElementById("precioMin").value);
     const precioMax = parseInt(document.getElementById("precioMax").value);
-
+    let productosAgregados = []
     let agregar = "";
     products.forEach(products => {
         if (precioMin <= products.cost && products.cost <= precioMax) {
             agregar += agregarProductos(products);
+            productosAgregados.push("1");
         }
     });
-
     document.getElementById("productos").innerHTML = agregar;
+    if (productosAgregados.length === 0){
+        productosNoEncontrados.innerHTML = `
+        <p id=noEncontrado>No se encontraron productos.</p>
+        `;
+    } else {
+        const noEncontrado = document.getElementById("noEncontrado");
+        noEncontrado.remove();
+    }
 });
 
 
