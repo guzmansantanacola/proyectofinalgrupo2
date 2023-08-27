@@ -348,15 +348,6 @@ span {
   filter:drop-shadow(0px 0px 5px #E0aaff)
 }
 
-/*BOTON DE CERRAR SESIÓN*/
-
-#cerrarSesion {
-margin-top: auto;
-/** background-color: #e6e1ec;**/
-  color: #4c1297;
-/** border-radius: 20px; */
- /** border-color: #ffffff; **/
-}
 
 /* LISTAS DE PRODUCTOS*/
 .titulo {
@@ -489,8 +480,7 @@ margin-top: auto;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-  
-  
+
   line-height: 1;
   justify-content: center; 
   align-items: center;
@@ -513,10 +503,14 @@ margin-top: auto;
   margin-bottom: 10px;
   list-style: none; }/**desaparece el punto de la lista*/ 
   
+  .list {
+    display: flex;
+    margin-right: 20px; /* Ajusta el margen derecho según tu preferencia */
+  }
+  
 
 
 .inicio {
-  display: inline-block;
   padding: 10px 20px;
   background-color:#4c1297;
   color:#4c1297;
@@ -525,37 +519,44 @@ margin-top: auto;
   cursor: pointer;
   margin: auto;
   font-family: 'Montserrat', sans-serif;
- 
-  
+  display: inline-block;
 
 }
-
+.general img {
+  width: 80px;
+  position: relative;
+  margin-left: 40px;
+}
 .inicio a {
-  color: #ffffff;
+  color: white;
 }
 
 #cerrarSesion:hover{
   color: #db71db;
+  transition: 400ms;
 }
 
 .posicion{
   display: flex; 
   margin:auto;
+  width: 50%;
 }
 
 .general {
   background-color: #4c1297;
   color: white;
-  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos dentro de .general */
+  justify-content: space-between; /* Distribuye los elementos en el espacio disponible */
+  padding: 10px; /* Agrega un poco de espacio alrededor de la barra de navegación */
+  position: sticky;
+  top: 0px
 }
 
-.list {
-  list-style: none;
-  display: flex;
-}
 
 .list li {
-  margin-right: 250px;
+  margin-right: 20px; /* Ajusta el margen derecho según tu preferencia */
+  list-style: none; /* Elimina los puntos de la lista */
 }
 
 #cerrarSesion {
@@ -563,7 +564,6 @@ margin-top: auto;
   border: none;
   color: white;
   cursor: pointer;
-  
 }
 
 a:hover {
@@ -572,7 +572,41 @@ a:hover {
   transition: 400ms;
 
 }
+.list ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+#formBusqueda {
+  width:30%;
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
 
+#campoBusqueda {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 40px;
+  font-size: 16px;
+  flex: 1;
+  color: white;
+  outline: none;
+}
 
+button[type="submit"] {
+  background-color: #4c1297;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-
+button[type="submit"]:hover {
+  color: #db71db;
+  transition: 400ms;
+}
