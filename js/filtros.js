@@ -1,5 +1,36 @@
 // Definimos variables globales
 
+// resultFetch = JSON.parse(localStorage.getItem("resultFetch"));
+// let products= [];
+
+// if (resultFetch != null) {
+//     products = resultFetch.products;
+// }
+
+
+
+// function traerDatos() {
+    
+
+//     if (resultFetch === null) {
+//         return null; // Si no hay datos en localStorage, retorna null o un valor predeterminado
+//     }
+
+//     conproducts = resultFetch.products;
+//     return products;
+// }
+
+// const productos = traerDatos();
+
+// if (productos === null) {
+//     console.log("No se encontraron datos en localStorage.");
+// } else {
+//     // Haz algo con los productos, por ejemplo, muestra los productos en la consola
+//     console.log(productos);
+// }
+
+
+
 const ORDENAR_VENDIDOS = "ordenarVendidos";
 const ORDENAR_ASCENDENTE = "ordenarAscendente";
 const ORDENAR_DESCENDENTE = "ordenarDescendente";
@@ -10,8 +41,13 @@ const productosNoEncontrados = document.getElementById("productosNoEncontrados")
 
 // Variables del fetch
 
-let resultFetch = JSON.parse(localStorage.getItem("resultFetch"));
-const products = resultFetch.products;
+// async function traerDatos() {
+//     let resultFetch = await JSON.parse(localStorage.getItem("resultFetch"))
+//     return resultFetch;
+// }
+
+// traerDatos()
+
 
 
 // Recupero los botones del DOM
@@ -48,6 +84,7 @@ function agregarProductos(element) {
 // FUNCION PARA ORDENAR PRODUCTOS
 
 function ordenar(criterio) {
+    let products = JSON.parse(localStorage.getItem("resultFetch"));
     let productosOrdenados = []
     if (criterio == "ordenarVendidos") {
         //ordeno los productos de mayor cantidad de ventas a menor y los guardo en la variable "productosOrdenados"
@@ -94,6 +131,7 @@ botonDescendente.addEventListener("click", function () {
 // Filtro para el rango de precios
 
 botonFiltrar.addEventListener("click", () => {
+    let products = JSON.parse(localStorage.getItem("resultFetch"));
 
     const precioMin = parseInt(document.getElementById("precioMin").value);
     const precioMax = parseInt(document.getElementById("precioMax").value);
@@ -106,7 +144,7 @@ botonFiltrar.addEventListener("click", () => {
         }
     });
     document.getElementById("productos").innerHTML = agregar;
-    if (productosAgregados.length === 0){
+    if (productosAgregados.length === 0) {
         productosNoEncontrados.innerHTML = `
         <p id=noEncontrado>No se encontraron productos.</p>
         `;
