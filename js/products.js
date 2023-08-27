@@ -6,7 +6,7 @@ fetch(prodID)
     .then(data => {
         //console.log(data);
         //Guardo los datos en el Local storage
-        localStorage.setItem("resultFetch", JSON.stringify(data));
+        localStorage.setItem("resultFetch", JSON.stringify(data.products));
         productList(data);
     })
 
