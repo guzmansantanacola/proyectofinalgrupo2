@@ -1,54 +1,8 @@
 // Definimos variables globales
 
-// resultFetch = JSON.parse(localStorage.getItem("resultFetch"));
-// let products= [];
-
-// if (resultFetch != null) {
-//     products = resultFetch.products;
-// }
-
-
-
-// function traerDatos() {
-    
-
-//     if (resultFetch === null) {
-//         return null; // Si no hay datos en localStorage, retorna null o un valor predeterminado
-//     }
-
-//     conproducts = resultFetch.products;
-//     return products;
-// }
-
-// const productos = traerDatos();
-
-// if (productos === null) {
-//     console.log("No se encontraron datos en localStorage.");
-// } else {
-//     // Haz algo con los productos, por ejemplo, muestra los productos en la consola
-//     console.log(productos);
-// }
-
-
-
 const ORDENAR_VENDIDOS = "ordenarVendidos";
 const ORDENAR_ASCENDENTE = "ordenarAscendente";
 const ORDENAR_DESCENDENTE = "ordenarDescendente";
-
-
-const productosNoEncontrados = document.getElementById("productosNoEncontrados")
-
-
-// Variables del fetch
-
-// async function traerDatos() {
-//     let resultFetch = await JSON.parse(localStorage.getItem("resultFetch"))
-//     return resultFetch;
-// }
-
-// traerDatos()
-
-
 
 // Recupero los botones del DOM
 
@@ -57,6 +11,8 @@ const botonDescendente = document.getElementById("ordenDesc");
 const botonVendidos = document.getElementById("ordenVendidos");
 const botonLimpiar = document.getElementById("clearRangeFilter");
 const botonFiltrar = document.getElementById("rangeFilterCount");
+
+const productosNoEncontrados = document.getElementById("productosNoEncontrados");
 
 
 // Agregar productos a HTML
