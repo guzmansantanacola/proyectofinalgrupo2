@@ -66,4 +66,7 @@ function redireccionarAlLogin() {
 
 redireccionarAlLogin();
 
-
+function toggleMenu() {
+  const list = document.querySelector(".list");
+  list.classList.toggle("show");
+}
