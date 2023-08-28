@@ -19,13 +19,14 @@
 
   <body id="bodyproducts">
     <nav class="general">
+    
       <a href="index.html"> <img src="img/logo_modif_loginprueba.png" alt="Jovenes a Comerciar"> </a>
-      <form id="formBusqueda" action="#" method="GET">
+      <form id="formBusqueda" action="products.html" method="GET">
         <input type="text" id="campoBusqueda" placeholder="Buscar...">
-        <button type="submit">Buscar</button>
       </form>
       
-      <div>
+     
+        <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
         <div class="list">
           <ul  class="posicion">
             <li class="inicio">
@@ -41,7 +42,6 @@
             </li>
           </ul>
         </div>
-      </div>
     </nav>
     <main class="mainproductos">
         <h2 class="titulo">PRODUCTOS</h2>
@@ -54,56 +54,51 @@
               name="ordenAsc"
               id="ordenAsc"
             />
-            <label class="btn btn-light" for="ordenAsc">A-Z</label>
+            <label class="botonesorden" for="ordenAsc">A-Z</label>
             <input
               type="button"
               class="btn-check"
               name="ordenDesc"
               id="ordenDesc"
             />
-            <label class="btn btn-light" for="ordenDesc">Z-A</label>
+            <label class="botonesorden" for="ordenDesc">Z-A</label>
             <input
               type="button"
               class="btn-check"
               name="ordenVendidos"
               id="ordenVendidos"
             />
-            <label class="btn btn-light" for="ordenVendidos"
+            <label class="botonesorden" for="ordenVendidos"
               ><i class="fas fa-sort-amount-down mr-1"></i
             ></label>
           </section>
 
-          <section id="filtroPrecios">
-            <div class="col">
-              <p class="font-weight-normal text-end my-2">Cant.</p>
-            </div>
-            <div class="col">
+          <div id="filtroPrecios">
+            <div class="barraprecio">
               <input
-                class="form-control"
+                class="busquedaprecio"
                 type="number"
                 placeholder="min."
                 id="precioMin"
               />
-            </div>
-            <div class="col">
               <input
-                class="form-control"
+                class="busquedaprecio"
                 type="number"
                 placeholder="máx."
                 id="precioMax"
               />
             </div>
-            <div class="col-3 p-0">
-              <div class="btn-group" role="group">
-                <button class="btn btn-light btn-block" id="rangeFilterCount">
+            <div>
+              <div>
+                <button class="limpiarfiltrar" id="rangeFilterCount">
                   Filtrar
                 </button>
-                <button class="btn btn-link btn-sm" id="clearRangeFilter">
+                <button class="limpiarfiltrar" id="clearRangeFilter">
                   Limpiar
                 </button>
               </div>
             </div>
-          </section>
+          </div>
         </div>
         <!-- fin de botones de filtros -->
         

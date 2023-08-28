@@ -10,6 +10,7 @@ fetch(prodID)
         productList(data);
     })
 
+
 function productList(data) {
     const products = data.products;
     let htmlContentToAppend = "";   
@@ -36,6 +37,7 @@ function productList(data) {
     })
 }
 
-
-
-
+function toggleMenu() {
+    const list = document.querySelector(".list");
+    list.classList.toggle("show");
+  }
