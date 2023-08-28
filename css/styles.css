@@ -610,3 +610,17 @@ button[type="submit"]:hover {
   color: #db71db;
   transition: 400ms;
 }
+
+
+@media  (min-width: 768px) {
+  .general {
+    padding: 20px;
+    margin:auto ;
+    display: flex;
+    align-items: center;
+    position: fixed; /* Hace que la barra sea fija */
+     top: 0; /* Alinea la barra en la parte superior */
+     left: 0; /* Alinea la barra a la izquierda */
+      width: 100%; /* Ocupa el ancho completo de la pantalla */
+  
+  }}
