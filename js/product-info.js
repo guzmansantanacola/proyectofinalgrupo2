@@ -1,3 +1,8 @@
 /* Boton de busqueda  */
 
-const product=document.getElementById("searchInput")
+const product=document.getElementById("searchInput");
+searchInput.addEventListener("input", () =>{
+    
+}
+
+)
