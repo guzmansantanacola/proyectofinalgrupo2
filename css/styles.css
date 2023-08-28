@@ -449,14 +449,20 @@ span {
 }
 
 #filtroPrecios{
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+
+  width: 100%;
+  display: block;
+  text-align: center;
+  /* display: flex;
+  justify-content: center; /* Centra horizontalmente
+  align-items: center; Centra verticalmente */
 }
 .barraprecio {
+  margin-bottom: 10px;
+  /* width: 45%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-end; */
 }
 .busquedaprecio{
   outline: none;
@@ -465,7 +471,7 @@ span {
   text-align: center;
   border: solid white 1px;
   border-radius: 10px;
-  width: 30%;
+  width: 150px;
 }
 .limpiarfiltrar{
   color: #000000;
@@ -478,13 +484,19 @@ span {
   box-shadow:0px 0px 10px #3c096c;
 }
 #filtros {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  display: block;
+  text-align: center;
+  /* justify-content: center; */
+  /* align-items: center;
+  width: 100%; */
   margin-top: 55px;
   font-family: 'Montserrat', sans-serif;
 }
+
+#filtrosOrden {
+  margin-bottom: 10px;
+}
+
 #noEncontrado{
   color: white;
   text-align: center;
@@ -534,15 +546,15 @@ span {
 
 
 .inicio {
-  padding: 10px 20px;
+  padding: 10px 30px;
   background-color: #101012;
   color: #4c1297;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: auto;
   font-family: 'Montserrat', sans-serif;
-  display: inline-block;
+  display: block;
+  text-align: center;
 }
 
 .general img {
@@ -567,13 +579,19 @@ span {
 .general {
   background-color: #101012;
   color: white;
-  display: flex;
+  display: block;
   position: sticky;
   top: 0px;
-  z-index: 1;
+  z-index: 10;
   border-bottom: 1px solid #E0aaff;
   justify-content: space-between;
   align-items: center;
+}
+
+#sectionNav {
+  display: flex;
+  width: 69%;
+    margin: 0px auto;
 }
 
 
@@ -638,15 +656,19 @@ a:hover {
   padding: 0;
 }
 
-.list li {
-  margin-right: 20px;
-}
 /* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
+  .list ul {
+    display: grid;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
   .list {
     display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* Transición de opacidad */
+    /* opacity: 0;
+    transition: opacity 0.3s ease-in-out; Transición de opacidad  */
   }
 
   .menu-button {
@@ -658,10 +680,10 @@ a:hover {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px;
-    right: 10px;
+    top: 67px;
+    right: 0px;
     background-color: #101012;
-    z-index: 1;
+    z-index: 2;
     opacity: 1; /* Cambia la opacidad a 1 para mostrar la lista */
     transition: opacity 0.3s ease-in-out; /* Transición de opacidad */
   }

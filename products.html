@@ -20,7 +20,8 @@
   <body id="bodyproducts">
     <nav class="general">
     
-      <a href="index.html"> <img src="img/logo_modif_loginprueba.png" alt="Jovenes a Comerciar"> </a>
+      <section id="sectionNav">
+        <a href="index.html"> <img src="img/logo_modif_loginprueba.png" alt="Jovenes a Comerciar"> </a>
       <form id="formBusqueda" action="products.html" method="GET">
         <input type="text" id="campoBusqueda" placeholder="Buscar...">
       </form>
@@ -42,6 +43,8 @@
             </li>
           </ul>
         </div>
+      </section>
+  
     </nav>
     <main class="mainproductos">
         <h2 class="titulo">PRODUCTOS</h2>
@@ -54,14 +57,14 @@
               name="ordenAsc"
               id="ordenAsc"
             />
-            <label class="botonesorden" for="ordenAsc">A-Z</label>
+            <label class="botonesorden" for="ordenAsc">$ &uarr;</label>
             <input
               type="button"
               class="btn-check"
               name="ordenDesc"
               id="ordenDesc"
             />
-            <label class="botonesorden" for="ordenDesc">Z-A</label>
+            <label class="botonesorden" for="ordenDesc">$ &darr;</label>
             <input
               type="button"
               class="btn-check"
