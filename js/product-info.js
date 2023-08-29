@@ -2,6 +2,7 @@
 
 const product = document.getElementById("searchInput");
 
+
 searchInput.addEventListener("input", e => {
    const searchFinal = e.target.value;
    console.log(searchFinal);
@@ -12,3 +13,14 @@ searchInput.addEventListener("input", e => {
 
 
 
+
+    const filtro= productList.filters(product =>{
+
+   const nombre= product.name.toLowerCase().includes(searchInput);
+   const descripcion=product.description.toLowerCase().includes(searchInput);
+
+    }});
+    
+    
+    /**incluyo el titulo y descripcion *
+     * toLoWerCase convertir a minuscula/
