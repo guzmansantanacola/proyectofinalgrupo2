@@ -688,3 +688,12 @@ a:hover {
     transition: opacity 0.3s ease-in-out; /* Transición de opacidad */
   }
 }
+
+.busqueda{
+  color:white;
+  font-family:'Montserrat', sans-serif;
+  border: 1px solid white;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}

@@ -2,12 +2,14 @@
 
 const product=document.getElementById("searchInput");
 searchInput.addEventListener("input", () =>{
+ const searchFinal= searchInput.value;
 
-    const searchFinal= searchInput.value;
-    const filtro= product.filter(product =>
-        const titulo=product.name;
-        const descrip= product.description;
+    const filtro= product.filter(product =>{
+
+    }});
     
-    });
     
     /**incluyo el titulo y descripcion */
+
+
+ 
