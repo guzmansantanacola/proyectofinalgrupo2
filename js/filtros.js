@@ -139,8 +139,6 @@ searchInput.addEventListener("input", e => {
    const nombre= product.name.toLowerCase().includes(searchInput);
    const descripcion=product.description.toLowerCase().includes(searchInput);
 
-    }});
+    });
     
     
-    /**incluyo el titulo y descripcion *
-     * toLoWerCase convertir a minuscula/

@@ -687,6 +687,13 @@ a:hover {
     opacity: 1; /* Cambia la opacidad a 1 para mostrar la lista */
     transition: opacity 0.3s ease-in-out; /* Transición de opacidad */
   }
+  #sectionNav {
+    width: 100%;
+    display: flex;
+    margin: 0px auto;
+  }
+  
+  
 }
 
 .busqueda{
