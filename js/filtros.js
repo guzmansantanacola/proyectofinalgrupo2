@@ -91,16 +91,16 @@ botonFiltrar.addEventListener("click", () => {
 
     const precioMin = parseInt(document.getElementById("precioMin").value);
     const precioMax = parseInt(document.getElementById("precioMax").value);
-    let productosAgregados = []
+    let contador = 0
     let agregar = "";
     products.forEach(products => {
         if (precioMin <= products.cost && products.cost <= precioMax) {
             agregar += agregarProductos(products);
-            productosAgregados.push("1");
+            contador++
         }
     });
     document.getElementById("productos").innerHTML = agregar;
-    if (productosAgregados.length === 0) {
+    if (contador === 0) {
         productosNoEncontrados.innerHTML = `
         <p id=noEncontrado>No se encontraron productos.</p>
         `;
@@ -126,7 +126,7 @@ const product = document.getElementById("searchInput");
 product.addEventListener("keyup", e => {
     let arrayTarjetas = document.querySelectorAll(".fondolista");
     if (e.target.matches("#searchInput")) {
-        let productosAgregados = []
+        let contador = 0
         arrayTarjetas.forEach(prod => {
             
             let tarjetaProducto = prod.textContent
@@ -134,13 +134,13 @@ product.addEventListener("keyup", e => {
             
             if (tarjetaProducto.toLowerCase().includes(busqueda.toLowerCase()) || tarjetaProducto.toUpperCase().includes(busqueda.toUpperCase())) {
                 prod.style.display = "block";
-                productosAgregados.push("1");
+                contador++
             } else {
                 prod.style.display = "none";
             }
         })
 
-        if (productosAgregados.length <= 0) {
+        if (contador === 0) {
             productosNoEncontrados.innerHTML = `
             <p id=noEncontrado>No se encontraron productos.</p>
             `;
