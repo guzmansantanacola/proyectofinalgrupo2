@@ -40,15 +40,33 @@ let getJSONData = function(url){
     });
 }
 
-// verificamos si encuentra una sesion guardada
-if (JSON.parse(localStorage.getItem("sesionIniciada")) == null) {
-  // si no la encuentra, guardo el valor de la sesion en el Local Storage convirtiendolo en texto antes
-  localStorage.setItem("sesionIniciada", JSON.stringify(false));
-}
+//Boton cerrar Sesion
 
 let botonCerrarSesion = document.getElementById('cerrarSesion');
 
 botonCerrarSesion.addEventListener("click", () => {
-  localStorage.clear();
+  localStorage.setItem("sesionIniciada", JSON.stringify(false));
   window.location.href = "login.html";
 })
+
+
+// Funcion para redirigir al Login si no hay sesion
+
+function redireccionarAlLogin() {
+  // obtenemos el valor en Local Storage
+  const sesionIniciada = JSON.parse(localStorage.getItem("sesionIniciada"));
+
+  // verificar el valor
+  if ((!sesionIniciada) || (JSON.parse(localStorage.getItem("sesionIniciada")) == null)) {
+    // Redireccionar a la página de inicio de sesión
+    window.location.href = "login.html";
+
+  }
+}
+
+redireccionarAlLogin();
+
+function toggleMenu() {
+  const list = document.querySelector(".list");
+  list.classList.toggle("show");
+}

@@ -30,7 +30,7 @@ nav a {
   }
 }
 
-.jumbotron {
+/* .jumbotron {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
@@ -41,7 +41,7 @@ nav a {
   background-repeat: no-repeat;
   color: black;
   font-weight: bold;
-}
+} */
 
 @media (min-width: 768px) {
   .jumbotron {
@@ -195,59 +195,45 @@ a.custom-card:hover {
 /* LOGIN */
 
 .estilologin {
-  /*background-image: url("../img/fondo_login.jpg");*/
-  background-image: url("../img/fondo_login_2.jpg");
+  background-image: url("../img/fondo_login_para_responsive.jpg");
   width: 100%;
   min-height: 100vh;
-  max-height: 100vh;
   display: flex;
+  justify-content: center; 
   align-items: center;
-  justify-content: space-between;
+  background-attachment: fixed;
 }
-
+.login .logo {
+  width: 40%;
+  margin-bottom: 50px;
+}
 .login {
+  width: 30%;
+  align-items: center;
   text-align: center;
+  margin: 5px auto;
+  background: #000000dc;
+  backdrop-filter: blur(2px);
+  padding: 40px;
+  min-width: 400px;
+  max-width: 600px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+#socialSesion{
+  margin-top: 20px;
   color: white;
-
-  /* float: left; */
-  width: 600px;
-  height: 70%;
-  /* margin-top: 280px; */
-  /* margin-top: 15%; */
-  margin-left: 4%;  
 }
-
-#formlogin {
-  width: 90%;
-}
-
 #sectionImg {
   width: 60%;
   text-align: center;
-}
-
-#imgLogo {
-  width: 80%;
-  max-width: 450px;
-  /* position: absolute; */
-  /* right: 21%;
-  top: 32%; */
-  animation: zoom 5s infinite;
-}
-
-@keyframes zoom {
-  0%{
-    scale: 1;
-  }
-  50%{
-    scale: 1.1;
-  }
-  100%{
-    scale: 1;
-  }
-}
+} 
 
 #iniciosesion {
+  min-width: 300px;
+  max-width: 600px;
   margin-bottom: 60px;
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -291,7 +277,7 @@ input {
   font-size: 0.65rem;
   font-weight: 600;
   padding: 0 10px;
-  background: #101012;
+  background: #000000;
   letter-spacing: 0.1rem;
 }
 
@@ -324,8 +310,6 @@ span {
 #login {
   background-color: #b05ff1;
   color: #3c096c;
-  /* margin-left: 40px;
-  margin-right: 40px; */
   margin-top: 5px;
   text-align: center;
   border-color: #00000000;
@@ -345,13 +329,6 @@ span {
 
 }
 
-
-#socialSesion {
-  margin-top: 20px;
-  width: 90%;
-}
-
-
 .socialImg {
   width: 30px;
   margin-right: 8px;
@@ -370,25 +347,20 @@ span {
   filter:drop-shadow(0px 0px 5px #E0aaff)
 }
 
-/*BOTON DE CERRAR SESIÓN*/
-
-#cerrarSesion {
-  margin-top: 5px;
-  background-color: #0000000f;
-  color: white;
-  border-radius: 8px;
-}
 
 /* LISTAS DE PRODUCTOS*/
 .titulo {
-  text-align: center;
+  min-width: 200px;
+  max-width: 400px;
   width: 100%;
+  justify-content: center ;
+  margin: auto;
+  display: flex;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 50px;
-  color: #ecdcfc;
+  padding-top: 40px;
+  color: #ffffff;
   text-shadow: 0px  0px 50px #551794;
-  font-size: 50px;
-  text-decoration: underline 4px #551794;
+  border-bottom: solid 5px #E0aaff;
 }
 .punto{
   color: #E0aaff;
@@ -401,35 +373,27 @@ span {
   margin-bottom: 20px;
   text-align: center;
   color:#ffffff;
-  font-size: 20px;
+  font-size: 15px;
 }
 
   #bodyproducts{
-  background-image: url("../img/fondo_products.jpg");
+  background-image: url("../img/fondo_login_para_responsive.jpg");
   background-color: #101012;
   background-attachment: fixed;
-  background-position: center;
-
 } 
 
 .fondolista {
+    max-width: 250px;
     margin-top: 40px;
-    width: calc(33.33% - 20px);
-    box-sizing: border-box;
-    border-radius: 3px;
-    position: relative;
-    color: #e3c9f1;
-    background: transparent;
-    backdrop-filter: blur(6px);
+    color: #ffffff;
     border: solid 0.5px #551794;
     transition: 0.6s;
-    margin-inline: 10px;
 }
 
 .description{
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 10px;
 }
 .nombreproductos {
   font-family: 'Montserrat', sans-serif;
@@ -439,13 +403,10 @@ span {
 }
 
 .fondolista img {
-  width: 98%;
-  display: block;
-  margin: 0 auto; 
-  border-radius: 30px;
+  width: 100%;
+  height: auto; 
   padding: 10px;
 }
-
 
 .fondolista:hover {
   box-shadow: 0px 0px 20px #551794;
@@ -454,12 +415,12 @@ span {
 
 #productos {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 1100px;
   width: 100%;
-  margin: 40px auto;
-  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 0px;
 }
 
 .nombreproductos,
@@ -469,10 +430,292 @@ span {
   margin-top: 10px;
   text-align: center;
   padding: 10px;
+  
+}
+.precio{
+  font-weight: bold;
+  color: #E0aaff;
+}
+@media (max-width: 768px) {
+  .fondolista {
+    max-width: 100%;
+    height: auto; 
+
+} 
+  #bodyproducts{
+    background-image: url("../img/fondo_products_violeta.jpg");
+    background-color: #101012;
+} 
+  .estilologin{
+  background-image: url("../img/fondo_products_violeta.jpg");
+  }
 }
 
 .vendidos {
   font-size: 15px;
   text-align: center;
   margin-top: 0; 
+}
+
+#filtroPrecios{
+
+  width: 100%;
+  display: block;
+  text-align: center;
+  /* display: flex;
+  justify-content: center; /* Centra horizontalmente
+  align-items: center; Centra verticalmente */
+}
+.barraprecio {
+  margin-bottom: 10px;
+  /* width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; */
+}
+.busquedaprecio{
+  outline: none;
+  color: white;
+  border: none;
+  text-align: center;
+  border: solid white 1px;
+  border-radius: 10px;
+  width: 150px;
+}
+.limpiarfiltrar{
+  color: #000000;
+  outline: none;
+  border:1px solid #E0aaff;
+  border-radius: 10px;
+  background-color: #E0aaff;
+}
+.limpiarfiltrar:hover{
+  box-shadow:0px 0px 10px #3c096c;
+}
+#filtros {
+  display: block;
+  text-align: center;
+  /* justify-content: center; */
+  /* align-items: center;
+  width: 100%; */
+  margin-top: 55px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#filtrosOrden {
+  margin-bottom: 10px;
+}
+
+
+#noEncontrado{
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+  overflow: visible;
+}
+.botonesorden{
+  border: 1px solid white;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}
+.botonesorden:hover{
+  color: #E0aaff;
+  border-color: #E0aaff;
+  box-shadow:0px 0px 10px #3c096c;
+}
+
+.mainproductos{
+  max-width: 2000px;
+  min-width: 300px;
+  margin: auto;
+  width: 60%;
+  justify-content: center;
+  background-color: #101012;
+  box-shadow: 0px 0px 30px #000000 ;
+}
+
+
+/* Barra de navegación */
+
+
+
+#nombreusuario {
+  display: inline-flex;
+  padding: 10px 20px;
+  background-color: #9d4edd;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.inicio {
+  padding: 10px 30px;
+  background-color: #101012;
+  color: #4c1297;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+  text-align: center;
+}
+
+.general img {
+  width: 80px;
+  position: relative;
+}
+
+.inicio a {
+  color: white;
+}
+
+#cerrarSesion:hover {
+  color: #db71db;
+  transition: 400ms;
+}
+
+.posicion {
+  display: flex;
+  margin: auto;
+}
+
+.general {
+  background-color: #101012;
+  color: white;
+  display: block;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  border-bottom: 1px solid #E0aaff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#sectionNav {
+  display: flex;
+  width: 69%;
+    margin: 0px auto;
+}
+
+
+#cerrarSesion {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #db71db;
+  transform: scale(1.05);
+  transition: 200ms;
+}
+
+.list ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+#formBusqueda {
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+#campoBusqueda {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 40px;
+  color: white;
+  outline: none;
+  margin: auto;
+  transition: width 0.5s;
+  width: 100%;
+  max-width: 600px; /* Aumenta el ancho máximo del campo de búsqueda según tus preferencias */
+}
+@media screen and (max-width: 768px) {
+  #campoBusqueda {
+    width: 80%; /* Ajusta el ancho en pantallas pequeñas según tus preferencias */
+  }
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px 20px;
+  display: none;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .list ul {
+    display: grid;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .list {
+    display: none;
+    /* opacity: 0;
+    transition: opacity 0.3s ease-in-out; Transición de opacidad  */
+  }
+
+  .menu-button {
+    display: block; /* Muestra el botón de menú en pantallas pequeñas */
+  }
+
+  /* Estilos para mostrar la lista cuando se hace clic en el botón de menú */
+  .list.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 67px;
+    right: 0px;
+    background-color: #101012;
+    z-index: 2;
+    opacity: 1; /* Cambia la opacidad a 1 para mostrar la lista */
+    transition: opacity 0.3s ease-in-out; /* Transición de opacidad */
+  }
+  #sectionNav {
+    width: 100%;
+    display: flex;
+    margin: 0px auto;
+  }
+  
+  
+}
+
+.busqueda{
+  color:white;
+  font-family:'Montserrat', sans-serif;
+  border: 1px solid white;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+#bodyIndex {
+  background-image: url("../img/fondo_login_para_responsive.jpg");
+  background-color: #101012;
 }
