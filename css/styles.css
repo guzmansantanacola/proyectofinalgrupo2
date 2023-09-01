@@ -30,7 +30,7 @@ nav a {
   }
 }
 
-.jumbotron {
+/* .jumbotron {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
@@ -41,7 +41,7 @@ nav a {
   background-repeat: no-repeat;
   color: black;
   font-weight: bold;
-}
+} */
 
 @media (min-width: 768px) {
   .jumbotron {
@@ -497,6 +497,7 @@ span {
   margin-bottom: 10px;
 }
 
+
 #noEncontrado{
   color: white;
   text-align: center;
@@ -703,4 +704,9 @@ a:hover {
   padding: 5px;
   color: white;
   border-radius: 10px;
+}
+
+#bodyIndex {
+  background-image: url("../img/fondo_login_para_responsive.jpg");
+  background-color: #101012;
 }
