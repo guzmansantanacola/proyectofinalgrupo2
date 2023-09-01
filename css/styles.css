@@ -201,6 +201,7 @@ a.custom-card:hover {
   display: flex;
   justify-content: center; 
   align-items: center;
+  background-attachment: fixed;
 }
 .login .logo {
   width: 40%;
@@ -328,8 +329,6 @@ span {
 
 }
 
-
-
 .socialImg {
   width: 30px;
   margin-right: 8px;
@@ -380,6 +379,7 @@ span {
   #bodyproducts{
   background-image: url("../img/fondo_login_para_responsive.jpg");
   background-color: #101012;
+  background-attachment: fixed;
 } 
 
 .fondolista {
@@ -440,7 +440,16 @@ span {
   .fondolista {
     max-width: 100%;
     height: auto; 
-} }
+
+} 
+  #bodyproducts{
+    background-image: url("../img/fondo_products_violeta.jpg");
+    background-color: #101012;
+} 
+  .estilologin{
+  background-image: url("../img/fondo_products_violeta.jpg");
+  }
+}
 
 .vendidos {
   font-size: 15px;
