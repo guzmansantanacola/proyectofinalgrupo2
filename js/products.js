@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 let catID = JSON.parse(localStorage.getItem("catID"));
 const prodID = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
 
@@ -27,7 +29,7 @@ function productList(data) {
                                    <p class="precio">${product.currency} ${product.cost}</p>
                                </div>
                                <p class="description">${product.description}</p>
-                               
+                               <input id="masInfo" type="button" value="Más Información" .>
                            </div>
                        </div>
                        <h5 class="vendidos">${product.soldCount} vendidos</h5>
@@ -38,14 +40,13 @@ function productList(data) {
 }
 
 
-let productito = document.getElementsByClassName("fondolista");
+ let productito = document.getElementById("masInfo");
 
-productito.addEventListener("click",() => {
-   
-window.location.href = "product-info.html";
+ productito.addEventListener("click", () => {
+     let redirigir = window.location.href = "product-info.html";
     
+     redirigir
+
+ });
+
 });
-
-
-//onclick="redirectToProductInfo(${product.id}"
-
