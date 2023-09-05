@@ -40,12 +40,12 @@ function productList(data) {
 
 let productito = document.getElementsByClassName("fondolista");
 
-productito.addEventListener("click",() => {
-   
-window.location.href = "product-info.html";
-    
-});
 
+for (let i = 0; i < productito.length; i++) {
+    productito.addEventListener("click", () => {
+      
+        window.location.href = "product-info.html";
+    });
+}
 
 //onclick="redirectToProductInfo(${product.id}"
-
