@@ -13,7 +13,7 @@ fetch(prodID)
 
 function productList(data) {
     const products = data.products;
-    let htmlContentToAppend = "";   
+    let htmlContentToAppend = "";
     products.forEach(product => {
         htmlContentToAppend += `
                    <div setCatID(${product.id})" class="fondolista">
@@ -38,6 +38,14 @@ function productList(data) {
 }
 
 
+let productito = document.getElementsByClassName("fondolista");
 
 
+for (let i = 0; i < productito.length; i++) {
+    productito.addEventListener("click", () => {
+      
+        window.location.href = "product-info.html";
+    });
+}
 
+//onclick="redirectToProductInfo(${product.id}"
