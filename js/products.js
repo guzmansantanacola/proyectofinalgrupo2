@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         products.forEach(product => {
             htmlContentToAppend += `
             
-                   <div setCatID(${product.id})" class="fondolists masInfo" type="button" name="${product.id}">
+                   <div setCatID(${product.id})" class="fondolista masInfo" type="button" name="${product.id}">
               
                        <div class="fila">
                            <div class=imagenes>
