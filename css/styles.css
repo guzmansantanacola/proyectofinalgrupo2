@@ -525,6 +525,8 @@ span {
   box-shadow:0px 0px 10px #3c096c;
 }
 
+/*Pagina de informacion de productos*/
+
 .mainproductos{
   max-width: 2000px;
   min-width: 300px;
@@ -533,6 +535,12 @@ span {
   justify-content: center;
   background-color: #101012;
   box-shadow: 0px 0px 30px #000000 ;
+  color: white;
+  text-align: center;
+}
+
+#imagenes img{
+  width: 200px;
 }
 
 
