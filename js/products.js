@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //Guardo los datos en el Local storage
             localStorage.setItem("resultFetch", JSON.stringify(data.products));
             productList(data);
-            
+
             infoProduct = document.getElementsByClassName("masInfo");
             
             for (let i = 0; i < infoProduct.length; i++) {
@@ -59,6 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
+productito.addEventListener("click",() => {
+   
+window.location.href = "product-info.html";
+    
 });
+
+
+//onclick="redirectToProductInfo(${product.id}"
+
