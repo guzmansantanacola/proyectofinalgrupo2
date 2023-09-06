@@ -11,9 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
             //Guardo los datos en el Local storage
             localStorage.setItem("resultFetch", JSON.stringify(data.products));
             productList(data);
-
+            
             infoProduct = document.getElementsByClassName("masInfo");
-
+            //Se trae el id de cada producto contenido en el name de cada botón, se lo guarda en local storage
+            //y luego redirije a product-info
             for (let i = 0; i < infoProduct.length; i++) {
                 infoProduct[i].addEventListener("click", () => {
 
