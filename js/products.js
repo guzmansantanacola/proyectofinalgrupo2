@@ -36,7 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let htmlContentToAppend = "";
         products.forEach(product => {
             htmlContentToAppend += `
-                   <div setCatID(${product.id})" class="fondolista">
+            
+                   <div setCatID(${product.id})" class="fondolists masInfo" type="button" name="${product.id}">
+              
                        <div class="fila">
                            <div class=imagenes>
                                <img src="${product.image}">
@@ -47,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                    <p class="precio">${product.currency} ${product.cost}</p>
                                </div>
                                <p class="description">${product.description}</p>
-                               <input class="masInfo" type="button" name="${product.id}" value="Más Información" .>
+                              
                            </div>
                        </div>
                        <h5 class="vendidos">${product.soldCount} vendidos</h5>
