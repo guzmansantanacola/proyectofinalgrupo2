@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("resultFetch", JSON.stringify(data.products));
             productList(data);
             
-            infoProduct = document.getElementsByClassName("masInfo");
+            infoProduct = document.getElementsByClassName("fondolista");
             //Se trae el id de cada producto contenido en el name de cada botón, se lo guarda en local storage
             //y luego redirije a product-info
             for (let i = 0; i < infoProduct.length; i++) {
                 infoProduct[i].addEventListener("click", () => {
 
-                    localStorage.setItem("productId", infoProduct[i].name);
+                    localStorage.setItem("productId", infoProduct[i].id);
 
                     let redirigir = window.location.href = "product-info.html";
                     redirigir
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         products.forEach(product => {
             htmlContentToAppend += `
             
-                   <div setCatID(${product.id})" class="fondolista masInfo" type="button" name="${product.id}">
+                   <div setCatID(${product.id})" class="fondolista masInfo" type="button" id="${product.id}">
               
                        <div class="fila">
                            <div class=imagenes>
