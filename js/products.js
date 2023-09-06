@@ -13,20 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
             productList(data);
 
             infoProduct = document.getElementsByClassName("masInfo");
-            
+
             for (let i = 0; i < infoProduct.length; i++) {
-                infoProduct[i].addEventListener ("click", () => {
-                    
+                infoProduct[i].addEventListener("click", () => {
+
                     localStorage.setItem("productId", infoProduct[i].name);
-    
+
                     let redirigir = window.location.href = "product-info.html";
                     redirigir
-    
+
                 });
-                
-            
+
+
             };
-            
+
         })
 
 
@@ -59,10 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-productito.addEventListener("click",() => {
-   
-window.location.href = "product-info.html";
-    
+
 });
 
 
