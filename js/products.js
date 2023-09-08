@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const prodID = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
     let infoProduct
 
+    const productosNoEncontrados = document.getElementById("productosNoEncontrados");
+
     fetch(prodID)
         .then(response => response.json())
         .then(data => {
@@ -11,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //Guardo los datos en el Local storage
             localStorage.setItem("resultFetch", JSON.stringify(data.products));
             productList(data);
-            
+
             infoProduct = document.getElementsByClassName("fondolista");
             //Se trae el id de cada producto contenido en el name de cada botón, se lo guarda en local storage
             //y luego redirije a product-info
@@ -33,9 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function productList(data) {
         const products = data.products;
-        let htmlContentToAppend = "";
-        products.forEach(product => {
-            htmlContentToAppend += `
+        if (products.length === 0) {
+            productosNoEncontrados.innerHTML = `
+            <p id=noEncontrado>No se encontraron productos.</p>
+            `;
+        } else {
+            let htmlContentToAppend = "";
+            products.forEach(product => {
+                htmlContentToAppend += `
             
                    <div setCatID(${product.id})" class="fondolista masInfo" type="button" id="${product.id}">
               
@@ -55,8 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
                        <h5 class="vendidos">${product.soldCount} vendidos</h5>
                    </div>
                    `
-            document.getElementById("productos").innerHTML = htmlContentToAppend;
-        })
+                document.getElementById("productos").innerHTML = htmlContentToAppend;
+            })
+        }
+
     }
 
 

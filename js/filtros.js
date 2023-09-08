@@ -104,7 +104,7 @@ botonFiltrar.addEventListener("click", () => {
         productosNoEncontrados.innerHTML = `
         <p id=noEncontrado>No se encontraron productos.</p>
         `;
-    } else {
+    } else if (document.getElementById("noEncontrado")) {
         const noEncontrado = document.getElementById("noEncontrado");
         noEncontrado.remove();
     }
