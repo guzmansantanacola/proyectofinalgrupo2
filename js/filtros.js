@@ -14,6 +14,8 @@ const botonFiltrar = document.getElementById("rangeFilterCount");
 
 const productosNoEncontrados = document.getElementById("productosNoEncontrados");
 
+let productosFiltradosPorPrecio = []
+
 
 // Agregar productos a HTML
 
@@ -40,7 +42,13 @@ function agregarProductos(element) {
 // FUNCION PARA ORDENAR PRODUCTOS
 
 function ordenar(criterio) {
-    let products = JSON.parse(localStorage.getItem("resultFetch"));
+    let products;
+    if (productosFiltradosPorPrecio.length !== 0) {
+        products = productosFiltradosPorPrecio
+    } else {
+        products = JSON.parse(localStorage.getItem("resultFetch"));
+    }
+    
     let productosOrdenados = []
     if (criterio == "ordenarVendidos") {
         //ordeno los productos de mayor cantidad de ventas a menor y los guardo en la variable "productosOrdenados"
@@ -93,9 +101,10 @@ botonFiltrar.addEventListener("click", () => {
     const precioMax = parseInt(document.getElementById("precioMax").value);
     let contador = 0
     let agregar = "";
-    products.forEach(products => {
-        if (precioMin <= products.cost && products.cost <= precioMax) {
-            agregar += agregarProductos(products);
+    products.forEach(product => {
+        if (precioMin <= product.cost && product.cost <= precioMax) {
+            agregar += agregarProductos(product);
+            productosFiltradosPorPrecio.push(product);
             contador++
         }
     });
@@ -108,6 +117,7 @@ botonFiltrar.addEventListener("click", () => {
         const noEncontrado = document.getElementById("noEncontrado");
         noEncontrado.remove();
     }
+
 });
 
 
