@@ -10,7 +10,7 @@ function infoProducts(data) {
     htmlContentToAppend += `
     <h1 class="titulo">${data.name}</h1>
     <hr>
-    <h3>Imagenes ilustrativas</h3>
+    <h3 class="ilus">Imagenes ilustrativas</h3>
 
     <div id="imagenes">
       <img src="${data.images[0]}" alt="">
@@ -19,16 +19,16 @@ function infoProducts(data) {
       <img src="${data.images[3]}" alt="">
     </div>
 
-    <h3>Precio</h3>
+    <h3 class="precio">Precio </h3>
     <p>${data.currency} ${data.cost}</p>
 
-    <h3>Descripcion</h3>
+    <h3 class="des">Descripcion </h3>
     <p>${data.description}</p>
 
-    <h3>Categoria</h3>
+    <h3 class="categorias">Categoria </h3>
     <p>${data.category}</p>
 
-    <h3>Cantidad de vendidos</h3>
+    <h3 class="vendidos">Cantidad de vendidos</h3>
     <p>${data.soldCount}</p>
     `
 
