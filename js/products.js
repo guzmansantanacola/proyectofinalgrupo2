@@ -1,4 +1,4 @@
-/**document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     let catID = JSON.parse(localStorage.getItem("catID"));
     const prodID = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
@@ -67,4 +67,5 @@
 
 
 //onclick="redirectToProductInfo(${product.id}"
+
 
