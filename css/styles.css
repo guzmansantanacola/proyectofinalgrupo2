@@ -727,3 +727,37 @@ a:hover {
   background-image: url("../img/fondo_login_para_responsive.jpg");
   background-color: #101012;
 }
+
+/** estilos para la muestra de los productos*/
+
+.precio, .categorias,.des, .ilus{
+  font-size: 20px;
+}
+
+#imagenes {
+  width: 150px; /* Puedes ajustar el valor según tus necesidades */
+  height: auto; /* Esto mantendrá la proporción original de la imagen */
+ /* Agrega un espacio horizontal entre las imágenes */
+  margin-right: 0; display: flex; }
+
+  .titulo:hover{
+    color: #db71db;
+    cursor: pointer;
+  }
+  .des:hover{
+    color: #db71db;
+    cursor: pointer;
+  }
+  .precio:hover{
+    color: #db71db;
+    cursor: pointer;
+  }
+
+
+  .categorias:hover{
+    color: #db71db;
+    cursor: pointer;
+  }
+  
+  
+
