@@ -34,3 +34,5 @@ function infoProducts(data) {
 
     document.getElementById("producto").innerHTML = htmlContentToAppend;
 }
+
+/*PARTE 3*/

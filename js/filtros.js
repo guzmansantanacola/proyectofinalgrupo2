@@ -165,7 +165,7 @@ product.addEventListener("keyup", e => {
 
 /*AGREGO ID DEL  PRODUCTO Y REDIRECCION A LA INFO DEL MISMO, PARTE 1 */
 
-document.addEventListener("DOMContentLoaded", () => {
+/**document.addEventListener("DOMContentLoaded", () => {
 
     let catID = JSON.parse(localStorage.getItem("catID"));
     const prodID = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
