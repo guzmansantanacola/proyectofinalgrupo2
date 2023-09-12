@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //y luego redirije a product-info
             for (let i = 0; i < infoProduct.length; i++) {
                 infoProduct[i].addEventListener("click", () => {
-
+                    console.log(localStorage.getItem("productId"));
                     localStorage.setItem("productId", infoProduct[i].id);
 
                     let redirigir = window.location.href = "product-info.html";
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             };
 
-        })
+        });
 
 
     function productList(data) {
@@ -75,6 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//onclick="redirectToProductInfo(${product.id}"
+
 
 
