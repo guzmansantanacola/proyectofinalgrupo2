@@ -48,7 +48,7 @@ function ordenar(criterio) {
     } else {
         products = JSON.parse(localStorage.getItem("resultFetch"));
     }
-    
+
     let productosOrdenados = []
     if (criterio == "ordenarVendidos") {
         //ordeno los productos de mayor cantidad de ventas a menor y los guardo en la variable "productosOrdenados"
@@ -130,7 +130,7 @@ botonLimpiar.addEventListener("click", function () {
 // BARRA DE BÚSQUEDA
 
 /* Boton de busqueda  */
-                          
+
 
 const product = document.getElementById("searchInput");
 product.addEventListener("keyup", e => {
@@ -138,10 +138,10 @@ product.addEventListener("keyup", e => {
     if (e.target.matches("#searchInput")) {
         let contador = 0
         arrayTarjetas.forEach(prod => {
-            
+
             let tarjetaProducto = prod.textContent
             let busqueda = e.target.value;
-            
+
             if (tarjetaProducto.toLowerCase().includes(busqueda.toLowerCase()) || tarjetaProducto.toUpperCase().includes(busqueda.toUpperCase())) {
                 prod.style.display = "block";
                 contador++
@@ -165,7 +165,7 @@ product.addEventListener("keyup", e => {
 
 /*AGREGO ID DEL  PRODUCTO Y REDIRECCION A LA INFO DEL MISMO, PARTE 1 */
 
-/**document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
 
     let catID = JSON.parse(localStorage.getItem("catID"));
     const prodID = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
@@ -231,10 +231,8 @@ product.addEventListener("keyup", e => {
 
 
 
-});
+}); */
 
 
 //onclick="redirectToProductInfo(${product.id}"
-
-
 
