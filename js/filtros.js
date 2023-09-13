@@ -1,7 +1,7 @@
 //se hace domcontentloaded para asegurar que cuando se llame la funcion janerancio estén definidos los datos del documento que se van a usar en ella
 //por alguna mística razon siempre se intentaba ejecutar janerancio antes de que cargaran los productos
 document.addEventListener("DOMContentLoaded", function () {
-    function janerancio() {
+    function trarID() {
         infoProduct = document.getElementsByClassName("fondolista");
         //Se trae el id de cada producto contenido en el name de cada botón, se lo guarda en local storage
         //y luego redirije a product-info
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 redirigir
 
             });
-
 
         };
     }
@@ -104,21 +103,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     botonVendidos.addEventListener("click", function () {
         ordenar(ORDENAR_VENDIDOS)
-        janerancio()
+        trarID()
     })
 
     // ORDENADO DE MENOR A MAYOR (PRECIO)
 
     botonAscendente.addEventListener("click", function () {
         ordenar(ORDENAR_ASCENDENTE)
-        janerancio()
+        trarID()
     })
 
     // ORDENADO DE MAYOR A MENOR (PRECIO)
 
     botonDescendente.addEventListener("click", function () {
         ordenar(ORDENAR_DESCENDENTE)
-        janerancio()
+        trarID()
     })
 
 
@@ -139,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
         document.getElementById("productos").innerHTML = agregar;
-        janerancio()
+        trarID()
         if (contador === 0) {
             productosNoEncontrados.innerHTML = `
         <p id=noEncontrado>No se encontraron productos.</p>
