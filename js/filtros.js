@@ -66,37 +66,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // FUNCION PARA ORDENAR PRODUCTOS
 
-function ordenar(criterio) {
-    let products;
-    if (productosFiltradosPorPrecio.length !== 0) {
-        products = productosFiltradosPorPrecio
-    } else {
-        products = JSON.parse(localStorage.getItem("resultFetch"));
+    function ordenar(criterio) {
+        let products;
+        if (productosFiltradosPorPrecio.length !== 0) {
+            products = productosFiltradosPorPrecio
+        } else {
+            products = JSON.parse(localStorage.getItem("resultFetch"));
+        }
+
+        let productosOrdenados = []
+        if (criterio == "ordenarVendidos") {
+            //ordeno los productos de mayor cantidad de ventas a menor y los guardo en la variable "productosOrdenados"
+            productosOrdenados = products.sort(function (a, b) {
+                return b.soldCount - a.soldCount;
+            })
+        } else if (criterio == "ordenarAscendente") {
+            //ordeno los productos de mayor precio a menor y los guardo en la variable "productosOrdenados"
+            productosOrdenados = products.sort(function (a, b) {
+                return a.cost - b.cost;
+            })
+        } else if (criterio == "ordenarDescendente") {
+            //ordeno los productos de menor precio a mayor y los guardo en la variable "productosOrdenados"
+            productosOrdenados = products.sort(function (a, b) {
+                return b.cost - a.cost;
+            })
+        }
+        let agregar = "";
+        productosOrdenados.forEach(products => {
+            agregar += agregarProductos(products);
+        })
+        return document.getElementById("productos").innerHTML = agregar;
     }
-    
-    let productosOrdenados = []
-    if (criterio == "ordenarVendidos") {
-        //ordeno los productos de mayor cantidad de ventas a menor y los guardo en la variable "productosOrdenados"
-        productosOrdenados = products.sort(function (a, b) {
-            return b.soldCount - a.soldCount;
-        })
-    } else if (criterio == "ordenarAscendente") {
-        //ordeno los productos de mayor precio a menor y los guardo en la variable "productosOrdenados"
-        productosOrdenados = products.sort(function (a, b) {
-            return a.cost - b.cost;
-        })
-    } else if (criterio == "ordenarDescendente") {
-        //ordeno los productos de menor precio a mayor y los guardo en la variable "productosOrdenados"
-        productosOrdenados = products.sort(function (a, b) {
-            return b.cost - a.cost;
-        })
-    }
-    let agregar = "";
-    productosOrdenados.forEach(products => {
-        agregar += agregarProductos(products);
-    })
-    return document.getElementById("productos").innerHTML = agregar;
-}
 
     // ORDENAR POR RELEVANCIA (MAS VENDIDOS)
 
@@ -160,9 +160,6 @@ function ordenar(criterio) {
 
     /* Boton de busqueda  */
 
-/* Boton de busqueda  */
-                          
-
     const product = document.getElementById("searchInput");
     product.addEventListener("keyup", e => {
         let arrayTarjetas = document.querySelectorAll(".fondolista");
@@ -190,82 +187,13 @@ function ordenar(criterio) {
                 noEncontrado.remove();
             }
 
-    }
-})
-
-
-/*AGREGO ID DEL  PRODUCTO Y REDIRECCION A LA INFO DEL MISMO, PARTE 1 */
-
-/**document.addEventListener("DOMContentLoaded", () => {
-
-    let catID = JSON.parse(localStorage.getItem("catID"));
-    const prodID = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
-    let infoProduct
-
-    fetch(prodID)
-        .then(response => response.json())
-        .then(data => {
-            //console.log(data);
-            //Guardo los datos en el Local storage
-            localStorage.setItem("resultFetch", JSON.stringify(data.products));
-            productList(data);
-            
-            infoProduct = document.getElementsByClassName("fondolista");
-            //Se trae el id de cada producto contenido en el name de cada botón, se lo guarda en local storage
-            //y luego redirije a product-info
-            for (let i = 0; i < infoProduct.length; i++) {
-                infoProduct[i].addEventListener("click", () => {
-
-                    localStorage.setItem("productId", infoProduct[i].id);
-
-                    let redirigir = window.location.href = "product-info.html";
-                    redirigir
-
-                });
-
-
-            };
-
-        })
-
-
-        
-    function productList(data) {
-        const products = data.products;
-        let htmlContentToAppend = "";
-        products.forEach(product => {
-            htmlContentToAppend += `
-            
-                   <div setCatID(${product.id})" class="fondolista masInfo" type="button" id="${product.id}">
-              
-                       <div class="fila">
-                           <div class=imagenes>
-                               <img src="${product.image}">
-                           </div>
-                           <div class="item">
-                               <div>
-                                   <h4 class="nombreproductos">${product.name} </h4>
-                                   <p class="precio">${product.currency} ${product.cost}</p>
-                               </div>
-                               <p class="description">${product.description}</p>
-                              
-                           </div>
-                       </div>
-                       <h5 class="vendidos">${product.soldCount} vendidos</h5>
-                   </div>
-                   `
-            document.getElementById("productos").innerHTML = htmlContentToAppend;
-        })
-    }
-
-
-
-
+        }
+    })
 
 });
 
 
-//onclick="redirectToProductInfo(${product.id}"
+
 
 
 
