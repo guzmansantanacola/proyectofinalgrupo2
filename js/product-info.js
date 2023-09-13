@@ -79,28 +79,15 @@ submitcomment.addEventListener("click", (event) => {
   event.preventDefault();
   let userName = localStorage.getItem("nombredeusuario");
   let date = new Date().toLocaleString();
-  //let dateFormat = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate()
-  
   let comentario = document.getElementById("inputComentario").value;
-  //let rate = document.getElementsByName('rate').val();
-  //let activoFijo = $('input[name="rate"]:checked').val();
-  // let radios = document.getElementsByName('contact');
-  // radios.forEach(boton => {
-  //   if (boton.checked) {
-  //     console.log(boton);
-  //   }
-  // })
-
-
- 
 
   document.getElementById("comments").innerHTML += `<div class="comentario">
   <p>${userName} | ${date} |  ${getStars(estrellaElegida)}   </p>
   <p>${comentario}</p>
-
  </div>`;
-  console.log(comentario);
-  console.log(estrellaElegida);
+
+  //console.log(comentario);
+  //console.log(estrellaElegida);
 
 });
 
