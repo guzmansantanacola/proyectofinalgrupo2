@@ -779,3 +779,47 @@ a:hover {
 
     padding: 20px
   }
+
+.btn{
+  color: white;
+}
+
+#inputComentario {
+  width: 200px;
+  height: 80px;
+}
+
+
+.mainproductos .star-widget input {
+  display: none;
+}
+
+.star-widget label {
+  font-size: 15px;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  float: right;
+
+}
+
+input:not(:checked) ~label:hover,
+input:not(:checked) ~label:hover ~ label {
+  color: #FFA500;
+}
+
+input:checked~label {
+  color: #FFA500;
+}
+
+input#rate-5:checked~ label {
+  color: #FFA500;
+  text-shadow: 0 0 10px #952;
+}
+
+input:checked form {
+  display: block;
+}
+#formComent {
+  display:flex;
+  justify-content: center;
+}
