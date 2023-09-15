@@ -539,8 +539,52 @@ span {
   text-align: center;
 }
 
-#imagenes img{
+#contentInfo {
+  width: 80%;
+  margin: 0px auto;
+}
+
+/* #imagenes img{
   width: 200px;
+} */
+
+
+.galeria {
+  height: calc( 500px + 3em);
+  width: 500px;
+  margin:1em auto;
+  border: 1px solid #555;
+  position: relative;  
+}
+
+.galeria img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.galeria input[type=radio] {
+  position: relative;
+  bottom: calc(-500px - 1.5em);
+  left: .5em;
+}
+
+.galeria input[type=radio]:nth-of-type(1):checked ~ img:nth-of-type(1) {
+  opacity: 1;
+}
+
+.galeria input[type=radio]:nth-of-type(2):checked ~ img:nth-of-type(2) {
+  opacity: 1;
+}
+
+.galeria input[type=radio]:nth-of-type(3):checked ~ img:nth-of-type(3) {
+  opacity: 1;
+}
+
+.galeria input[type=radio]:nth-of-type(4):checked ~ img:nth-of-type(4) {
+  opacity: 1;
 }
 
 
@@ -762,7 +806,7 @@ a:hover {
   #comments{
     max-width: 2000px;
     min-width: 300px;
-    text-align: left;
+    text-align: center;
     width: 100%;
     background-color: #101012;
     color: white;
@@ -823,3 +867,4 @@ input:checked form {
   display:flex;
   justify-content: center;
 }
+

@@ -7,28 +7,39 @@ fetch(URL_)
 function infoProducts(data) {
   let htmlContentToAppend = "";
   htmlContentToAppend += `
-    <h1 class="titulo">${data.name}</h1>
-    <hr>
-    <h3 class="ilus">Imagenes ilustrativas</h3>
+    
+  <div id="contentInfo">
+  <h1 class="titulo">${data.name}</h1>
+  <hr>
 
-    <div id="imagenes">
-      <img src="${data.images[0]}" alt="">
-      <img src="${data.images[1]}" alt="">
-      <img src="${data.images[2]}" alt="">
-      <img src="${data.images[3]}" alt="">
-    </div>
+  <div class="galeria">
+    <input type="radio" name="navegacion" id="_1" checked>
+    <input type="radio" name="navegacion" id="_2">
+    <input type="radio" name="navegacion" id="_3">
+    <input type="radio" name="navegacion" id="_4"> 
+    <img src="${data.images[0]}" width="500px" height="500px" alt="Galeria CSS 1" />
+    <img src="${data.images[1]}" width="500px" height="500px"  alt="Galeria CSS 2"  />
+    <img src="${data.images[2]}" width="500px" height="500px"  alt="Galeria CSS 3" />
+    <img src="${data.images[3]}" width="500px" height="500px"  alt="Galeria CSS 4" />
+  </div>
+ 
 
-    <h3 class="precio">Precio </h3>
-    <p>${data.currency} ${data.cost}</p>
-
-    <h3 class="des">Descripcion </h3>
-    <p>${data.description}</p>
-
+ <div class="imagenes">
     <h3 class="categorias">Categoria </h3>
     <p>${data.category}</p>
 
     <h3 class="vendidos">Cantidad de vendidos</h3>
     <p>${data.soldCount}</p>
+
+    <h3 class="des">Descripcion:</h3>
+    <p>${data.description}</p>
+
+
+    <h3 class="precio">Sólo: </h3>
+    <p>  ${data.currency} ${data.cost}</p>
+
+  </div>
+    
     `;
 
   document.getElementById("producto").innerHTML = htmlContentToAppend;
@@ -70,7 +81,7 @@ let estrellaElegida
 starInputs.forEach((input) => {
   input.addEventListener("click", () => {
     estrellaElegida = input.value;
-    
+
   });
 });
 
@@ -93,3 +104,9 @@ submitcomment.addEventListener("click", (event) => {
 
 
 
+/* <div id="imagenes">
+      <img src="${data.images[0]}" alt="">
+      <img src="${data.images[1]}" alt="">
+      <img src="${data.images[2]}" alt="">
+      <img src="${data.images[3]}" alt="">
+    </div> */
