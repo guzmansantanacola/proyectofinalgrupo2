@@ -540,6 +540,7 @@ span {
 }
 
 #contentInfo {
+  display: flex;
   width: 80%;
   margin: 0px auto;
 }
@@ -558,7 +559,6 @@ span {
 }
 
 .galeria img {
-  position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
@@ -778,7 +778,7 @@ a:hover {
   font-size: 20px;
 }
 
-#imagenes {
+#description {
   width: 150px; /* Puedes ajustar el valor según tus necesidades */
   height: auto; /* Esto mantendrá la proporción original de la imagen */
  /* Agrega un espacio horizontal entre las imágenes */

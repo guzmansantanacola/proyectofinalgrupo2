@@ -8,9 +8,9 @@ function infoProducts(data) {
   let htmlContentToAppend = "";
   htmlContentToAppend += `
     
-  <div id="contentInfo">
+
   <h1 class="titulo">${data.name}</h1>
-  <hr>
+  <div id="contentInfo">
 
   <div class="galeria">
     <input type="radio" name="navegacion" id="_1" checked>
@@ -24,7 +24,7 @@ function infoProducts(data) {
   </div>
  
 
- <div class="imagenes">
+ <div class="description">
     <h3 class="categorias">Categoria </h3>
     <p>${data.category}</p>
 
@@ -38,6 +38,7 @@ function infoProducts(data) {
     <h3 class="precio">Sólo: </h3>
     <p>  ${data.currency} ${data.cost}</p>
 
+  </div>
   </div>
     
     `;
