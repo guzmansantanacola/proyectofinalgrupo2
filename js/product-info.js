@@ -10,37 +10,32 @@ function infoProducts(data) {
     
 
   <h1 class="titulo">${data.name}</h1>
-  <div id="contentInfo">
 
-  <div class="galeria">
-    <input type="radio" name="navegacion" id="_1" checked>
-    <input type="radio" name="navegacion" id="_2">
-    <input type="radio" name="navegacion" id="_3">
-    <input type="radio" name="navegacion" id="_4"> 
-    <img src="${data.images[0]}" width="500px" height="500px" alt="Galeria CSS 1" />
-    <img src="${data.images[1]}" width="500px" height="500px"  alt="Galeria CSS 2"  />
-    <img src="${data.images[2]}" width="500px" height="500px"  alt="Galeria CSS 3" />
-    <img src="${data.images[3]}" width="500px" height="500px"  alt="Galeria CSS 4" />
-  </div>
- 
-
- <div class="description">
-    <h3 class="categorias">Categoria </h3>
-    <p>${data.category}</p>
-
-    <h3 class="vendidos">Cantidad de vendidos</h3>
-    <p>${data.soldCount}</p>
-
-    <h3 class="des">Descripcion:</h3>
-    <p>${data.description}</p>
-
-
-    <h3 class="precio">Sólo: </h3>
-    <p>  ${data.currency} ${data.cost}</p>
-
-  </div>
-  </div>
+<div id="contentInfo">
+     <div class="galeria">
     
+    <section class= "infoImg">
+    <img src="${data.images[0]}"/>
+    <img src="${data.images[1]}"/>
+    <img src="${data.images[2]}"/>
+    <img src="${data.images[3]}"/>
+    </section>
+
+<div class="description">
+
+    <div id="vendidoCategorias">
+    <h3 class="sell">Vendidos: ${data.soldCount} </h3>    
+    <h1 class="categorias"> Categoría: ${data.category} </h1>
+    </div>
+
+    <h3 class="des">Descripción:</h3>
+    <p class="parrafoDes">${data.description}</p>
+
+    <h3 class="precio">Precio: ${data.currency} $${data.cost} </h3>
+
+  </div>
+</div>
+  
     `;
 
   document.getElementById("producto").innerHTML = htmlContentToAppend;
@@ -77,15 +72,13 @@ fetch(COMMENT_URL)
 const submitcomment = document.getElementById("submitcomment");
 
 const starInputs = document.querySelectorAll('input[type="radio"]');
-let estrellaElegida
+let estrellaElegida;
 
 starInputs.forEach((input) => {
   input.addEventListener("click", () => {
     estrellaElegida = input.value;
-
   });
 });
-
 
 submitcomment.addEventListener("click", (event) => {
   event.preventDefault();
@@ -98,12 +91,10 @@ submitcomment.addEventListener("click", (event) => {
   <p>${comentario}</p>
  </div>`;
 
+
   //console.log(comentario);
   //console.log(estrellaElegida);
-
 });
-
-
 
 /* <div id="imagenes">
       <img src="${data.images[0]}" alt="">

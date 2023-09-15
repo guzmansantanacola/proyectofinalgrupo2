@@ -394,6 +394,7 @@ span {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
+  
 }
 .nombreproductos {
   font-family: 'Montserrat', sans-serif;
@@ -541,8 +542,9 @@ span {
 
 #contentInfo {
   display: flex;
-  width: 80%;
+  width: 600px;
   margin: 0px auto;
+  justify-content: center;
 }
 
 /* #imagenes img{
@@ -550,42 +552,7 @@ span {
 } */
 
 
-.galeria {
-  height: calc( 500px + 3em);
-  width: 500px;
-  margin:1em auto;
-  border: 1px solid #555;
-  position: relative;  
-}
 
-.galeria img {
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 3s;
-}
-
-.galeria input[type=radio] {
-  position: relative;
-  bottom: calc(-500px - 1.5em);
-  left: .5em;
-}
-
-.galeria input[type=radio]:nth-of-type(1):checked ~ img:nth-of-type(1) {
-  opacity: 1;
-}
-
-.galeria input[type=radio]:nth-of-type(2):checked ~ img:nth-of-type(2) {
-  opacity: 1;
-}
-
-.galeria input[type=radio]:nth-of-type(3):checked ~ img:nth-of-type(3) {
-  opacity: 1;
-}
-
-.galeria input[type=radio]:nth-of-type(4):checked ~ img:nth-of-type(4) {
-  opacity: 1;
-}
 
 
 /* Barra de navegación */
@@ -784,39 +751,23 @@ a:hover {
  /* Agrega un espacio horizontal entre las imágenes */
   margin-right: 0; display: flex; }
 
-  .titulo:hover{
-    color: #db71db;
-    cursor: pointer;
-  }
-  .des:hover{
-    color: #db71db;
-    cursor: pointer;
-  }
-  .precio:hover{
-    color: #db71db;
-    cursor: pointer;
-  }
-
-
-  .categorias:hover{
-    color: #db71db;
-    cursor: pointer;
-  }
-  
-  #comments{
-    max-width: 2000px;
+  #comments {
+    max-width: 800px; 
     min-width: 300px;
+    margin: 0 auto; 
     text-align: left;
-    width: 100%;
+    width: 90%; 
     background-color: #101012;
     color: white;
-    border-top: #3c096c solid 1px;
+    border: 1px solid #3c096c; 
+    border-radius: 5px; 
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
   }
-
+  
   .comentario {
-    border-bottom: #3c096c solid 1px;
-    padding-left: 10px;
-    padding-top: 10px;
+    border-bottom: 1px solid #3c096c;
+    padding: 10px 0; 
   }
   
   .com{
@@ -829,6 +780,7 @@ a:hover {
 }
 
 #inputComentario {
+  outline: none;
   margin-top: 10px;
   width: 200px;
   height: 80px;
@@ -858,17 +810,23 @@ background-color: #3c096c;
   display: none;
 }
 
+
 .star-widget label {
   margin-top: 18px;
   font-size: 15px;
   color: #ffffff;
   transition: all 0.2s ease;
   float: right;
-
 }
 
-input:not(:checked) ~label:hover,
-input:not(:checked) ~label:hover ~ label {
+.star-widget{
+  margin: 0px auto;
+  display: table;
+  margin-bottom: 10px;
+}
+
+#formComent > input:not(:checked) ~label:hover,
+ #formComent > input:not(:checked) ~label:hover ~ label {
   color: #FFA500;
 }
 
@@ -890,6 +848,68 @@ input:checked form {
 
 }
 
+/* Estilo descripcion producto */
 
 
 
+.des{ 
+  text-align: left;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.sell{ 
+  color: grey;
+  text-align: left;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.categorias{
+  color: grey;
+  text-align: right;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+#vendidoCategorias{
+  display: flex;
+  justify-content: space-between;
+}
+
+.parrafoDes{
+  font-size: 20px;
+  text-align: left;
+}
+
+.precio{
+  font-size: 25px;
+}
+
+.infoImg{
+  margin: 0px auto;
+  margin-top: 10%;
+  width: 600px;
+  display: flex;
+  height: 430px;
+}
+
+.infoImg img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8;
+  transition: .5s ease;
+} 
+
+.infoImg img:hover{
+  cursor: crosshair;
+  width: 80%;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+.limpiarFloat{
+  clear: both;
+  float: none;
+}
