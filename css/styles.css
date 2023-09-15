@@ -806,7 +806,7 @@ a:hover {
   #comments{
     max-width: 2000px;
     min-width: 300px;
-    text-align: center;
+    text-align: left;
     width: 100%;
     background-color: #101012;
     color: white;
@@ -829,8 +829,28 @@ a:hover {
 }
 
 #inputComentario {
+  margin-top: 10px;
   width: 200px;
   height: 80px;
+  padding: 10px;
+  font-size: 16px;
+  border: 5px solid #3c096c;
+  border-radius: 5px;
+  resize: vertical;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  color: #ffffff
+}
+
+#submitcomment{
+margin-top: 5px;
+background-color: #3c096c; 
+  color: #ffffff; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
 }
 
 
@@ -839,6 +859,7 @@ a:hover {
 }
 
 .star-widget label {
+  margin-top: 18px;
   font-size: 15px;
   color: #ffffff;
   transition: all 0.2s ease;
@@ -866,5 +887,9 @@ input:checked form {
 #formComent {
   display:flex;
   justify-content: center;
+
 }
+
+
+
 
