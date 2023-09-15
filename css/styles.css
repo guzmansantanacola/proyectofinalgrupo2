@@ -785,21 +785,45 @@ a:hover {
 }
 
 #inputComentario {
+  margin-top: 10px;
   width: 200px;
   height: 80px;
+  padding: 10px;
+  font-size: 16px;
+  border: 5px solid #3c096c;
+  border-radius: 5px;
+  resize: vertical;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  color: #ffffff
 }
 
+#submitcomment{
+margin-top: 5px;
+background-color: #3c096c; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno del botón (arriba/abajo izquierda/derecha) */
+  font-size: 16px; /* Tamaño de fuente */
+  border: none; /* Elimina el borde */
+  border-radius: 5px; /* Esquinas redondeadas */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+#submitcomment:hover {
+  background-color: #b05ff1; /* Color de fondo cuando el cursor pasa sobre el botón */
+}
 
 .mainproductos .star-widget input {
   display: none;
 }
 
 .star-widget label {
+  margin-top: 18px;
+  margin-bottom: 50px;
   font-size: 15px;
   color: #ffffff;
   transition: all 0.2s ease;
   float: right;
-
 }
 
 input:not(:checked) ~label:hover,
