@@ -70,8 +70,9 @@ fetch(COMMENT_URL)
   });
 
 const submitcomment = document.getElementById("submitcomment");
-
+const commentArea = document.getElementById("inputComentario");
 const starInputs = document.querySelectorAll('input[type="radio"]');
+const estrellitas = document.getElementsByName('rate');
 let estrellaElegida;
 
 starInputs.forEach((input) => {
@@ -91,10 +92,18 @@ submitcomment.addEventListener("click", (event) => {
   <p>${comentario}</p>
  </div>`;
 
-
   //console.log(comentario);
   //console.log(estrellaElegida);
+  commentArea.value="";
+  for (let i = 0; i < estrellitas.length; i++) {
+    estrellitas[i].checked=false;
+    
+  }
 });
+
+
+
+
 
 /* <div id="imagenes">
       <img src="${data.images[0]}" alt="">
