@@ -649,11 +649,11 @@ a:hover {
   margin: auto;
   transition: width 0.5s;
   width: 100%;
-  max-width: 600px; /* Aumenta el ancho máximo del campo de búsqueda según tus preferencias */
+  max-width: 600px; 
 }
 @media screen and (max-width: 768px) {
   #campoBusqueda {
-    width: 80%; /* Ajusta el ancho en pantallas pequeñas según tus preferencias */
+    width: 80%; /
   }
 }
 
