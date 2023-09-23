@@ -7,28 +7,35 @@ fetch(URL_)
 function infoProducts(data) {
   let htmlContentToAppend = "";
   htmlContentToAppend += `
-    <h1 class="titulo">${data.name}</h1>
-    <hr>
-    <h3 class="ilus">Imagenes ilustrativas</h3>
+    
 
-    <div id="imagenes">
-      <img src="${data.images[0]}" alt="">
-      <img src="${data.images[1]}" alt="">
-      <img src="${data.images[2]}" alt="">
-      <img src="${data.images[3]}" alt="">
+  <h1 class="titulo">${data.name}</h1>
+
+<div id="contentInfo">
+     <div class="galeria">
+    
+    <section class= "infoImg">
+    <img src="${data.images[0]}"/>
+    <img src="${data.images[1]}"/>
+    <img src="${data.images[2]}"/>
+    <img src="${data.images[3]}"/>
+    </section>
+
+<div class="description">
+
+    <div id="vendidoCategorias">
+    <h3 class="sell">Vendidos: ${data.soldCount} </h3>    
+    <h1 class="categorias"> Categoría: ${data.category} </h1>
     </div>
 
-    <h3 class="precio">Precio </h3>
-    <p>${data.currency} ${data.cost}</p>
+    <h3 class="des">Descripción:</h3>
+    <p class="parrafoDes">${data.description}</p>
 
-    <h3 class="des">Descripcion </h3>
-    <p>${data.description}</p>
+    <h3 class="precio">Precio: ${data.currency} $${data.cost} </h3>
 
-    <h3 class="categorias">Categoria </h3>
-    <p>${data.category}</p>
-
-    <h3 class="vendidos">Cantidad de vendidos</h3>
-    <p>${data.soldCount}</p>
+  </div>
+</div>
+  
     `;
 
   document.getElementById("producto").innerHTML = htmlContentToAppend;
@@ -63,17 +70,16 @@ fetch(COMMENT_URL)
   });
 
 const submitcomment = document.getElementById("submitcomment");
-
+const commentArea = document.getElementById("inputComentario");
 const starInputs = document.querySelectorAll('input[type="radio"]');
-let estrellaElegida
+const estrellitas = document.getElementsByName('rate');
+let estrellaElegida;
 
 starInputs.forEach((input) => {
   input.addEventListener("click", () => {
     estrellaElegida = input.value;
-    
   });
 });
-
 
 submitcomment.addEventListener("click", (event) => {
   event.preventDefault();
@@ -88,8 +94,20 @@ submitcomment.addEventListener("click", (event) => {
 
   //console.log(comentario);
   //console.log(estrellaElegida);
-
+  commentArea.value="";
+  for (let i = 0; i < estrellitas.length; i++) {
+    estrellitas[i].checked=false;
+    
+  }
 });
 
 
 
+
+
+/* <div id="imagenes">
+      <img src="${data.images[0]}" alt="">
+      <img src="${data.images[1]}" alt="">
+      <img src="${data.images[2]}" alt="">
+      <img src="${data.images[3]}" alt="">
+    </div> */
