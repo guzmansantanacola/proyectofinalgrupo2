@@ -832,9 +832,12 @@ input:checked form {
   justify-content: center;
   align-items: center;
   position: relative;
+  display: inline-block;
+  width: auto;
 }
 
 #menu-desplegable {
+  white-space: nowrap;
   z-index: 1000;
   color: black;
   background-color: #9d4edd;
