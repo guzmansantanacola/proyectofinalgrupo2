@@ -823,3 +823,11 @@ input:checked form {
   display:flex;
   justify-content: center;
 }
+
+
+
+/** desplegable */
+
+.visible {
+  display: block;
+}
