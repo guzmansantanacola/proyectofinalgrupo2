@@ -16,7 +16,11 @@ let menuDesplegable = document.createElement("ul");
     menuDesplegable.innerHTML = `
         <li ><a href="carrito.html">Mi Carrito</a></li>
         <li ><a href="my-profile.html">Mi Perfil</a></li>
-        <li c><button id="cerrarSesion">Cerrar Sesión</button></li>
+        <li ><button id="cerrarSesion">Cerrar Sesión</button></li>
+        <li> <div class="modo-toggle">
+           <button id="modoDia">Modo Día</button>
+          <button id="modoNoche">Modo Noche</button>
+          </div> </li>
     `;
     menuDesplegable.style.display = "none";
 nombreUsuarioButton.addEventListener("click", function (){
