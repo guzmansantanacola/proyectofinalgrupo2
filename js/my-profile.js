@@ -14,9 +14,9 @@ let menuDesplegable = document.createElement("ul");
     let menu = localStorage.getItem("menuVisible") === "true";
    
     menuDesplegable.innerHTML = `
-        <li ><a href="carrito.html">Mi Carrito</a></li>
+        <li ><a href="cart.html">Mi Carrito</a></li>
         <li ><a href="my-profile.html">Mi Perfil</a></li>
-        <li ><button id="cerrarSesion">Cerrar Sesión</button></li>
+        <li > <a href="init.js"><button id="cerrarSesion">Cerrar Sesión</button></li>
         <li> <div class="doble">
            <button id="modoDia">Modo Día</button>
           <button id="modoNoche">Modo Noche</button>
