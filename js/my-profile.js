@@ -16,9 +16,9 @@ let menuDesplegable = document.createElement("ul");
     menuDesplegable.innerHTML = `
         <li ><a href="cart.html">Mi Carrito</a></li>
         <li ><a href="my-profile.html">Mi Perfil</a></li>
-        <li > <a href="init.js"><button id="cerrarSesion">Cerrar Sesión</button></li>
+         
         <li> <div class="doble">
-           <button id="modoDia">Modo Día</button>
+           <li><<button id="modoDia">Modo Día</button> </li>
           <button id="modoNoche">Modo Noche</button>
           </div> </li>
     `;

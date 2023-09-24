@@ -1,3 +1,4 @@
+
 const CATEGORIES_URL = "https://japceibal.github.io/emercado-api/cats/cat.json";
 const PUBLISH_PRODUCT_URL = "https://japceibal.github.io/emercado-api/sell/publish.json";
 const PRODUCTS_URL = "https://japceibal.github.io/emercado-api/cats_products/";
@@ -6,6 +7,10 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/prod
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -42,12 +47,18 @@ let getJSONData = function(url){
 
 //Boton cerrar Sesion
 
-let botonCerrarSesion = document.getElementById('cerrarSesion');
 
-botonCerrarSesion.addEventListener("click", () => {
-  localStorage.setItem("sesionIniciada", JSON.stringify(false));
-  window.location.href = "login.html";
-})
+ 
+  
+
+  let botonCerrarSesion = document.getElementById("cerrarSesion");
+
+  botonCerrarSesion.addEventListener("click", () => {
+    console.log('cerrarSesion');
+    localStorage.setItem("sesionIniciada", JSON.stringify(false));
+    window.location.href = "login.html";
+  });
+
 
 
 // Funcion para redirigir al Login si no hay sesion
@@ -69,4 +80,5 @@ redireccionarAlLogin();
 function toggleMenu() {
   const list = document.querySelector(".list");
   list.classList.toggle("show");
-}
+}  
+});
