@@ -11,6 +11,7 @@
 let nombreUsuarioButton = document.getElementById("nombreusuario");
 let menuDesplegable = document.createElement("ul");
     menuDesplegable.id = "menu-desplegable";
+    let menu = localStorage.getItem("menuVisible") === "true";
    
     menuDesplegable.innerHTML = `
         <li ><a href="carrito.html">Mi Carrito</a></li>
@@ -31,6 +32,7 @@ nombreUsuarioButton.addEventListener("click", function (){
   
     if (menuDesplegable.style.display === "none") {
         menuDesplegable.style.display = "block";
+        localStorage.setItem("menuVisible", "false")
     } else {
         menuDesplegable.style.display = "block";
         
