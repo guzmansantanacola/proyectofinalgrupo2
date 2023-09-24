@@ -10,7 +10,6 @@ const EXT_TYPE = ".json";
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -81,4 +80,3 @@ function toggleMenu() {
   const list = document.querySelector(".list");
   list.classList.toggle("show");
 }  
-});
