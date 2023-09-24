@@ -833,10 +833,12 @@ input:checked form {
   align-items: center;
   position: relative;
   display: inline-block;
+  
 }
 
 #menu-desplegable {
   z-index: 1000;
+ 
   color: black;
   background-color: #9d4edd;
   border: 1px solid #ccc;
@@ -867,8 +869,17 @@ input:checked form {
 }
 
 
-#menu-desplegable #mi-carrito {
-  background-color: #db71db;
-  border-radius: 5px;
+
+
+
+/**MODOS**/
+
+#modos, #modoDia, #modoNoche{
+  
+  background-color: #9d4edd;
+  color:white;
+  border-radius: 10px;
+
+
 }
 
