@@ -17,7 +17,7 @@ let menuDesplegable = document.createElement("ul");
         <li ><a href="carrito.html">Mi Carrito</a></li>
         <li ><a href="my-profile.html">Mi Perfil</a></li>
         <li ><button id="cerrarSesion">Cerrar Sesión</button></li>
-        <li> <div class="modo-toggle">
+        <li> <div class="doble">
            <button id="modoDia">Modo Día</button>
           <button id="modoNoche">Modo Noche</button>
           </div> </li>
