@@ -17,7 +17,7 @@
     <link href="css/styles.css" rel="stylesheet" />
   </head>
 
-  <body>
+  <body id="bodyproducts">
     <nav class="general">
     
       <section id="sectionNav">
@@ -46,14 +46,15 @@
       </section>
   
     </nav>
-    <main class="pb-5">
+    <main class="mainproductos">
       <div class="text-center p-4">
-        <h2>Categorías</h2>
+        <h2 class="titulo">CATEGORÍAS</h2>
         <p class="lead">Verás aquí todas las categorías del sitio.</p>
       </div>
-      <div class="container">
+
+      <!-- <div class="container">
         <div class="row">
-          <div class="col text-end">
+          <div class="filtrosOrden">
             <div
               class="btn-group btn-group-toggle mb-4"
               data-bs-toggle="buttons"
@@ -85,7 +86,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="barraprecio">
           <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
             <div class="row container p-0 m-0">
               <div class="col">
@@ -123,7 +124,67 @@
         <div class="row">
           <div class="list-group" id="cat-list-container"></div>
         </div>
+      </div> -->
+
+      <div id="filtros">
+        <section id="filtrosOrden">
+          <input
+            type="submit"
+            class="btn-check"
+            name="ordenAsc"
+            id="sortAsc"
+          />
+          <label class="botonesorden" for="sortAsc">A-Z</label>
+          <input
+            type="button"
+            class="btn-check"
+            name="ordenDesc"
+            id="sortDesc"
+          />
+          <label class="botonesorden" for="sortDesc">Z-A</label>
+          <input
+            type="button"
+            class="btn-check"
+            name="ordenVendidos"
+            id="sortByCount"
+          />
+          <label class="botonesorden" for="sortByCount"
+            ><i class="fas fa-sort-amount-down mr-1"></i
+          ></label>
+        </section>
+
+        <div id="filtroPrecios">
+          <div class="barraprecio">
+            <p>Cant.</p>
+            <input
+              class="busquedaprecio"
+              type="number"
+              placeholder="min."
+              id="rangeFilterCountMin"
+            />
+            <input
+              class="busquedaprecio"
+              type="number"
+              placeholder="máx."
+              id="rangeFilterCountMax"
+            />
+               <!-- boton de busqueda-->
+            
+          </div>
+          <div>
+            <div>
+              <button class="limpiarfiltrar" id="rangeFilterCount">
+                Filtrar
+              </button>
+              <button class="limpiarfiltrar" id="clearRangeFilter">
+                Limpiar
+              </button>
+            </div>
+            <div class="list-group" id="cat-list-container"></div>
+          </div>
+        </div>
       </div>
+
     </main>
     <!-- <footer class="text-muted">
     <div class="container">
@@ -145,5 +206,6 @@
     <script src="js/init.js"></script>
     <script src="js/categories.js"></script>
     <script src="js/my-profile.js"></script>
+    <script src="js/search.js" defer></script>
   </body>
 </html>

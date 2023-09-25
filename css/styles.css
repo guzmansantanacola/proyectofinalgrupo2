@@ -394,6 +394,7 @@ span {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
+  
 }
 .nombreproductos {
   font-family: 'Montserrat', sans-serif;
@@ -525,6 +526,8 @@ span {
   box-shadow:0px 0px 10px #3c096c;
 }
 
+/*Pagina de informacion de productos*/
+
 .mainproductos{
   max-width: 2000px;
   min-width: 300px;
@@ -533,7 +536,23 @@ span {
   justify-content: center;
   background-color: #101012;
   box-shadow: 0px 0px 30px #000000 ;
+  color: white;
+  text-align: center;
 }
+
+#contentInfo {
+  display: flex;
+  width: 600px;
+  margin: 0px auto;
+  justify-content: center;
+}
+
+/* #imagenes img{
+  width: 200px;
+} */
+
+
+
 
 
 /* Barra de navegación */
@@ -718,4 +737,179 @@ a:hover {
 #bodyIndex {
   background-image: url("../img/fondo_login_para_responsive.jpg");
   background-color: #101012;
+}
+
+/** estilos para la muestra de los productos*/
+
+.precio, .categorias,.des, .ilus{
+  font-size: 20px;
+}
+
+#description {
+  width: 150px; /* Puedes ajustar el valor según tus necesidades */
+  height: auto; /* Esto mantendrá la proporción original de la imagen */
+ /* Agrega un espacio horizontal entre las imágenes */
+  margin-right: 0; display: flex; }
+
+  #comments {
+    max-width: 800px; 
+    min-width: 300px;
+    margin: 0 auto; 
+    text-align: left;
+    width: 90%; 
+    background-color: #101012;
+    color: white;
+    border: 1px solid #3c096c; 
+    border-radius: 5px; 
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .comentario {
+    border-bottom: 1px solid #3c096c;
+    padding: 10px 0; 
+  }
+  
+  .com{
+
+    padding: 20px
+  }
+
+.btn{
+  color: white;
+}
+
+#inputComentario {
+  outline: none;
+  margin-top: 10px;
+  width: 200px;
+  height: 80px;
+  padding: 10px;
+  font-size: 16px;
+  border: 5px solid #3c096c;
+  border-radius: 5px;
+  resize: vertical;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  color: #ffffff
+}
+
+#submitcomment{
+margin-top: 5px;
+background-color: #3c096c; 
+  color: #ffffff; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+
+.mainproductos .star-widget input {
+  display: none;
+}
+
+
+.star-widget label {
+  margin-top: 18px;
+  font-size: 15px;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  float: right;
+}
+
+.star-widget{
+  margin: 0px auto;
+  display: table;
+  margin-bottom: 10px;
+}
+
+#formComent > input:not(:checked) ~label:hover,
+ #formComent > input:not(:checked) ~label:hover ~ label {
+  color: #FFA500;
+}
+
+input:checked~label {
+  color: #FFA500;
+}
+
+input#rate-5:checked~ label {
+  color: #FFA500;
+  text-shadow: 0 0 10px #952;
+}
+
+input:checked form {
+  display: block;
+}
+#formComent {
+  display:flex;
+  justify-content: center;
+
+}
+
+/* Estilo descripcion producto */
+
+
+
+.des{ 
+  text-align: left;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.sell{ 
+  color: grey;
+  text-align: left;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.categorias{
+  color: grey;
+  text-align: right;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+#vendidoCategorias{
+  display: flex;
+  justify-content: space-between;
+}
+
+.parrafoDes{
+  font-size: 20px;
+  text-align: left;
+}
+
+.precio{
+  font-size: 25px;
+}
+
+.infoImg{
+  margin: 0px auto;
+  margin-top: 10%;
+  width: 600px;
+  display: flex;
+  height: 430px;
+}
+
+.infoImg img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8;
+  transition: .5s ease;
+} 
+
+.infoImg img:hover{
+  cursor: crosshair;
+  width: 80%;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+.limpiarFloat{
+  clear: both;
+  float: none;
 }
