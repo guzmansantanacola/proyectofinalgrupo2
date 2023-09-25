@@ -70,7 +70,8 @@ fetch(COMMENT_URL)
   });
 
 const submitcomment = document.getElementById("submitcomment");
-
+const commentArea = document.getElementById("inputComentario");
+const estrellitas = document.getElementsByName('rate');
 const starInputs = document.querySelectorAll('input[type="radio"]');
 let estrellaElegida;
 
@@ -94,6 +95,12 @@ submitcomment.addEventListener("click", (event) => {
 
   //console.log(comentario);
   //console.log(estrellaElegida);
+
+  commentArea.value = "";
+  for (let i = 0; i < estrellitas.length; i++) {
+    estrellitas[i].checked = false;
+
+  }
 });
 
 /* <div id="imagenes">
