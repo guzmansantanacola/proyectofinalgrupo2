@@ -40,15 +40,6 @@ let getJSONData = function(url){
     });
 }
 
-//Boton cerrar Sesion
-
-let botonCerrarSesion = document.getElementById('cerrarSesion');
-
-botonCerrarSesion.addEventListener("click", () => {
-  localStorage.setItem("sesionIniciada", JSON.stringify(false));
-  window.location.href = "login.html";
-})
-
 
 // Funcion para redirigir al Login si no hay sesion
 
