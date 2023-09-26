@@ -4,41 +4,88 @@ const COMMENT_URL = `https://japceibal.github.io/emercado-api/products_comments/
 fetch(URL_)
   .then((response) => response.json())
   .then((data) => infoProducts(data));
+
+
 function infoProducts(data) {
+  console.log(data);
   let htmlContentToAppend = "";
+  let relacionadosToAppend = "";
+
   htmlContentToAppend += `
     
 
   <h1 class="titulo">${data.name}</h1>
 
-<div id="contentInfo">
+  <div id="contentInfo">
+
      <div class="galeria">
-    
-    <section class= "infoImg">
-    <img src="${data.images[0]}"/>
-    <img src="${data.images[1]}"/>
-    <img src="${data.images[2]}"/>
-    <img src="${data.images[3]}"/>
-    </section>
+        <section class= "infoImg">
+          <img src="${data.images[0]}"/>
+          <img src="${data.images[1]}"/>
+          <img src="${data.images[2]}"/>
+          <img src="${data.images[3]}"/>
+        </section>
+      
 
-<div class="description">
+    <div class="description">
 
-    <div id="vendidoCategorias">
-    <h3 class="sell">Vendidos: ${data.soldCount} </h3>    
-    <h1 class="categorias"> Categoría: ${data.category} </h1>
+      <div id="vendidoCategorias">
+        <h3 class="sell">Vendidos: ${data.soldCount} </h3>    
+        <h1 class="categorias"> Categoría: ${data.category} </h1>
+      </div>
+
+      <h3 class="des">Descripción:</h3>
+      <p class="parrafoDes">${data.description}</p>
+
+      <h3 class="precio">Precio: ${data.currency} $${data.cost} </h3>
+
     </div>
-
-    <h3 class="des">Descripción:</h3>
-    <p class="parrafoDes">${data.description}</p>
-
-    <h3 class="precio">Precio: ${data.currency} $${data.cost} </h3>
-
   </div>
-</div>
   
     `;
 
+  //creamos los productos relacionados
+
+  data.relatedProducts.forEach(product => {
+    relacionadosToAppend += `
+    <div setCatID(${product.id})" class="relacionado fondolista masInfo " type="button" id="${product.id}">
+              
+      <div class="fila">
+        <div class=imagenes>
+          <img src="${product.image}">
+        </div>
+        <div class="item">
+            <div>
+              <h4 class="nombreproductos">${product.name} </h4>
+                     
+            </div>
+                
+        </div>
+      </div>
+         
+    </div>
+    `;
+  })
+
+  
+
   document.getElementById("producto").innerHTML = htmlContentToAppend;
+  document.getElementById("relacionados").innerHTML = relacionadosToAppend;
+  //listener que nos permite guardar la id de los productos relacionados que creamos más arriba
+  let relatedProducts = document.getElementsByClassName("relacionado");
+  for (let i = 0; i < relatedProducts.length; i++) {
+    relatedProducts[i].addEventListener("click", () => {
+  
+        localStorage.setItem("productId", relatedProducts[i].id);
+  
+        let redirigir = window.location.href = "product-info.html";
+        redirigir
+  
+      });
+    };
+  
+  
+
 }
 
 /*PARTE 3*/
@@ -81,6 +128,8 @@ starInputs.forEach((input) => {
   });
 });
 
+
+//Agregar un comentario nuevo
 submitcomment.addEventListener("click", (event) => {
   event.preventDefault();
   let userName = localStorage.getItem("nombredeusuario");
@@ -102,6 +151,36 @@ submitcomment.addEventListener("click", (event) => {
 
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  //Agrego escuchadores de eventos click a cada tarjeta para ir a la seccion de información de producto
+  // let infoProduct = document.getElementsByClassName("fondolista");
+  // console.log(infoProduct);
+ 
+
+
+  // for (let i = 0; i < infoProduct.length; i++) {
+  //   infoProduct[i].addEventListener("click", () => {
+
+  //     console.log('hola');
+
+  //     localStorage.setItem("productId", infoProduct[i].id);
+
+  //     let redirigir = window.location.href = "product-info.html";
+  //     redirigir
+
+  //   });
+  // };
+});
+
+
+
+
+
+
+
+
 
 /* <div id="imagenes">
       <img src="${data.images[0]}" alt="">
