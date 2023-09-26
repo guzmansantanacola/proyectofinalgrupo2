@@ -47,10 +47,14 @@ nombreUsuarioButton.addEventListener("click", function (){
         
     }
 
-
-
+    /*OCULTAR MENU*/
+    
 
     
+ 
+
+
+
     
 });
 document.body.appendChild(menuDesplegable);  
