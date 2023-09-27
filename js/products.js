@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     let catID = JSON.parse(localStorage.getItem("catID"));
-    const prodID = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
+    const URL_PRODUCTS = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
     let infoProduct
 
     const productosNoEncontrados = document.getElementById("productosNoEncontrados");
 
-    fetch(prodID)
+    fetch(URL_PRODUCTS)
         .then(response => response.json())
         .then(data => {
             //console.log(data);
             //Guardo los datos en el Local storage
             localStorage.setItem("resultFetch", JSON.stringify(data.products));
-            productList(data);
+            listProducts(data);
 
             infoProduct = document.getElementsByClassName("fondolista");
             //Se trae el id de cada producto contenido en el name de cada botón, se lo guarda en local storage
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    function productList(data) {
+    function listProducts(data) {
         const products = data.products;
         if (products.length === 0) {
             productosNoEncontrados.innerHTML = `
