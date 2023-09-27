@@ -776,9 +776,7 @@ a:hover {
     min-width: 300px;
     margin: 0 auto; 
     text-align: left;
-    width: 90%; 
-    background-color: #101012;
-    color: white;
+    width: 90%;
     border: 1px solid #3c096c; 
     border-radius: 5px; 
     padding: 20px;
@@ -810,7 +808,7 @@ a:hover {
   border-radius: 5px;
   resize: vertical;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-  color: #ffffff
+  color: #584f4f;
 }
 
 #submitcomment{
@@ -830,11 +828,14 @@ background-color: #3c096c;
   display: none;
 }
 
+.mainproductos.light .star-widget label{
+  color: rgb(155, 155, 155);
+}
+
 
 .star-widget label {
   margin-top: 18px;
   font-size: 15px;
-  color: #ffffff;
   transition: all 0.2s ease;
   float: right;
 }
