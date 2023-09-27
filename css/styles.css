@@ -358,7 +358,6 @@ span {
   display: flex;
   font-family: 'Montserrat', sans-serif;
   padding-top: 40px;
-  color: #ffffff;
   text-shadow: 0px  0px 50px #551794;
   border-bottom: solid 5px #E0aaff;
 }
@@ -385,7 +384,6 @@ span {
 .fondolista {
     max-width: 250px;
     margin-top: 40px;
-    color: #ffffff;
     border: solid 0.5px #551794;
     transition: 0.6s;
 }
@@ -476,13 +474,18 @@ span {
 }
 .busquedaprecio{
   outline: none;
-  color: white;
   border: none;
   text-align: center;
   border: solid white 1px;
   border-radius: 10px;
   width: 150px;
+  color:white;
 }
+.busquedaprecio.light{
+  border: solid black 1px;
+  color:black;
+}
+
 .limpiarfiltrar{
   color: #000000;
   outline: none;
@@ -503,6 +506,10 @@ span {
   font-family: 'Montserrat', sans-serif;
 }
 
+#filtros.light{
+  border: 1px solid black;
+}
+
 #filtrosOrden {
   margin-bottom: 10px;
 }
@@ -517,13 +524,16 @@ span {
 .botonesorden{
   border: 1px solid white;
   padding: 5px;
-  color: white;
   border-radius: 10px;
 }
 .botonesorden:hover{
   color: #E0aaff;
   border-color: #E0aaff;
   box-shadow:0px 0px 10px #3c096c;
+}
+
+.botonesorden.light{
+  border: 1px solid black;
 }
 
 /*Pagina de informacion de productos*/
@@ -538,6 +548,11 @@ span {
   box-shadow: 0px 0px 30px #000000 ;
   color: white;
   text-align: center;
+}
+
+.mainproductos.light{
+  background-color: white;
+  color: black;
 }
 
 #contentInfo {
@@ -734,6 +749,11 @@ a:hover {
   border-radius: 10px;
 }
 
+.busqueda.light{
+  border: 1px solid black;
+  color: black;
+}
+
 #bodyIndex {
   background-image: url("../img/fondo_login_para_responsive.jpg");
   background-color: #101012;
@@ -756,9 +776,7 @@ a:hover {
     min-width: 300px;
     margin: 0 auto; 
     text-align: left;
-    width: 90%; 
-    background-color: #101012;
-    color: white;
+    width: 90%;
     border: 1px solid #3c096c; 
     border-radius: 5px; 
     padding: 20px;
@@ -775,9 +793,9 @@ a:hover {
     padding: 20px
   }
 
-.btn{
+/*.btn{
   color: white;
-}
+}*/
 
 #inputComentario {
   outline: none;
@@ -790,7 +808,7 @@ a:hover {
   border-radius: 5px;
   resize: vertical;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-  color: #ffffff
+  color: #584f4f;
 }
 
 #submitcomment{
@@ -810,11 +828,14 @@ background-color: #3c096c;
   display: none;
 }
 
+.mainproductos.light .star-widget label{
+  color: rgb(155, 155, 155);
+}
+
 
 .star-widget label {
   margin-top: 18px;
   font-size: 15px;
-  color: #ffffff;
   transition: all 0.2s ease;
   float: right;
 }
@@ -947,4 +968,44 @@ color:white }
 #modoDia button{
   background-color: white;
 
+}
+
+.material-symbols-outlined{
+    cursor: pointer;
+}
+
+.darkModeSwitch{
+  background: #b3b3b3;
+  display:flex;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.darkModeSwitch::after{
+  display:block;
+  background: #fffbf5;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top:0;
+  left:0;
+  right:unset;
+  border-radius: 3rem;
+  transition: all .5s ease;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+  content: "";
+}
+
+.darkModeSwitch.active{
+  background: #fdd384;
+}
+
+.darkModeSwitch.active::after{
+  left:unset;
+  right:0;
 }
