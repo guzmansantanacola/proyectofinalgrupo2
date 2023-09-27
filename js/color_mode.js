@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i < busqueda.length; i++) {
         busqueda[i].classList.toggle('light');
       }
+
+      let divIndex = document.getElementById('divIndex');
+      divIndex.classList.toggle('light');
       
       // Actualiza el valor en localStorage después de cambiar las clases
       if (main.classList.contains('light')) {

@@ -83,9 +83,6 @@ function infoProducts(data) {
   
       });
     };
-  
-  
-
 }
 
 /*PARTE 3*/
