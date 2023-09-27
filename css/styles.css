@@ -558,6 +558,7 @@ span {
 #contentInfo {
   display: flex;
   width: 600px;
+  height: 750px;
   margin: 0px auto;
   justify-content: center;
 }
@@ -970,6 +971,34 @@ color:white }
 
 }
 
+
+@media (max-width: 1024px) {
+
+#contentInfo {
+  width: 90%;
+}
+
+.galeria {
+  width: 100%;
+}
+
+.infoImg{
+  width: 100%;
+  height: 50%;
+}
+
+}
+
+@media (max-width: 545px) {
+  .infoImg{
+    height: 40%;
+  }
+
+  .infoImg img {
+    width: 18px;
+  }
+}
+=======
 .material-symbols-outlined{
     cursor: pointer;
 }
