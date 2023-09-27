@@ -72,17 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /*MODOS*/
 
-  document.getElementById("modoDia").addEventListener("click", function () {
-    menuDesplegable.classList.remove("modo-noche");
-    menuDesplegable.classList.add("modo-dia");
-    console.log("modo DIA");
-  });
-
-  document.getElementById("modoNoche").addEventListener("click", function () {
-    menuDesplegable.classList.remove("modo-dia");
-    menuDesplegable.classList.add("modo-noche");
-    console.log("modo NOCHE")
-  });
 
 
 
