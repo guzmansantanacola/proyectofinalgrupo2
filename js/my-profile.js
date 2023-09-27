@@ -3,6 +3,8 @@ usuarioguardado = localStorage.getItem("nombredeusuario");
 document.getElementById("nombreusuario").textContent = usuarioguardado;
 
 
+          //  <li><button id="modoDia">Modo Día</button> </li>
+          //  <li><button id="modoNoche">Modo Noche</button>  </li>
 
 
 /*Desplegable*/
@@ -23,8 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
             <button id="cerrarSesion"> Cerrar Sesión </button>
           </li>
          <div class="modos">
-           <li><button id="modoDia">Modo Día</button> </li>
-           <li><button id="modoNoche">Modo Noche</button>  </li>
+         <button class="darkModeSwitch" id="switch">
+         <span class="material-symbols-outlined">
+         light_mode
+         </span>
+         <span class="material-symbols-outlined">
+          dark_mode
+         </span>
           </div> 
     `;
 
