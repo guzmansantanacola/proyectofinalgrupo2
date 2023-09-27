@@ -347,6 +347,18 @@ span {
   filter:drop-shadow(0px 0px 5px #E0aaff)
 }
 
+/* INDEX */
+
+#divIndex{
+  width: 100vw;
+  background-color: #101012;
+}
+
+#divIndex.light{
+  background-color: white;
+
+}
+
 
 /* LISTAS DE PRODUCTOS*/
 .titulo {
@@ -548,6 +560,7 @@ span {
   box-shadow: 0px 0px 30px #000000 ;
   color: white;
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .mainproductos.light{
@@ -799,10 +812,11 @@ a:hover {
 }*/
 
 #inputComentario {
+  background-color: #ffff;
   outline: none;
   margin-top: 10px;
-  width: 200px;
-  height: 80px;
+  width: 640px;
+  height: 140px;
   padding: 10px;
   font-size: 16px;
   border: 5px solid #3c096c;
@@ -813,11 +827,11 @@ a:hover {
 }
 
 #submitcomment{
-margin-top: 5px;
-background-color: #3c096c; 
+  margin-top: 5px;
+  background-color: #3c096c; 
   color: #ffffff; 
   padding: 10px 20px; 
-  font-size: 16px; 
+  font-size: 20px; 
   border: none; 
   border-radius: 5px; 
   cursor: pointer; 
@@ -833,19 +847,23 @@ background-color: #3c096c;
 
 .star-widget label {
   margin-top: 18px;
-  font-size: 15px;
+  font-size: 25px;
   transition: all 0.2s ease;
   float: right;
 }
 
 .star-widget{
-  margin: 0px auto;
   display: table;
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
-#formComent > input:not(:checked) ~label:hover,
- #formComent > input:not(:checked) ~label:hover ~ label {
+.estrellas{
+  display: flex;
+}
+
+.star-widget > input:not(:checked) ~label:hover,
+.star-widget > input:not(:checked) ~label:hover ~ label {
   color: #FFA500;
 }
 
@@ -987,7 +1005,7 @@ text-decoration: none;
     width: 18px;
   }
 }
-=======
+
 .material-symbols-outlined{
     cursor: pointer;
 }
@@ -1004,9 +1022,11 @@ text-decoration: none;
   justify-content: space-between;
   transition: all .5s ease
 }
+
 #switch {
   margin: auto;
 }
+
 .darkModeSwitch::after{
   display:block;
   background: #fffbf5;
