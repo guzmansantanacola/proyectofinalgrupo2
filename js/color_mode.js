@@ -24,8 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
       let divIndex = document.getElementById('divIndex');
       divIndex.classList.toggle('light');
       
+      
+    }
+
+    function saveMode(){
       // Actualiza el valor en localStorage después de cambiar las clases
-      if (main.classList.contains('light')) {
+      if (switchButton.classList.contains('active')) {
         localStorage.setItem('light-mode', 'true');
       } else {
         localStorage.setItem('light-mode', 'false');
@@ -33,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     switchButton.addEventListener('click', toggleLightMode);
+    switchButton.addEventListener('click', saveMode);
   
     // Obtiene el valor de localStorage y configura las clases al cargar la página
     if (localStorage.getItem('light-mode') === 'true') {
