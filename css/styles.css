@@ -1050,3 +1050,12 @@ text-decoration: none;
   left:unset;
   right:0;
 }
+
+
+@media (max-width: 768px) {
+  #gene  {
+    width: 70%;
+   
+  
+  }
+}

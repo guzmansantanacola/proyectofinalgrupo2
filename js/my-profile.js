@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let menu = localStorage.getItem("menuVisible") === "true";
 
-  menuDesplegable.innerHTML = `
+  menuDesplegable.innerHTML = `<div id="gene">
         <li ><a href="cart.html">Mi Carrito</a></li>
         <li ><a href="my-profile.html">Mi Perfil</a></li>
         <li >
-            <button id="cerrarSesion"> Cerrar Sesión </button>
+        <button id="cerrarSesion"> Cerrar Sesión </button>
           </li>
          <div class="modos">
          <button class="darkModeSwitch" id="switch">
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
          <span class="material-symbols-outlined">
           dark_mode
          </span>
+          </div> 
           </div> 
     `;
 
