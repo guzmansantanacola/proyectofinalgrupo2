@@ -1007,6 +1007,7 @@ text-decoration: none;
 }
 
 .material-symbols-outlined{
+  font-family: 'Material Symbols Outlined';
     cursor: pointer;
 }
 
