@@ -568,6 +568,10 @@ span {
   color: black;
 }
 
+.mainproductos.light > #productosNoEncontrados > #noEncontrado {
+  color: #101012;
+}
+
 #contentInfo {
   display: flex;
   width: 600px;
