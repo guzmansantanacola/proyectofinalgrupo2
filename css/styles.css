@@ -347,6 +347,18 @@ span {
   filter:drop-shadow(0px 0px 5px #E0aaff)
 }
 
+/* INDEX */
+
+#divIndex{
+  width: 100vw;
+  background-color: #101012;
+}
+
+#divIndex.light{
+  background-color: white;
+
+}
+
 
 /* LISTAS DE PRODUCTOS*/
 .titulo {
@@ -358,7 +370,6 @@ span {
   display: flex;
   font-family: 'Montserrat', sans-serif;
   padding-top: 40px;
-  color: #ffffff;
   text-shadow: 0px  0px 50px #551794;
   border-bottom: solid 5px #E0aaff;
 }
@@ -385,7 +396,6 @@ span {
 .fondolista {
     max-width: 250px;
     margin-top: 40px;
-    color: #ffffff;
     border: solid 0.5px #551794;
     transition: 0.6s;
 }
@@ -476,13 +486,18 @@ span {
 }
 .busquedaprecio{
   outline: none;
-  color: white;
   border: none;
   text-align: center;
   border: solid white 1px;
   border-radius: 10px;
   width: 150px;
+  color:white;
 }
+.busquedaprecio.light{
+  border: solid black 1px;
+  color:black;
+}
+
 .limpiarfiltrar{
   color: #000000;
   outline: none;
@@ -503,6 +518,10 @@ span {
   font-family: 'Montserrat', sans-serif;
 }
 
+#filtros.light{
+  border: 1px solid black;
+}
+
 #filtrosOrden {
   margin-bottom: 10px;
 }
@@ -517,13 +536,16 @@ span {
 .botonesorden{
   border: 1px solid white;
   padding: 5px;
-  color: white;
   border-radius: 10px;
 }
 .botonesorden:hover{
   color: #E0aaff;
   border-color: #E0aaff;
   box-shadow:0px 0px 10px #3c096c;
+}
+
+.botonesorden.light{
+  border: 1px solid black;
 }
 
 /*Pagina de informacion de productos*/
@@ -538,11 +560,22 @@ span {
   box-shadow: 0px 0px 30px #000000 ;
   color: white;
   text-align: center;
+  padding-bottom: 50px;
+}
+
+.mainproductos.light{
+  background-color: white;
+  color: black;
+}
+
+.mainproductos.light > #productosNoEncontrados > #noEncontrado {
+  color: #101012;
 }
 
 #contentInfo {
   display: flex;
   width: 600px;
+  height: 750px;
   margin: 0px auto;
   justify-content: center;
 }
@@ -734,6 +767,11 @@ a:hover {
   border-radius: 10px;
 }
 
+.busqueda.light{
+  border: 1px solid black;
+  color: black;
+}
+
 #bodyIndex {
   background-image: url("../img/fondo_login_para_responsive.jpg");
   background-color: #101012;
@@ -756,9 +794,7 @@ a:hover {
     min-width: 300px;
     margin: 0 auto; 
     text-align: left;
-    width: 90%; 
-    background-color: #101012;
-    color: white;
+    width: 90%;
     border: 1px solid #3c096c; 
     border-radius: 5px; 
     padding: 20px;
@@ -775,30 +811,31 @@ a:hover {
     padding: 20px
   }
 
-.btn{
+/*.btn{
   color: white;
-}
+}*/
 
 #inputComentario {
+  background-color: #ffff;
   outline: none;
   margin-top: 10px;
-  width: 200px;
-  height: 80px;
+  width: 640px;
+  height: 140px;
   padding: 10px;
   font-size: 16px;
   border: 5px solid #3c096c;
   border-radius: 5px;
   resize: vertical;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-  color: #ffffff
+  color: #584f4f;
 }
 
 #submitcomment{
-margin-top: 5px;
-background-color: #3c096c; 
+  margin-top: 5px;
+  background-color: #3c096c; 
   color: #ffffff; 
   padding: 10px 20px; 
-  font-size: 16px; 
+  font-size: 20px; 
   border: none; 
   border-radius: 5px; 
   cursor: pointer; 
@@ -811,22 +848,26 @@ background-color: #3c096c;
 }
 
 
+
 .star-widget label {
   margin-top: 18px;
-  font-size: 15px;
-  color: #ffffff;
+  font-size: 25px;
   transition: all 0.2s ease;
   float: right;
 }
 
 .star-widget{
-  margin: 0px auto;
   display: table;
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
-#formComent > input:not(:checked) ~label:hover,
- #formComent > input:not(:checked) ~label:hover ~ label {
+.estrellas{
+  display: flex;
+}
+
+.star-widget > input:not(:checked) ~label:hover,
+.star-widget > input:not(:checked) ~label:hover ~ label {
   color: #FFA500;
 }
 
@@ -898,7 +939,7 @@ input:checked form {
   width: 0px;
   flex-grow: 1;
   object-fit: cover;
-  opacity: .8;
+  opacity: 1;
   transition: .5s ease;
 } 
 
@@ -912,4 +953,114 @@ input:checked form {
 .limpiarFloat{
   clear: both;
   float: none;
+}
+
+/**DESPLEGABLE*/
+#menu-desplegable{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #101012;
+  display: none; 
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  z-index: 999; 
+  color: white;
+  padding: 10px; 
+  width: 200px;
+  list-style-type: none; 
+  transition: .5s ease; 
+}
+li{text-align: center;
+  line-height: 3ex;
+  padding-bottom: 2ex;}
+
+#menu-desplegable a{
+color:white;
+text-decoration: none;
+}
+
+#menu-desplegable a:hover{
+  color:#db71db }
+
+
+@media (max-width: 1024px) {
+
+#contentInfo {
+  width: 90%;
+}
+
+.galeria {
+  width: 100%;
+}
+
+.infoImg{
+  width: 100%;
+  height: 50%;
+}
+
+}
+
+@media (max-width: 545px) {
+  .infoImg{
+    height: 40%;
+  }
+
+  .infoImg img {
+    width: 18px;
+  }
+}
+
+.material-symbols-outlined{
+  font-family: 'Material Symbols Outlined';
+    cursor: pointer;
+}
+
+.darkModeSwitch{
+  background: #b3b3b3;
+  display:flex;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .5s ease
+}
+
+#switch {
+  margin: auto;
+}
+
+.darkModeSwitch::after{
+  display:block;
+  background: #fffbf5;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top:0;
+  left:0;
+  right:unset;
+  border-radius: 3rem;
+  transition: all .5s ease;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+  content: "";
+}
+
+.darkModeSwitch.active{
+  background: #fdd384;
+}
+
+.darkModeSwitch.active::after{
+  left:unset;
+  right:0;
+}
+
+
+@media (max-width: 768px) {
+  #gene  {
+    width: 70%;
+   
+  
+  }
 }
