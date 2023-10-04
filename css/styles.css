@@ -1064,3 +1064,26 @@ text-decoration: none;
   
   }
 }
+
+/**cart*/
+.direnvio {
+  max-width: 300px;
+  text-align: center;
+}
+
+.datosenvio {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.caractenvio {
+  display: block;
+
+}
+
+.inputdirec {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

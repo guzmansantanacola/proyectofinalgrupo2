@@ -38,8 +38,41 @@
 
   </nav>
   <main>
-    <div class="carrito">
+    <div id="carrito" class="table">
       
+    </div>
+    
+    <div>
+      <h2>Tipo de envío</h2>
+    <form>
+        <label>
+            <input type="radio" name="tipo"> Premium 2 a 5 días (15%)
+        </label><br>
+        <label>
+            <input type="radio" name="tipo"> Express 5 a 8 días (7%)
+        </label><br>
+        <label>
+            <input type="radio" name="tipo"> Premium 12 a 15 días (5%)
+        </label><br>
+    </form>
+    <h2>Dirección de envío</h2>
+    <div class="direnvio">
+        <form>
+          <div class="datosenvio">
+            <label class="caractenvio">Calle:</label>
+            <input type="text" class="inputdirec" >
+          </div>
+          <div class="datosenvio">
+            <label class="caractenvio">Numero:</label>
+            <input type="text"  class="inputdirec" >
+          </div>
+          <div class="datosenvio">
+            <label class="caractenvio">Esquina:</label>
+            <input type="text"  class="inputdirec" >
+          </div>
+    
+        </form>
+      </div>
     </div>
   </main>
   <!-- <footer class="text-muted">
@@ -60,7 +93,7 @@
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+  <script src="js/cart.js" defer></script>
   <script src="js/my-profile.js"></script>  
 </body>
 
