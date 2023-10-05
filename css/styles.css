@@ -1087,3 +1087,8 @@ text-decoration: none;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.imagencarrito{
+  width: 100px;
+    height: 70px;
+}

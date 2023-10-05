@@ -22,10 +22,13 @@ function cartArticulos(data) {
         htmlContentToAppend += `
   
     <div id="${data.articles[i].id}">
-      <img src="${data.articles[i].image}">
-      <p>Costo: ${data.articles[i].currency} ${data.articles[i].unitCost}</p>
-      <input type="number" id="cantidad" value="1" class="cantidad">
-      <p>Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost}</p>
+    <tr>
+    <td><img class="imagencarrito"src="${data.articles[i].image}"></td>
+    <td><p> ${data.articles[i].name} </p></td>
+    <td><p> ${data.articles[i].currency} ${data.articles[i].unitCost}</p></td>
+    <td><input type="number" id="cantidad" value="1" class="cantidad"></td>
+    <td><p id="subtotal">Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost}</p></td>
+      </tr>
     <div> 
  
         `;
@@ -64,7 +67,7 @@ function subTotal(data) {
            
         let cantidad = inputCantidad.value;
         if(cantidad > prevCantidad){
-            art.innerHTML += `
+            document.getElementById('subtotal').innerHTML += `
             <p>Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost * cantidad}</p>
             `
         }
