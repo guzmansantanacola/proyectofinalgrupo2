@@ -1087,3 +1087,49 @@ text-decoration: none;
       width: 18px;
     }
   }
+
+  /*CAJA DE COMENTARIOS*/
+  #formComent {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  #inputComentario {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 14px; 
+  }
+  
+  .star-widget {
+    text-align: center;
+  }
+  
+  button#submitcomment {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .fa.fa-star {
+    font-size: 24px;
+    color: #ffd700;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    #formComent {
+      padding: 10px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    #inputComentario {
+      width: 100%;
+    }
+  }
+  
+
+  
