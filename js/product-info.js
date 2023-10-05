@@ -39,7 +39,7 @@ function infoProducts(data) {
       <h3 class="precio">Precio: ${data.currency} $${data.cost} </h3>
 
        </div>
-       <button id="cartadd" type="button" onclick="addtocart()">Agregar al carrito</button>
+       
      </div>
   </div>
     `;
@@ -66,12 +66,6 @@ function infoProducts(data) {
     </div>
     `;
   });
-
- 
-
-
-
-
 
 
   document.getElementById("producto").innerHTML = htmlContentToAppend;
@@ -149,8 +143,15 @@ submitcomment.addEventListener("click", (event) => {
   }
 });
 
-
+//boton agregar al carrito
+let addButton = document.getElementById('cartadd');
 let cartList = JSON.parse(localStorage.getItem("cartlist")) || [];
+
+
+addButton.addEventListener('click', () => {
+  addtocart();
+})
+
 
 function addtocart() {
   const productId = localStorage.getItem("productId");
