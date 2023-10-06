@@ -154,7 +154,29 @@ addButton.addEventListener('click', () => {
 
 
 function addtocart() {
-  const productId = localStorage.getItem("productId");
-  cartList = [...cartList, productId];
-  localStorage.setItem("cartlist", JSON.stringify(cartList));
+  //let productId = localStorage.getItem("productId"); ya lo declaramos al principio
+  let productObject = {
+    id: product,
+    mount: 1
+  }
+
+  let productExist = false;
+
+  cartList.map(i => {
+
+    if(i.id == product) {
+      productExist = true;
+      i.mount +=1;
+      localStorage.setItem("cartlist", JSON.stringify(cartList));
+    }
+
+  })
+
+  if (!productExist) {
+    cartList = [...cartList, productObject];
+    localStorage.setItem("cartlist", JSON.stringify(cartList));
+  }
+
+
+  
 }
