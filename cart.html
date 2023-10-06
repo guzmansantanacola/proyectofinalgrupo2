@@ -37,9 +37,14 @@
     </section>
 
   </nav>
-  <main class="d-flex col-8 col justify-content-md-center ">
-    <div class="table col-3 d-flex align-items-center ">
-      <table>
+
+  <h1 class="text-center">Carrito de compras</h1>
+  <h2>Articulos a comprar.</h2>
+  <main class="container mt-4">
+    <div class="row col-lg-8 mb-4 table p-4" >
+      <div class="col-lg-8 mb-4">
+          <div class="table border p-4">
+              <table class="table">
         <thead>
           <tr>
             <th scope="col"></th>
@@ -55,8 +60,10 @@
         </tbody>
       </table>
     </div>
+</div>
 
-    <div class="col-3">
+<div class="col-lg-4">
+  <div class="border p-4">
       <h2>Tipo de envío</h2>
       <form>
         <label>
@@ -69,25 +76,26 @@
           <input type="radio" name="tipo"> Premium 12 a 15 días (5%)
         </label><br>
       </form>
-      <h2>Dirección de envío</h2>
+      <h2 class="mt-4">Dirección de envío</h2>
       <div class="direnvio">
         <form>
           <div class="datosenvio">
             <label class="caractenvio">Calle:</label>
-            <input type="text" class="inputdirec">
+            <input type="text" class="inputdirec form-control">
           </div>
           <div class="datosenvio">
-            <label class="caractenvio">Numero:</label>
-            <input type="text" class="inputdirec">
+            <label class="caractenvio">Número:</label>
+            <input type="text" class="inputdirec form-control">
           </div>
           <div class="datosenvio">
             <label class="caractenvio">Esquina:</label>
-            <input type="text" class="inputdirec">
+            <input type="text" class="inputdirec form-control">
           </div>
-
+          <button class="btn btn-primary">Comprar</button>
         </form>
       </div>
     </div>
+  </div>
   </main>
   <!-- <footer class="text-muted">
     <div class="container">
