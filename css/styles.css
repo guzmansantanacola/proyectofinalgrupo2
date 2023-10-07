@@ -794,9 +794,9 @@ a:hover {
 }
 
 #description {
-  width: 150px; /* Puedes ajustar el valor según tus necesidades */
-  height: auto; /* Esto mantendrá la proporción original de la imagen */
- /* Agrega un espacio horizontal entre las imágenes */
+  width: 150px; 
+  height: auto; 
+
   margin-right: 0; display: flex; }
 
   #comments {
