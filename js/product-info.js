@@ -112,6 +112,8 @@ fetch(COMMENT_URL)
 
 const submitcomment = document.getElementById("submitcomment");
 const commentArea = document.getElementById("inputComentario");
+const commentLimit = document.getElementById("commentLimit")
+const charLimit = 100;
 const estrellitas = document.getElementsByName("rate");
 const starInputs = document.querySelectorAll('input[type="radio"]');
 let estrellaElegida;
@@ -121,6 +123,23 @@ starInputs.forEach((input) => {
     estrellaElegida = input.value;
   });
 });
+
+// contador de caracteres, se pone rojito cuando se pasa el límite 
+
+commentLimit.textContent = `0 / ${charLimit}`;
+commentArea.addEventListener("input", function () {
+  let commentLenght = commentArea.value.length;
+  commentLimit.textContent = `${commentLenght} / ${charLimit}`
+
+  if (commentLenght > charLimit) {
+    commentArea.style.borderColor = "#ff2851"
+    commentLimit.style.color = "#ff2851"
+  } else {
+    commentArea.style.borderColor = "#3c096c"
+    commentLimit.style.color = "#808080"
+  }
+
+})
 
 //Agregar un comentario nuevo
 submitcomment.addEventListener("click", (event) => {
@@ -133,6 +152,7 @@ submitcomment.addEventListener("click", (event) => {
   <p>${userName} | ${date} |  ${getStars(estrellaElegida)}   </p>
   <p>${comentario}</p>
  </div>`;
+
 
   //console.log(comentario);
   //console.log(estrellaElegida);
@@ -166,9 +186,9 @@ function addtocart() {
 
   cartList.map(i => {
 
-    if(i.id == product) {
+    if (i.id == product) {
       productExist = true;
-      i.mount +=1;
+      i.mount += 1;
       localStorage.setItem("cartlist", JSON.stringify(cartList));
     }
 
@@ -177,9 +197,9 @@ function addtocart() {
   if (!productExist) {
     cartList = [...cartList, productObject];
     localStorage.setItem("cartlist", JSON.stringify(cartList));
-  } 
+  }
 }
 
-closeAlert.addEventListener('click', () =>{
+closeAlert.addEventListener('click', () => {
   alertSuccess.classList.add('d-none');
 })
