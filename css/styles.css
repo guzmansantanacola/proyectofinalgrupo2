@@ -913,7 +913,9 @@ input:checked form {
 }
 #formComent {
   display:flex;
-  justify-content: center;
+  justify-content: center; 
+  align-items: center;
+  margin-right: 505px;
 
 }
 
@@ -1062,8 +1064,7 @@ text-decoration: none;
 
 }
 
-input:checked~label {color: #101012;
-}
+
 
 .card-body h4 {
   font-size: 16px;
@@ -1110,14 +1111,14 @@ input:checked~label {color: #101012;
   /*CAJA DE COMENTARIOS*/
   
  
-#inputComentario {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 16px;
- 
-  border-radius: 5px;
-}
+  #inputComentario {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+  }
 
 #submitcomment {
  
@@ -1141,7 +1142,7 @@ input:checked~label {color: #101012;
 @media (min-width: 768px) {
   
   #inputComentario {
-    width: 170%; 
+    width: 350%; 
     margin:  auto; 
   }
   #submitcomment {
@@ -1149,6 +1150,7 @@ input:checked~label {color: #101012;
     
   }
 }
+
 
 
 
