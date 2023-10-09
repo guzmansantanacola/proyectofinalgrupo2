@@ -66,8 +66,8 @@ function infoProducts(data) {
     </div>
     `;
   });
-
-
+  document.getElementById('closeAlert')
+  document.getElementById('alertSuccess')
   document.getElementById("producto").innerHTML = htmlContentToAppend;
   document.getElementById("relacionados").innerHTML = relacionadosToAppend;
   //listener que nos permite guardar la id de los productos relacionados que creamos más arriba
@@ -154,6 +154,8 @@ addButton.addEventListener('click', () => {
 
 
 function addtocart() {
+  alertSuccess.classList.remove('d-none');
+  alertSuccess.classList.add('fade-in');
   //let productId = localStorage.getItem("productId"); ya lo declaramos al principio
   let productObject = {
     id: product,
@@ -175,8 +177,9 @@ function addtocart() {
   if (!productExist) {
     cartList = [...cartList, productObject];
     localStorage.setItem("cartlist", JSON.stringify(cartList));
-  }
-
-
-  
+  } 
 }
+
+closeAlert.addEventListener('click', () =>{
+  alertSuccess.classList.add('d-none');
+})

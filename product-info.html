@@ -46,10 +46,15 @@
 
       <div id="producto"></div>
       <button id="cartadd" type="button">Agregar al carrito</button>
+      <div class="alert alert-dark alert-dismissible d-none" role="alert" id="alertSuccess">
+        <h4 class="alert-heading">
+        </svg>Producto añadido con exíto!</h4>
+        <p>Vea su carrito de compras <a class="alert-link" href="cart.html">aquí</a></p>
+        <button type="button" id="closeAlert" class="btn-close d-flex float-end" aria-label="Close"></button>
+      </div>
       <h1 class="com">Comentarios</h1>
       <div id="comments">
       </div>
-      
       <div id="formComent">
         <form>
           <input id="inputComentario" type="textarea" placeholder="Escribe un comentario" name="comentario">
