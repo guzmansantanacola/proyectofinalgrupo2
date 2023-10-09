@@ -795,9 +795,9 @@ a:hover {
 }
 
 #description {
-  width: 150px; /* Puedes ajustar el valor según tus necesidades */
-  height: auto; /* Esto mantendrá la proporción original de la imagen */
- /* Agrega un espacio horizontal entre las imágenes */
+  width: 150px; 
+  height: auto; 
+
   margin-right: 0; display: flex; }
 
   #comments {
@@ -1054,6 +1054,25 @@ text-decoration: none;
   right:0;
 }
 
+
+
+.form-check-input:checked {
+  background-color: violet; 
+  color:white;
+
+}
+
+input:checked~label {color: #101012;
+}
+
+.card-body h4 {
+  font-size: 16px;
+}
+
+.form-check-label {
+  font-size: 14px;
+}
+=======
 @media (max-width: 1024px) {
 
   #contentInfo {
