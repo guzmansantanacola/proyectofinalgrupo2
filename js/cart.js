@@ -27,16 +27,28 @@ function cartArticulos(data) {
     <td><img class="imagencarrito"src="${data.articles[i].image}" style="width: 140px;"></td>
     <td><p> ${data.articles[i].name} </p></td>
     <td><p> ${data.articles[i].currency} ${data.articles[i].unitCost}</p></td>
-    <td><input type="number" id="cantidad" value="1" class="cantidad"></td>
-    <td><p id="subtotal">Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost}</p></td>
+    <td><input type="number" id="${data.articles[i].id}input" value="1" class="cantidad"></td>
+    <td><p id="subtotal" class="cantidad">Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost}</p></td>
       </tr>
     <div> 
  
         `;
         tabla.innerHTML = htmlContentToAppend;
-
+            
+        // let inputPruebaExample = document.getElementById('50924input');
+        // let partedelsubtotalExample = document.getElementsByClassName('cantidad');
+        // console.log(partedelsubtotalExample[0]);
+        // console.log(inputPruebaExample.value);
+        // inputPruebaExample.addEventListener('input', () => {
+        // let valornuevoExample = inputPruebaExample.value;
+        // console.log(valornuevoExample);
+        // partedelsubtotalExample[1].innerHTML = `<p id="subtotal" class="cantidad">Sub-Total: ${data.articles[0].currency} ${data.articles[0].unitCost * valornuevoExample}</p>`
+    // })
     }
-    subTotal(data)
+    // subTotal(data); // Descomentar
+    
+    //probando input para calcular subtotal
+    
     
 }
 
@@ -44,12 +56,16 @@ function cartArticulos(data) {
 
 let itemsLocalStorage = JSON.parse(localStorage.getItem("cartlist")) || [];
 
+
+
 itemsLocalStorage.map(i => {
     //itemsId.push(i.id)
     fetch(`https://japceibal.github.io/emercado-api/products/${i.id}.json`)
         .then((response) => response.json())
         .then((data) => {
+            const variable = 1;
             let tabla = document.getElementById('carrito');
+            
             let htmlContentToAppend = "";
            
             htmlContentToAppend += `
@@ -59,17 +75,54 @@ itemsLocalStorage.map(i => {
             <td><img class="imagencarrito"src="${data.images[0]}" style="width: 140px;"></td>
             <td><p> ${data.name} </p></td>
             <td><p> ${data.currency} ${data.cost}</p></td>
-            <td><input type="number"  value="${i.mount}" class="cantidad"></td>
-            <td><p id="subtotal">Sub-Total: ${data.currency} ${data.cost * i.mount}</p></td>
+            <td><input type="number"  value="${i.mount}" id="${data.id}input" class="cantidad"></td>
+            <td><p id="${data.id}subtotal">Sub-Total: ${data.currency} ${data.cost * i.mount}</p></td>
               </tr>
             <div> 
          
                 `;
                 tabla.innerHTML += htmlContentToAppend;
-        
-            
+                let idInput = data.id + "input";
+                let idp = data.id + "subtotal"
+                //probando input para calcular subtotal
+                let inputPrueba = document.getElementById(idInput);
+                console.log(inputPrueba);
+                let partedelsubtotal = document.getElementById(idp);
+                console.log(partedelsubtotal);
+                console.log(inputPrueba.value);
+                inputPrueba.addEventListener('input', () => {
+                let valornuevo = inputPrueba.value;
+                console.log(valornuevo);
+                partedelsubtotal.innerHTML = `<p id="subtotal" class="cantidad">Sub-Total: ${data.currency} ${data.cost * valornuevo}</p>`
+            })
         });
+        
 });
+subTotal();
+
+
+// SI SE EJECUTA LA FUNCION FUERA DEL FETCH, NO ENCUENTRA LOS ELEMENTOS DEL HTML
+
+// console.log(itemsLocalStorage);
+// console.log(variable)
+// function subTotal(){
+//     for(let e of itemsLocalStorage){
+//         console.log(e);
+//         console.log(e.id)
+//         let idInput = e.id + "input";
+//         console.log(idInput)
+//         let idp = e.id + "subtotal";
+//         let inputPrueba = document.getElementById(idInput);
+//         console.log(inputPrueba)
+//         let partedelsubtotal = document.getElementById(idp);
+//         inputPrueba.addEventListener('input', () => {
+//             let valornuevo = inputPrueba.value;
+//             console.log(valornuevo);
+//             partedelsubtotal.innerHTML = `<p id="subtotal" class="cantidad">Sub-Total: ${data.currency} ${data.cost * valornuevo}</p>`
+//         });
+//     }
+// }
+
 
 
 
@@ -77,27 +130,30 @@ itemsLocalStorage.map(i => {
     
 // Funcion de abajo es para la parte 3, pero queda hacerla funcionar
 
-function subTotal(data) {
-    let cualquierInput = document.getElementsByClassName('cantidad');
-    console.log(cualquierInput);
-    let inputCantidad = document.getElementById("cantidad");
-    console.log(inputCantidad.parentElement.id);
-    let prevCantidad = document.getElementById("cantidad").value;
-    inputCantidad.addEventListener('change', () => {
-           
-        let cantidad = inputCantidad.value;
-        if(cantidad > prevCantidad){
-            document.getElementById('subtotal').innerHTML += `
-            <p>Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost * cantidad}</p>
-            `
-        }
-        console.log(cantidad);
-        console.log(document.getElementById('50924'));
 
-        // art.innerHTML += `
-        // <p>Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost * cantidad}</p>
-        // `
-    })
-}
+// Descomentar lo de abajo
+
+// function subTotal(data) {
+//     let cualquierInput = document.getElementsByClassName('cantidad');
+//     console.log(cualquierInput);
+//     let inputCantidad = document.getElementById("cantidad");
+//     console.log(inputCantidad.parentElement.id);
+//     let prevCantidad = document.getElementById("cantidad").value;
+//     inputCantidad.addEventListener('change', () => {
+           
+//         let cantidad = inputCantidad.value;
+//         if(cantidad > prevCantidad){
+//             document.getElementById('subtotal').innerHTML += `
+//             <p>Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost * cantidad}</p>
+//             `
+//         }
+//         console.log(cantidad);
+//         console.log(document.getElementById('50924'));
+
+//         // art.innerHTML += `
+//         // <p>Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost * cantidad}</p>
+//         // `
+//     })
+// }
 
 
