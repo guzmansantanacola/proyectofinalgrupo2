@@ -896,15 +896,17 @@ a:hover {
 }
 #formComent > input:not(:checked) ~label:hover,
  #formComent > input:not(:checked) ~label:hover ~ label {
-  color: #FFA500;
+  color: black;
 }
 
+
+
 input:checked~label {
-  color: #FFA500;
+  color: black !important;
 }
 
 input#rate-5:checked~ label {
-  color: #FFA500;
+  color: black;
   text-shadow: 0 0 10px #952;
 }
 
@@ -1053,13 +1055,11 @@ text-decoration: none;
 
 
 .form-check-input:checked {
-  background-color: violet; 
-  color:white;
+  background-color: violet !important; 
+  
 }
+  
 
-input:checked~label {
-  color: orange;
-}
 
 .card-body h4 {
   font-size: 16px;
@@ -1168,3 +1168,9 @@ input:checked~label {
 .fade-in {
   animation: fade-in 0.3s ease-in-out;
 }
+/* letra para el tipo de envio*/
+.card-body{
+  font-size: 14px;
+  font-family:'Montserrat', sans-serif ;
+}
+
