@@ -1,4 +1,5 @@
 
+
 const url = `https://japceibal.github.io/emercado-api/user_cart/25801.json`;
 
 fetch(url)
@@ -23,7 +24,7 @@ function cartArticulos(data) {
   
     <div id="${data.articles[i].id}">
     <tr>
-    <td><img class="imagencarrito"src="${data.articles[i].image}"></td>
+    <td><img class="imagencarrito"src="${data.articles[i].image}" style="width: 140px;"></td>
     <td><p> ${data.articles[i].name} </p></td>
     <td><p> ${data.articles[i].currency} ${data.articles[i].unitCost}</p></td>
     <td><input type="number" id="cantidad" value="1" class="cantidad"></td>
@@ -33,26 +34,45 @@ function cartArticulos(data) {
  
         `;
         tabla.innerHTML = htmlContentToAppend;
-        //let inputCantidad = document.getElementById("cantidad");
-    
-        
 
-        
-        
-        // inputCantidad.addEventListener('input', () => {
-
-            
-        //     let cantidad = inputCantidad.value;
-
-        //     art.innerHTML += `
-        //     <p>Sub-Total: ${data.articles[i].currency} ${data.articles[i].unitCost * cantidad}</p>
-        //     `
-        // })
-        
     }
     subTotal(data)
     
 }
+
+// maquetar lo que esta en el LocalStorage
+
+let itemsLocalStorage = JSON.parse(localStorage.getItem("cartlist")) || [];
+
+itemsLocalStorage.map(i => {
+    //itemsId.push(i.id)
+    fetch(`https://japceibal.github.io/emercado-api/products/${i.id}.json`)
+        .then((response) => response.json())
+        .then((data) => {
+            let tabla = document.getElementById('carrito');
+            let htmlContentToAppend = "";
+           
+            htmlContentToAppend += `
+          
+            <div id="${data.id}">
+            <tr>
+            <td><img class="imagencarrito"src="${data.images[0]}" style="width: 140px;"></td>
+            <td><p> ${data.name} </p></td>
+            <td><p> ${data.currency} ${data.cost}</p></td>
+            <td><input type="number"  value="${i.mount}" class="cantidad"></td>
+            <td><p id="subtotal">Sub-Total: ${data.currency} ${data.cost * i.mount}</p></td>
+              </tr>
+            <div> 
+         
+                `;
+                tabla.innerHTML += htmlContentToAppend;
+        
+            
+        });
+});
+
+
+
 
     
 // Funcion de abajo es para la parte 3, pero queda hacerla funcionar
