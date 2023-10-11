@@ -28,7 +28,7 @@ function cartArticulos(data) {
  
         `;
     tabla.innerHTML = htmlContentToAppend;
-
+    
     // let inputPruebaExample = document.getElementById('50924input');
     // let partedelsubtotalExample = document.getElementsByClassName('cantidad');
     // console.log(partedelsubtotalExample[0]);
@@ -47,33 +47,41 @@ function cartArticulos(data) {
 // maquetar lo que esta en el LocalStorage
 
 let itemsLocalStorage = JSON.parse(localStorage.getItem("cartlist")) || [];
-console.log(itemsLocalStorage)
 let tabla = document.getElementById("carrito");
-itemsLocalStorage.forEach((i) => {
+
+itemsLocalStorage.forEach((i, index) => {
   fetch(`https://japceibal.github.io/emercado-api/products/${i.id}.json`)
     .then((response) => response.json())
     .then((data) => {
-    
-      let htmlContentToAppend = "";
-      htmlContentToAppend += `
-            <div id="${data.id}">
-            <tr>
-            <td><img class="imagencarrito"src="${
-              data.images[0]
-            }" style="width: 140px;"></td>
-            <td><p> ${data.name} </p></td>
-            <td><p> ${data.currency} ${data.cost}</p></td>
-            <td><input type="number"  value="${i.mount}" class="cantidad"></td>
-            <td><p class="subTotal">Sub-Total: ${data.currency} ${data.cost * i.mount}</p></td>
-              </tr>
-            <div> `;
-      tabla.innerHTML += htmlContentToAppend;
+      const productoHTML = document.createElement("tr");
+      productoHTML.id = data.id;
+      const htmlContentToAppend = `
+        <tr>
+          <td><img class="imagencarrito" src="${data.images[0]}" style="width: 140px;"></td>
+          <td><p>${data.name}</p></td>
+          <td><p class="precioProducto">${data.currency} ${data.cost}</p></td>
+          <td><input min="1" type="number" value="${i.mount}" class="cantidad"></td>
+          <td><p class="subTotal">Sub-Total: ${data.currency} <span class="subtotal-valor">${data.cost * i.mount}</span></p></td>
+        </tr>`
+
+      productoHTML.innerHTML = htmlContentToAppend;
+      tabla.appendChild(productoHTML);
+
+      const cantidadInput = productoHTML.querySelector(".cantidad");
+      const subTotalElement = productoHTML.querySelector(".subtotal-valor");
+
+      cantidadInput.addEventListener("input", () => {
+        const cantidad = cantidadInput.value;
+        const costo = data.cost;
+        const subTotalValor = cantidad * costo;
+        subTotalElement.textContent = subTotalValor;
+
+       
+        itemsLocalStorage[index].mount = cantidad;
+        localStorage.setItem("cartlist", JSON.stringify(itemsLocalStorage));
+      });
     });
-    
 });
-
-
-
 
 
 
