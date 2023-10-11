@@ -47,13 +47,12 @@ function cartArticulos(data) {
 // maquetar lo que esta en el LocalStorage
 
 let itemsLocalStorage = JSON.parse(localStorage.getItem("cartlist")) || [];
-console.log(itemsLocalStorage)
 let tabla = document.getElementById("carrito");
 itemsLocalStorage.forEach((i) => {
   fetch(`https://japceibal.github.io/emercado-api/products/${i.id}.json`)
     .then((response) => response.json())
     .then((data) => {
-    
+      let suma = data.cost * i.mount;
       let htmlContentToAppend = "";
       htmlContentToAppend += `
             <div id="${data.id}">
@@ -62,19 +61,28 @@ itemsLocalStorage.forEach((i) => {
               data.images[0]
             }" style="width: 140px;"></td>
             <td><p> ${data.name} </p></td>
-            <td><p> ${data.currency} ${data.cost}</p></td>
+            <td><p class="precioProducto"> ${data.currency} ${data.cost}</p></td>
             <td><input type="number"  value="${i.mount}" class="cantidad"></td>
-            <td><p class="subTotal">Sub-Total: ${data.currency} ${data.cost * i.mount}</p></td>
+            <td><p class="subTotal">Sub-Total: ${data.currency} ${suma} </p></td>
               </tr>
             <div> `;
       tabla.innerHTML += htmlContentToAppend;
+            suma = i.mount * data.cost;
     });
     
 });
 
 
 
+function calcular(){
+try {
+  let a = parseFloat(document.getElementsByClassName('cantidad').value) || 0;
+  let b = parseFloat(document.getElementsByClassName('precioProducto')) || 0;
+  document.getElementsByClassName("subTotal").value = a + b;
+} catch (e){
 
+}
+}
 
 
 function subTotal(data) {
