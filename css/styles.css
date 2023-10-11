@@ -1172,5 +1172,70 @@ text-decoration: none;
 .card-body{
   font-size: 14px;
   font-family:'Montserrat', sans-serif ;
+  
 }
 
+/*RESPONSIVE PARA TABLA*/
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+ 
+  padding: 10px;
+  text-align: center;
+}
+
+.p-4 {
+  padding: 4px;
+}
+
+@media (max-width: 768px) {
+  .table th, .table td {
+      padding: 3px; 
+      font-size: 10px;
+  }
+}
+
+
+/*RESPONSIVE PARA ENVIO*/
+
+.card-body {
+  padding: 10px;
+}
+
+.form-check-label {
+  display: block; 
+  margin-bottom: 10px;
+}
+
+.direnvio form {
+  padding: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .card-body {
+      padding: 5px; 
+  }
+
+  .form-check-label {
+      margin-bottom: 5px; 
+  }
+
+  .form-group {
+      margin-bottom: 10px;
+  }
+}
