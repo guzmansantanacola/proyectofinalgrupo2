@@ -48,41 +48,42 @@ function cartArticulos(data) {
 
 let itemsLocalStorage = JSON.parse(localStorage.getItem("cartlist")) || [];
 let tabla = document.getElementById("carrito");
-itemsLocalStorage.forEach((i) => {
+
+itemsLocalStorage.forEach((i, index) => {
   fetch(`https://japceibal.github.io/emercado-api/products/${i.id}.json`)
     .then((response) => response.json())
     .then((data) => {
-      let suma = data.cost * i.mount;
-      let htmlContentToAppend = "";
-      htmlContentToAppend += `
-            <div id="${data.id}">
-            <tr>
-            <td><img class="imagencarrito"src="${
-              data.images[0]
-            }" style="width: 140px;"></td>
-            <td><p> ${data.name} </p></td>
-            <td><p class="precioProducto"> ${data.currency} ${data.cost}</p></td>
-            <td><input type="number"  value="${i.mount}" class="cantidad"></td>
-            <td><p class="subTotal">Sub-Total: ${data.currency} ${suma} </p></td>
-              </tr>
-            <div> `;
-      tabla.innerHTML += htmlContentToAppend;
-            suma = i.mount * data.cost;
+      const productoHTML = document.createElement("tr");
+      productoHTML.id = data.id;
+
+      const htmlContentToAppend = `
+        <tr>
+          <td><img class="imagencarrito" src="${data.images[0]}" style="width: 140px;"></td>
+          <td><p>${data.name}</p></td>
+          <td><p class="precioProducto">${data.currency} ${data.cost}</p></td>
+          <td><input type="number" value="${i.mount}" class="cantidad"></td>
+          <td><p class="subTotal">Sub-Total: ${data.currency} <span class="subtotal-valor">${data.cost * i.mount}</span></p></td>
+        </tr>`
+
+      productoHTML.innerHTML = htmlContentToAppend;
+      tabla.appendChild(productoHTML);
+
+      const cantidadInput = productoHTML.querySelector(".cantidad");
+      const subTotalElement = productoHTML.querySelector(".subtotal-valor");
+
+      cantidadInput.addEventListener("input", () => {
+        const cantidad = cantidadInput.value;
+        const costo = data.cost;
+        const subTotalValor = cantidad * costo;
+        subTotalElement.textContent = subTotalValor;
+
+       
+        itemsLocalStorage[index].mount = cantidad;
+        localStorage.setItem("cartlist", JSON.stringify(itemsLocalStorage));
+      });
     });
-    
 });
 
-
-
-function calcular(){
-try {
-  let a = parseFloat(document.getElementsByClassName('cantidad').value) || 0;
-  let b = parseFloat(document.getElementsByClassName('precioProducto')) || 0;
-  document.getElementsByClassName("subTotal").value = a + b;
-} catch (e){
-
-}
-}
 
 
 function subTotal(data) {
