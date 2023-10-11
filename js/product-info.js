@@ -118,6 +118,7 @@ const estrellitas = document.getElementsByName("rate");
 const starInputs = document.querySelectorAll('input[type="radio"]');
 let estrellaElegida;
 
+
 starInputs.forEach((input) => {
   input.addEventListener("click", () => {
     estrellaElegida = input.value;
@@ -125,10 +126,9 @@ starInputs.forEach((input) => {
 });
 
 // contador de caracteres, se pone rojito cuando se pasa el límite 
-
 commentLimit.textContent = `0 / ${charLimit}`;
 commentArea.addEventListener("input", function () {
-  let commentLenght = commentArea.value.length;
+  commentLenght = commentArea.value.length;
   commentLimit.textContent = `${commentLenght} / ${charLimit}`
 
   if (commentLenght > charLimit) {
@@ -148,17 +148,21 @@ submitcomment.addEventListener("click", (event) => {
   let date = new Date().toLocaleString();
   let comentario = document.getElementById("inputComentario").value;
 
-  document.getElementById("comments").innerHTML += `<div class="comentario">
-  <p>${userName} | ${date} |  ${getStars(estrellaElegida)}   </p>
-  <p>${comentario}</p>
- </div>`;
-
-
-  //console.log(comentario);
-  //console.log(estrellaElegida);
-
+  if (commentArea.value.length < charLimit && commentArea.value.length > 1 && !(starInputs.checked=false)) {
+    document.getElementById("comments").innerHTML +=
+      `<div class="comentario">
+      <p>${userName} | ${date} |  ${getStars(estrellaElegida)}   </p>
+      <p>${comentario}</p>
+    </div>`;
+    //console.log(comentario);
+    //console.log(estrellaElegida);
+  } else {
+    alert("guarda che");
+  }
+  
   commentArea.value = "";
-  for (let i = 0; i < estrellitas.length; i++) {
+  commentLimit.textContent = `0 / ${charLimit}`
+  for (let i = 0; i < starInputs.length; i++) {
     estrellitas[i].checked = false;
   }
 });
