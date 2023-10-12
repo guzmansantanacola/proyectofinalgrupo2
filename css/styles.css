@@ -1293,3 +1293,22 @@ li {
       margin-bottom: 10px;
   }
 }
+
+
+/* Estilos para dispositivos con un ancho de pantalla menor o igual a 768px */
+@media (max-width: 768px) {
+  .table-responsive {
+      overflow-x: auto;
+  }
+  .table-responsive thead {
+      display: none; /* Ocultar la cabecera en dispositivos móviles */
+  }
+  .table-responsive tbody {
+      display: block;
+  }
+  .table-responsive td {
+      display: block;
+      text-align: left;
+  }
+
+}
