@@ -937,25 +937,19 @@ a:hover {
   margin-bottom: 10px;
   margin-left: 20px;
 }
-
-#formComent>input:not(:checked)~label:hover,
-#formComent>input:not(:checked)~label:hover~label {
-  color: #FFA500;
+#formComent > input:not(:checked) ~label:hover,
+ #formComent > input:not(:checked) ~label:hover ~ label {
+  color: black;
 }
 
-#commentLimit {
-  display: flex;
-  justify-content: flex-end;
-  margin: inherit;
-  color: #808080;
-  }
+
 
 input:checked~label {
-  color: #FFA500;
+  color: black !important;
 }
 
-input#rate-5:checked~label {
-  color: #FFA500;
+input#rate-5:checked~ label {
+  color: black;
   text-shadow: 0 0 10px #952;
 }
 
@@ -1110,13 +1104,11 @@ li {
 
 
 .form-check-input:checked {
-  background-color: violet;
-  color: white;
+  background-color: violet !important; 
+  
 }
+  
 
-input:checked~label {
-  color: orange;
-}
 
 .card-body h4 {
   font-size: 16px;
@@ -1229,4 +1221,75 @@ input:checked~label {
 
 .fade-in {
   animation: fade-in 0.3s ease-in-out;
+}
+/* letra para el tipo de envio*/
+.card-body{
+  font-size: 14px;
+  font-family:'Montserrat', sans-serif ;
+  
+}
+
+/*RESPONSIVE PARA TABLA*/
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+ 
+  padding: 10px;
+  text-align: center;
+}
+
+.p-4 {
+  padding: 4px;
+}
+
+@media (max-width: 768px) {
+  .table th, .table td {
+      padding: 3px; 
+      font-size: 10px;
+  }
+}
+
+
+/*RESPONSIVE PARA ENVIO*/
+
+.card-body {
+  padding: 10px;
+}
+
+.form-check-label {
+  display: block; 
+  margin-bottom: 10px;
+}
+
+.direnvio form {
+  padding: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .card-body {
+      padding: 5px; 
+  }
+
+  .form-check-label {
+      margin-bottom: 5px; 
+  }
+
+  .form-group {
+      margin-bottom: 10px;
+  }
 }
