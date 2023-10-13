@@ -908,6 +908,12 @@ a:hover {
   transition: background-color 0.3s ease 0s;
 }
 
+#commentLimit {
+  display: flex;
+  color:grey;
+  justify-content: end;
+}
+
 #submitcomment:hover {
   background-color: #9d4edd;
   color: #101012;

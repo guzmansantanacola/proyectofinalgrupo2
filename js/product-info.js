@@ -148,7 +148,7 @@ submitcomment.addEventListener("click", (event) => {
   let date = new Date().toLocaleString();
   let comentario = document.getElementById("inputComentario").value;
 
-  if (commentArea.value.length < charLimit && commentArea.value.length > 1 && !(starInputs.checked=false)) {
+  if (commentArea.value.length < charLimit && commentArea.value.length > 1 && (starInputs.checked=true)) {
     document.getElementById("comments").innerHTML +=
       `<div class="comentario">
       <p>${userName} | ${date} |  ${getStars(estrellaElegida)}   </p>
