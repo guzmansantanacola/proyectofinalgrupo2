@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
       botonesorden[i].classList.toggle('light');
     }
 
+    let bodyCart = document.getElementsByClassName('card-body-cart')
+    console.log(bodyCart);
+    for (let i = 0; i < botonbodyCart; i++) {
+      botonbodyCartlassList.toggle('light');
+    }
+
     let busquedaprecio = document.getElementsByClassName('busquedaprecio');
     for (let i = 0; i < busquedaprecio.length; i++) {
       busquedaprecio[i].classList.toggle('light');
