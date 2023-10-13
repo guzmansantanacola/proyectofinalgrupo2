@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="bodycart">
   <nav class="general">
 
     <section id="sectionNav">
@@ -38,13 +41,13 @@
 
   </nav>
 
-        <main class="container mt-4">
+        <main id="main" class="container mt-4 mainCarrito">
           
-            <div class="d-md-flex mb-4 ">
+            <div class="d-xl-flex mb-4 ">
 
 
-              <div class=" table-responsive p-4  ">
-                <table class="table ">
+              <div class=" table-responsive p-xl-4 ">
+                <table id="tablacarrito" class="table rounded">
                   <thead>
 
                     <tr>
@@ -67,28 +70,28 @@
 
               
 
-              <div class="col-12 col-md-4 bottom-0" >
+              <div class="col-12 col-xl-4 bottom-0" >
                 
-                <div class="card  border-0" >
-                  <div class="card-body"><br>
+                <div class="card  border-1" >
+                  <div class="card-body card-body-cart"><br>
 
                     
                     <h4 class="mb-2" style="font-weight: bold; position: center;" >Tipo de envío</h4>
 
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check">
                       <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                       <label class="form-check-label" for="flexRadioDefault1">
                         Premium 2 a 5 días (15%)
                       </label><br> <br>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check">
                       <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
                         checked>
                       <label class="form-check-label" for="flexRadioDefault2">
                         Express 5 a 8 días (7%)
                       </label><br> <br>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check">
                       <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                       <label class="form-check-label" for="flexRadioDefault3">
                         Premium 12 a 15 días (5%)
@@ -181,6 +184,7 @@
         <script src="js/init.js"></script>
         <script src="js/cart.js" defer></script>
         <script src="js/my-profile.js"></script>
+        <script src="js/color_mode.js" defer></script>
 </body>
 
 </html>

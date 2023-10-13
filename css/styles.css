@@ -1301,13 +1301,13 @@ li {
 }
 
 
-/* Estilos para dispositivos con un ancho de pantalla menor o igual a 768px */
-@media (max-width: 768px) {
+
+@media (max-width: 767px) {
   .table-responsive {
       overflow-x: auto;
   }
   .table-responsive thead {
-      display: none; /* Ocultar la cabecera en dispositivos móviles */
+      display: none; 
   }
   .table-responsive tbody {
       display: block;
@@ -1319,4 +1319,54 @@ li {
 
 }
 
+.card-body-cart{
+  background-color: #101012;
+  color: white;
+}
 
+.card-body-cart.light{
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+#bodycart{
+  background-image: url("../img/fondo_login_para_responsive.jpg");
+  background-color: #101012;
+  background-attachment: fixed;
+  color: white;
+} 
+
+#tablacarrito{
+  background-color: #101012;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 0px 10px #000000;
+}
+
+#tablacarrito.light{
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 0px 10px #000000;
+}
+
+#tablacarrito p{
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#tablacarrito.light p{
+  color: rgb(0, 0, 0);
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+#inputExample, input.cantidad {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  font-family: 'Montserrat', sans-serif;
+}
+
+#tablacarrito tr {
+  border-bottom: 1px solid #E0aaff
+}
