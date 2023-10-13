@@ -1241,13 +1241,13 @@ text-decoration: none;
 }
 
 
-/* Estilos para dispositivos con un ancho de pantalla menor o igual a 768px */
-@media (max-width: 768px) {
+
+@media (max-width: 767px) {
   .table-responsive {
       overflow-x: auto;
   }
   .table-responsive thead {
-      display: none; /* Ocultar la cabecera en dispositivos móviles */
+      display: none; 
   }
   .table-responsive tbody {
       display: block;
@@ -1257,4 +1257,14 @@ text-decoration: none;
       text-align: left;
   }
 
+}
+
+#bodycart{
+  background-image: url("../img/fondo_login_para_responsive.jpg");
+  background-color: #101012;
+  background-attachment: fixed;
+} 
+
+#tablacarrito{
+  background-color: white;
 }
