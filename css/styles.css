@@ -1274,7 +1274,6 @@ text-decoration: none;
   background-color: #101012;
   background-attachment: fixed;
   color: white;
-
 } 
 
 #tablacarrito{
@@ -1284,15 +1283,30 @@ text-decoration: none;
   box-shadow: 0px 0px 10px #000000;
 }
 
+#tablacarrito.light{
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 0px 10px #000000;
+}
+
 #tablacarrito p{
   color: white;
   font-family: 'Montserrat', sans-serif;
 }
 
-#inputExample, input.cantidad {
-  color: white;
+#tablacarrito.light p{
+  color: rgb(0, 0, 0);
   font-family: 'Montserrat', sans-serif;
 }
+
+
+#inputExample, input.cantidad {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  font-family: 'Montserrat', sans-serif;
+}
+
 #tablacarrito tr {
   border-bottom: 1px solid #E0aaff
 }

@@ -12,11 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
       botonesorden[i].classList.toggle('light');
     }
 
-    let bodyCart = document.getElementsByClassName('card-body-cart')
+    let bodyCart = document.getElementsByClassName('card-body-cart');
     console.log(bodyCart);
-    for (let i = 0; i < botonbodyCart; i++) {
-      botonbodyCartlassList.toggle('light');
+    for (let i = 0; i < bodyCart.length; i++) {
+      bodyCart[i].classList.toggle('light');
     }
+
+    let tablacarrito = document.getElementById('tablacarrito');
+      tablacarrito.classList.toggle('light');
 
     let busquedaprecio = document.getElementsByClassName('busquedaprecio');
     for (let i = 0; i < busquedaprecio.length; i++) {
