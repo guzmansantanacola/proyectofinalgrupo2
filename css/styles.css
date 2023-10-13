@@ -1358,6 +1358,9 @@ li {
 #tablacarrito.light p{
   color: rgb(0, 0, 0);
   font-family: 'Montserrat', sans-serif;
+  border: 1px solid #9d4edd;
+  border-radius:10px;
+  text-align: center;
 }
 
 
@@ -1368,5 +1371,22 @@ li {
 }
 
 #tablacarrito tr {
-  border-bottom: 1px solid #E0aaff
+  border-bottom: 1px solid #E0aaff;
+  align-items: center;
+}
+#tablacarrito th {
+  border-bottom: 1px solid #E0aaff;
+}
+
+#carrito p {
+  font-size: small;
+}
+
+#carrito td {
+  vertical-align: middle;
+}
+
+
+p{
+  margin: 0;
 }
