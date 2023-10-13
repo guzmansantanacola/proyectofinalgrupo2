@@ -896,17 +896,17 @@ a:hover {
 }
 #formComent > input:not(:checked) ~label:hover,
  #formComent > input:not(:checked) ~label:hover ~ label {
-  color: black;
+  color: #FFA500;
 }
 
 
 
 input:checked~label {
-  color: black !important;
+  color: #FFA500;
 }
 
 input#rate-5:checked~ label {
-  color: black;
+  color: #FFA500;
   text-shadow: 0 0 10px #952;
 }
 
