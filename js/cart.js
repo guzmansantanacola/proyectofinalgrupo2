@@ -17,7 +17,7 @@ function cartArticulos(data) {
     htmlContentToAppend += `
   
     <div id="${data.articles[0].id}">
-    <tr>
+    <tr clase="productCard">
     <td><img class="imagencarrito"src="${data.articles[0].image}" style="width: 140px;"></td>
     <td><p> ${data.articles[0].name} </p></td>
     <td><p> ${data.articles[0].currency} ${data.articles[0].unitCost}</p></td>
@@ -43,7 +43,7 @@ itemsLocalStorage.forEach((i, index) => {
       const productoHTML = document.createElement("tr");
       productoHTML.id = data.id;
       const htmlContentToAppend = `
-        <tr>
+        <tr clase="productCard">
           <td><img class="imagencarrito" src="${data.images[0]}" style="width: 140px;"></td>
           <td class="nombre"><p >${data.name}</p></td>
           <td><p class="precioProducto">${data.currency} ${data.cost}</p></td>

@@ -1317,6 +1317,19 @@ li {
       text-align: left;
   }
 
+  #carrito {
+    display: grid;
+    justify-content: center;
+  }
+
+  #tablacarrito tr {
+    width: 220px;
+    border: 1px solid #E0aaff;
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
 }
 
 .card-body-cart{
@@ -1392,3 +1405,6 @@ li {
 p{
   margin: 0;
 }
+
+
+
