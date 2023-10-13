@@ -1365,9 +1365,11 @@ li {
 
 
 #inputExample, input.cantidad {
-  background-color: white;
-  color: rgb(0, 0, 0);
+  color: white;
   font-family: 'Montserrat', sans-serif;
+  border: 1px solid #9d4edd;
+  border-radius:10px;
+  text-align: center;
 }
 
 #tablacarrito tr {
