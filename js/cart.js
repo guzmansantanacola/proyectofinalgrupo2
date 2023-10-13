@@ -77,7 +77,7 @@ itemsLocalStorage.forEach((i, index) => {
         subTotalElement.textContent = subTotalValor;
 
        
-        itemsLocalStorage[index].mount = cantidad;
+        itemsLocalStorage[index].mount = Number(cantidad);
         localStorage.setItem("cartlist", JSON.stringify(itemsLocalStorage));
       });
     });
