@@ -5,7 +5,6 @@ fetch(URL_)
   .then((response) => response.json())
   .then((data) => infoProducts(data));
 
-
 function infoProducts(data) {
   console.log(data);
   let htmlContentToAppend = "";
@@ -27,7 +26,7 @@ function infoProducts(data) {
         </section>
       
 
-    <div class="description">
+      <div class="description">
 
       <div id="vendidoCategorias">
         <h3 class="sell">Vendidos: ${data.soldCount} </h3>    
@@ -39,14 +38,15 @@ function infoProducts(data) {
 
       <h3 class="precio">Precio: ${data.currency} $${data.cost} </h3>
 
-    </div>
+       </div>
+       
+     </div>
   </div>
-  
     `;
 
   //creamos los productos relacionados
 
-  data.relatedProducts.forEach(product => {
+  data.relatedProducts.forEach((product) => {
     relacionadosToAppend += `
     <div setCatID(${product.id})" class="relacionado fondolista masInfo " type="button" id="${product.id}">
               
@@ -65,24 +65,21 @@ function infoProducts(data) {
          
     </div>
     `;
-  })
-
-  
-
+  });
+  document.getElementById('closeAlert')
+  document.getElementById('alertSuccess')
   document.getElementById("producto").innerHTML = htmlContentToAppend;
   document.getElementById("relacionados").innerHTML = relacionadosToAppend;
   //listener que nos permite guardar la id de los productos relacionados que creamos más arriba
   let relatedProducts = document.getElementsByClassName("relacionado");
   for (let i = 0; i < relatedProducts.length; i++) {
     relatedProducts[i].addEventListener("click", () => {
-  
-        localStorage.setItem("productId", relatedProducts[i].id);
-  
-        let redirigir = window.location.href = "product-info.html";
-        redirigir
-  
-      });
-    };
+      localStorage.setItem("productId", relatedProducts[i].id);
+
+      let redirigir = (window.location.href = "product-info.html");
+      redirigir;
+    });
+  }
 }
 
 /*PARTE 3*/
@@ -115,9 +112,12 @@ fetch(COMMENT_URL)
 
 const submitcomment = document.getElementById("submitcomment");
 const commentArea = document.getElementById("inputComentario");
-const estrellitas = document.getElementsByName('rate');
+const commentLimit = document.getElementById("commentLimit")
+const charLimit = 100;
+const estrellitas = document.getElementsByName("rate");
 const starInputs = document.querySelectorAll('input[type="radio"]');
 let estrellaElegida;
+
 
 starInputs.forEach((input) => {
   input.addEventListener("click", () => {
@@ -125,6 +125,21 @@ starInputs.forEach((input) => {
   });
 });
 
+// contador de caracteres, se pone rojito cuando se pasa el límite 
+commentLimit.textContent = `0 / ${charLimit}`;
+commentArea.addEventListener("input", function () {
+  commentLenght = commentArea.value.length;
+  commentLimit.textContent = `${commentLenght} / ${charLimit}`
+
+  if (commentLenght > charLimit) {
+    commentArea.style.borderColor = "#ff2851"
+    commentLimit.style.color = "#ff2851"
+  } else {
+    commentArea.style.borderColor = "#3c096c"
+    commentLimit.style.color = "#808080"
+  }
+
+})
 
 //Agregar un comentario nuevo
 submitcomment.addEventListener("click", (event) => {
@@ -133,55 +148,62 @@ submitcomment.addEventListener("click", (event) => {
   let date = new Date().toLocaleString();
   let comentario = document.getElementById("inputComentario").value;
 
-  document.getElementById("comments").innerHTML += `<div class="comentario">
-  <p>${userName} | ${date} |  ${getStars(estrellaElegida)}   </p>
-  <p>${comentario}</p>
- </div>`;
-
-
-  //console.log(comentario);
-  //console.log(estrellaElegida);
-
+  if (commentArea.value.length < charLimit && commentArea.value.length > 1 && (starInputs.checked=true)) {
+    document.getElementById("comments").innerHTML +=
+      `<div class="comentario">
+      <p>${userName} | ${date} |  ${getStars(estrellaElegida)}   </p>
+      <p>${comentario}</p>
+    </div>`;
+    //console.log(comentario);
+    //console.log(estrellaElegida);
+  } else {
+    alert("guarda che");
+  }
+  
   commentArea.value = "";
-  for (let i = 0; i < estrellitas.length; i++) {
+  commentLimit.textContent = `0 / ${charLimit}`
+  for (let i = 0; i < starInputs.length; i++) {
     estrellitas[i].checked = false;
-
   }
 });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-  //Agrego escuchadores de eventos click a cada tarjeta para ir a la seccion de información de producto
-  // let infoProduct = document.getElementsByClassName("fondolista");
-  // console.log(infoProduct);
- 
+//boton agregar al carrito
+let addButton = document.getElementById('cartadd');
+let cartList = JSON.parse(localStorage.getItem("cartlist")) || [];
 
 
-  // for (let i = 0; i < infoProduct.length; i++) {
-  //   infoProduct[i].addEventListener("click", () => {
-
-  //     console.log('hola');
-
-  //     localStorage.setItem("productId", infoProduct[i].id);
-
-  //     let redirigir = window.location.href = "product-info.html";
-  //     redirigir
-
-  //   });
-  // };
-});
+addButton.addEventListener('click', () => {
+  addtocart();
+})
 
 
+function addtocart() {
+  alertSuccess.classList.remove('d-none');
+  alertSuccess.classList.add('fade-in');
+  //let productId = localStorage.getItem("productId"); ya lo declaramos al principio
+  let productObject = {
+    id: product,
+    mount: 1
+  }
 
+  let productExist = false;
 
+  cartList.map(i => {
 
+    if (i.id == product) {
+      productExist = true;
+      i.mount += 1;
+      localStorage.setItem("cartlist", JSON.stringify(cartList));
+    }
 
+  })
 
+  if (!productExist) {
+    cartList = [...cartList, productObject];
+    localStorage.setItem("cartlist", JSON.stringify(cartList));
+  }
+}
 
-
-/* <div id="imagenes">
-      <img src="${data.images[0]}" alt="">
-      <img src="${data.images[1]}" alt="">
-      <img src="${data.images[2]}" alt="">
-      <img src="${data.images[3]}" alt="">
-    </div> */
+closeAlert.addEventListener('click', () => {
+  alertSuccess.classList.add('d-none');
+})

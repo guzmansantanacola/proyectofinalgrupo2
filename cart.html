@@ -6,64 +6,185 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="bodycart">
   <nav class="general">
-    
+
     <section id="sectionNav">
       <a href="index.html"> <img src="img/logo_modif_loginprueba.png" alt="Jovenes a Comerciar"> </a>
-    <form id="formBusqueda" action="products.html" method="GET">
-      <input type="text" id="campoBusqueda" placeholder="Buscar...">
-    </form>
-    
-   
+      <form id="formBusqueda" action="products.html" method="GET">
+        <input type="text" id="campoBusqueda" placeholder="Buscar...">
+      </form>
+
+
       <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
       <div class="list">
-        <ul  class="posicion">
+        <ul class="posicion">
           <li class="inicio">
             <a href="categories.html"> Categorías </a>
           </li>
           <li class="inicio">
             <a href="sell.html"> Vender </a>
           </li>
-          <li id="nombreusuario" >
+          <li id="nombreusuario">
           </li>
         </ul>
       </div>
     </section>
 
   </nav>
-  <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
-  </main>
-  <!-- <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
-    </div>
-  </footer> -->
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/my-profile.js"></script>  
+
+        <main id="main" class="container mt-4 mainCarrito">
+          
+            <div class="d-xl-flex mb-4 ">
+
+
+              <div class=" table-responsive p-xl-4 ">
+                <table id="tablacarrito" class="table rounded">
+                  <thead>
+
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Costo</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Subtotal</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="carrito" class="table">
+
+                  </tbody>
+
+                </table>
+              </div>
+
+
+
+              
+
+              <div class="col-12 col-xl-4 bottom-0" >
+                
+                <div class="card  border-1" >
+                  <div class="card-body card-body-cart"><br>
+
+                    
+                    <h4 class="mb-2" style="font-weight: bold; position: center;" >Tipo de envío</h4>
+
+                    <div class="form-check form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Premium 2 a 5 días (15%)
+                      </label><br> <br>
+                    </div>
+                    <div class="form-check form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                        checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Express 5 a 8 días (7%)
+                      </label><br> <br>
+                    </div>
+                    <div class="form-check form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                      <label class="form-check-label" for="flexRadioDefault3">
+                        Premium 12 a 15 días (5%)
+                      </label><br> <br>
+                    </div>
+
+                    <h4 class="mt-3"style="font-weight: bold;">Dirección de envío</h4>
+                    <div class="direnvio">
+                      <form>
+                        <div class="form-group">
+                          <label for="calleInput" class="caractenvio">Calle:</label>
+                          <input type="text" class="form-control inputdirec" required><br>
+                        </div>
+                        <div class="form-group">
+                          <label for="numeroInput" class="caractenvio">Número:</label>
+                          <input type="text" class="form-control inputdirec" required><br>
+                        </div>
+                        <div class="form-group">
+                          <label for="esquinaInput" class="caractenvio" required>Esquina:</label>
+                          <input type="text" class="form-control inputdirec"><br>
+                        </div>
+                        <button class="btn btn-primary">Comprar</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+            
+
+            <!-- <div class="col-lg-4">
+              <div class="border p-4">
+                <h2>Tipo de envío</h2>
+                <form>
+                  <label>
+                    <input type="radio" name="tipo"> Premium 2 a 5 días (15%)
+                  </label><br>
+                  <label>
+                    <input type="radio" name="tipo"> Express 5 a 8 días (7%)
+                  </label><br>
+                  <label>
+                    <input type="radio" name="tipo"> Premium 12 a 15 días (5%)
+                  </label><br>
+                </form>
+                <h2 class="mt-4">Dirección de envío</h2>
+                <div class="direnvio">
+                  <form>
+                    <div class="datosenvio">
+                      <label class="caractenvio">Calle:</label>
+                      <input type="text" class="inputdirec form-control">
+                    </div>
+                    <div class="datosenvio">
+                      <label class="caractenvio">Número:</label>
+                      <input type="text" class="inputdirec form-control">
+                    </div>
+                    <div class="datosenvio">
+                      <label class="caractenvio">Esquina:</label>
+                      <input type="text" class="inputdirec form-control">
+                    </div>
+                    <button class="btn btn-primary">Comprar</button>
+                  </form>
+                </div>
+              </div>
+            </div> -->
+
+
+          </div>
+
+
+        </main>
+
+
+
+
+
+        </footer>
+        <div id="spinner-wrapper">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/cart.js" defer></script>
+        <script src="js/my-profile.js"></script>
+        <script src="js/color_mode.js" defer></script>
 </body>
 
 </html>
