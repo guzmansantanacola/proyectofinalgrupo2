@@ -1406,5 +1406,16 @@ p{
   margin: 0;
 }
 
+.table{
+  color: white;
+}
+table.table-sm tbody tr td {
+  padding: 0.25rem 0.5rem;}
+  .custom-table {
+    border-collapse: collapse;
+  }
+
+  .custom-table th, .custom-table td {
+    padding: 0.2rem 0.5rem; }
 
 
