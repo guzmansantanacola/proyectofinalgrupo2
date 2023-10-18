@@ -1408,14 +1408,9 @@ p{
 
 .table{
   color: white;
+  background-color: #101012;
+  border-color: white;
 }
-table.table-sm tbody tr td {
-  padding: 0.25rem 0.5rem;}
-  .custom-table {
-    border-collapse: collapse;
-  }
 
-  .custom-table th, .custom-table td {
-    padding: 0.2rem 0.5rem; }
 
 
