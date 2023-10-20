@@ -4,7 +4,7 @@
 .card-body,
 .container,
 .site-header {
-  font-family: "Verdana", serif !important;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .jumbotron .display-4 {
@@ -954,7 +954,7 @@ input:checked~label {
   color: #FFA500;
 }
 
-input#rate-5:checked~ label {
+input#rate-5:checked ~label {
   color: #FFA500;
   text-shadow: 0 0 10px #952;
 }
@@ -1265,6 +1265,10 @@ li {
   padding: 10px;
 }
 
+.form-check {
+  height: 30px;
+}
+
 .form-check-label {
   display: block; 
   margin-bottom: 10px;
@@ -1378,7 +1382,7 @@ li {
 
 
 #inputExample, input.cantidad {
-  color: white;
+  color: grey;
   font-family: 'Montserrat', sans-serif;
   border: 1px solid #9d4edd;
   border-radius:10px;
@@ -1411,3 +1415,65 @@ p{
 
 }
 
+
+#cardnumber{
+  width: 180px;
+}
+#cardcode{
+  width:56px;
+}
+
+#cardven{
+  width:150px;
+  text-align: center;
+}
+
+@media (min-width: 767px) {
+
+  #cardinputs{
+    display: flex;
+  flex-wrap: wrap;
+  
+  }
+
+  #divTarjetNumb{
+    width: 60%;
+  }
+  
+}
+
+
+.modal-content{
+  background-color: #101012;
+  font-family: 'Montserrat', sans-serif;
+}
+.modal-content label{
+  color: #9d4edd;
+  padding: 10px;
+
+}
+.modal-header h5{
+  color: #E0aaff;
+  font-weight: bolder;
+  text-decoration: underline 1px #efd4ff;
+
+}
+
+.cardcontainer{
+  margin-bottom: 20px;
+  border-bottom: #000000 1px solid;
+  border-top: #000000 1px solid;
+  padding-bottom: 20px;
+  padding-top:20px
+}
+
+.accountcontainer{
+  margin-bottom: 20px;
+  border-bottom: #000000 1px solid;
+  padding-bottom: 20px;
+}
+
+.card{
+  border:none;
+  box-shadow: 0px 0px 10px #000000;
+}
