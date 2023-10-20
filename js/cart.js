@@ -83,6 +83,41 @@ function subTotal(data) {
 }
 
 
+let tarjetaDeCredito = document.getElementById('radio1');
+let transferenciaBancaria = document.getElementById('radio2');
+let accountinput= document.getElementById('accountinput')
+let accountnumber = document.getElementById('accountnumber');
+const cardnumber = document.getElementById('cardnumber');
+const cardcode = document.getElementById('cardcode');
+const cardven = document.getElementById('cardven')
+let cardinputs = document.getElementById('cardinputs')
+
+
+
+tarjetaDeCredito.addEventListener("change", ()=> {
+  if(tarjetaDeCredito.checked){
+   accountnumber.disabled = true;
+   cardnumber.disabled = false;
+   cardcode.disabled = false;
+   cardven.disabled = false;
+    cardinputs.classList.remove('d-none');
+    accountinput.classList.add('d-none')
+  }
+ })
+
+transferenciaBancaria.addEventListener("change", ()=> {
+  if(transferenciaBancaria.checked){
+    accountnumber.disabled = false;
+    cardnumber.disabled = true;
+    cardcode.disabled = true;
+    cardven.disabled = true;
+    cardinputs.classList.add('d-none');
+    accountinput.classList.remove('d-none');
+  }
+})
+
+
+
 let buyForm = document.getElementById('buyForm')
 let alertSuccess = document.getElementById('alertSuccess');
 let closeAlert = document.getElementById('closeAlert');
@@ -105,3 +140,4 @@ closeAlert.addEventListener('click', () => {
 });
 
  
+
