@@ -41,7 +41,19 @@
 
   </nav>
 
+
   <main id="main" class="container mt-4 mainCarrito">
+
+        <main id="main" class="container mt-4 mainCarrito">
+
+          <div class="alert alert-dark alert-dismissible text-center d-none buySucces" role="alert" id="alertSuccess">
+            <h4 class="alert-heading">
+              </svg>¡Realizaste la compra con éxito!</h4>
+            <button type="button" id="closeAlert" class="btn-close d-flex float-end" aria-label="Close"></button>
+          </div>
+          
+            <div class="d-xl-flex mb-4 ">
+
 
     <div class="d-xl-flex mb-4 ">
 
@@ -71,6 +83,7 @@
 
 
       <div class="col-12 col-xl-4 bottom-0" >
+
 
         <div class="card  border-1">
           <div class="card-body card-body-cart" id="sendcard"><br>
@@ -156,6 +169,7 @@
                             <hr>
                             <br>
                           </div>
+
                         </div>
                     
                         <div class="accountcontainer">
@@ -170,10 +184,15 @@
                             <input type="text" id="accountnumber" class="form-control inputdirec"><br>
                           </div>
                         </div>
+
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                       </div>
+
+                        <button id="buyButton" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg></button>
+                      </form>
+
                     </div>
                   </div>
                 </div>
