@@ -1412,5 +1412,9 @@ p{
   border-color: white;
 }
 
+input:checked~label {
+    color: white;
+}
+
 
 
