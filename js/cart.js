@@ -9,12 +9,12 @@ fetch(url)
 function cartArticulos(data) {
   let tabla = document.getElementById("carrito");
 
-  console.log(data.articles);
+  // console.log(data.articles);
   //console.log(tabla);
   //let articulos = []
 
   let htmlContentToAppend = "";
-    htmlContentToAppend += `
+  htmlContentToAppend += `
   
     <div id="${data.articles[0].id}">
     <tr clase="productCard">
@@ -26,8 +26,8 @@ function cartArticulos(data) {
       </tr>
     <div> 
         `;
-    tabla.innerHTML = htmlContentToAppend;
-    subTotal(data);
+  tabla.innerHTML = htmlContentToAppend;
+  subTotal(data);
 }
 
 // maquetar lo que esta en el LocalStorage
@@ -64,7 +64,7 @@ itemsLocalStorage.forEach((i, index) => {
         const subTotalValor = cantidad * costo;
         subTotalElement.textContent = subTotalValor;
 
-       // sobreescribimos la cantidad en el LocalStorage
+        // sobreescribimos la cantidad en el LocalStorage
         itemsLocalStorage[index].mount = Number(cantidad);
         localStorage.setItem("cartlist", JSON.stringify(itemsLocalStorage));
       });
@@ -80,4 +80,21 @@ function subTotal(data) {
     let valornuevo = inputPrueba.value;
     partedelsubtotal.innerHTML = `<p id="subtotal" class="cantidad">Sub-Total: ${data.articles[0].currency} ${data.articles[0].unitCost * valornuevo}</p>`;
   });
+}
+  const subGeneral = document.getElementsByClassName("subtotal-valor")
+let arrST = [];
+console.log(arrST);
+for (let i = 0; i < subGeneral.length; i++) {
+  const element = subGeneral[i].textContent;
+  console.log(element);
+
+  arrST.push(element)
+  
+  valorInicial = 0
+  const subFinal = arrST.reduce(function (a, b) {
+    return a + b
+  })
+ 
+  console.log(subFinal)
+
 }
