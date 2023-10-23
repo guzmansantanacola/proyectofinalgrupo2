@@ -81,20 +81,3 @@ function subTotal(data) {
     partedelsubtotal.innerHTML = `<p id="subtotal" class="cantidad">Sub-Total: ${data.articles[0].currency} ${data.articles[0].unitCost * valornuevo}</p>`;
   });
 }
-  const subGeneral = document.getElementsByClassName("subtotal-valor")
-let arrST = [];
-console.log(arrST);
-for (let i = 0; i < subGeneral.length; i++) {
-  const element = subGeneral[i].textContent;
-  console.log(element);
-
-  arrST.push(element)
-  
-  valorInicial = 0
-  const subFinal = arrST.reduce(function (a, b) {
-    return a + b
-  })
- 
-  console.log(subFinal)
-
-}
