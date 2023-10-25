@@ -1415,28 +1415,15 @@ p{
 
 }
 
-input:checked~label {
-    color: white;
+
+#radio1:checked~label{
+  color: #efd4ff;
+}
+#radio2:checked~label{
+  color: #efd4ff;
 }
 
-#costosTotales{
-width: 100%;
-display: flex;
-margin: auto;
-justify-content: center;
-background-color: #101012;
-}
-#estilocosto{
-  width: 100%;
-  border: none;
-}
-@media(max-width: 767px){
-  #estilocostos{
-    width: 100%;
-    margin: auto;
-    justify-content: center;
-    }
-}
+
 
 .formasdepago{
   color: #000000;
@@ -1517,4 +1504,22 @@ background-color: #101012;
 
 #buyForm input:valid{
   border: 1px, solid, green;
+}
+
+
+#costodiv{
+  justify-content: center;
+  display: flex;
+}
+.badge{
+  background-color: #3c096c;
+}
+
+.listaprecios{
+  background-color: #101012;
+  color: #ffffff;
+  box-shadow: 0px 0px 10px #9d4edd(255, 255, 255);
+}
+#costocontainer{
+  box-shadow: 0px 0px 10px #000000
 }

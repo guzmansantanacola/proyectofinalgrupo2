@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             localStorage.setItem('cartlist', JSON.stringify(itemsLocalStorage));
             //precioFinal();
+            window.location.reload()
           })
         
           const cantidadInput = productoHTML.querySelector(".cantidad");
@@ -105,8 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, 800);
 
-  const prodInCart = JSON.parse(localStorage.getItem("cartlist")) || []; // Trae los productos del localStorage (los que están en el carrito)
 
+ 
+  const prodInCart = JSON.parse(localStorage.getItem("cartlist")) || []; // Trae los productos del localStorage (los que están en el carrito)
+  
   let toDolar = 0.025;
 
   // funcion para agregar subtotal, costo de envio y total de todos los productos
@@ -129,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         subtotales += productSubtotal;
       }
     }
+    
     for (let check of checks) {
       if (check.checked) {
         total = subtotales * check.value;
@@ -138,16 +142,16 @@ document.addEventListener("DOMContentLoaded", () => {
         total = subtotales * check.value;
         costoEnvio = (total - subtotales);
         console.log(total)
-        document.getElementById("costoEnvio").innerHTML = costoEnvio.toFixed(2);
-        document.getElementById("totalFinal").innerHTML = total.toFixed(2);
+        document.getElementById("costoEnvio").innerHTML = `<span class="badge  rounded-pill">USD ${costoEnvio.toFixed(2)}</span>`;
+        document.getElementById("totalFinal").innerHTML = `<span class="badge rounded-pill">USD ${total.toFixed(2)}</span>`;
       })
     }
     console.log(total)
     console.log(subtotales);
 
-    document.getElementById("subTotalFinal").innerHTML = subtotales.toFixed(2);
-    document.getElementById("costoEnvio").innerHTML = costoEnvio.toFixed(2)
-    document.getElementById("totalFinal").innerHTML = total.toFixed(2);
+    document.getElementById("subTotalFinal").innerHTML = `<span class="badge  rounded-pill">USD ${subtotales.toFixed(2)}</span>`;
+    document.getElementById("costoEnvio").innerHTML = `<span class="badge  rounded-pill">USD ${costoEnvio.toFixed(2)}</span>`;
+    document.getElementById("totalFinal").innerHTML = `<span class="badge rounded-pill">USD ${total.toFixed(2)}</span>`;
   }
 
   setTimeout(() => {
@@ -172,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+let formadepagoboton = document.getElementById('formadepagoboton');
 let tarjetaDeCredito = document.getElementById('radio1');
 let transferenciaBancaria = document.getElementById('radio2');
 let accountinput= document.getElementById('accountinput')
@@ -182,10 +186,10 @@ const cardcode = document.getElementById('cardcode');
 const cardven = document.getElementById('cardven')
 let cardinputs = document.getElementById('cardinputs')
 
-
-
 tarjetaDeCredito.addEventListener("change", ()=> {
+  formadepagoboton.innerText = 'Tarjeta de Crédito'
   if(tarjetaDeCredito.checked){
+
    accountnumber.disabled = true;
    cardnumber.disabled = false;
    cardcode.disabled = false;
@@ -196,6 +200,7 @@ tarjetaDeCredito.addEventListener("change", ()=> {
  })
 
 transferenciaBancaria.addEventListener("change", ()=> {
+  formadepagoboton.innerText= 'Transferencia Bancaria'
   if(transferenciaBancaria.checked){
     accountnumber.disabled = false;
     cardnumber.disabled = true;
