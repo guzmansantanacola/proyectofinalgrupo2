@@ -1421,7 +1421,7 @@ p{
   width: 180px;
 }
 #cardcode{
-  width:56px;
+  width:80px;
 }
 
 #cardven{
@@ -1482,4 +1482,12 @@ p{
 .card{
   border:none;
   box-shadow: 0px 0px 10px #000000;
+}
+
+#buyForm input:invalid{
+  border: 1px, solid, red;
+}
+
+#buyForm input:valid{
+  border: 1px, solid, green;
 }
