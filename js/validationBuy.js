@@ -12,33 +12,30 @@ buyForm.addEventListener('submit', (event) => {
     if (!buyForm.checkValidity()) {
         console.log('no se realiza la compra');
         event.preventDefault();
-        //console.log(formaPago.checked)
 
         if ((!tarjetaDeCredito.checked && !transferenciaBancaria.checked)) {
-            metodosPagosError.style.display = "block"
-           //formaPago.getElementById('modalerror').style.color = 'red'
+            metodosPagosError.style.display = "block";
         }
         else {
             metodosPagosError.style.display = 'none';
-            //document.getElementById('modalerror').style.color = 'green'
+            
         }
 
     } else {
-        //event.preventDefault(); // con este prevent default ya no se recarga la pagina
+        
         console.log('se realiza la compra');
-        //console.log(formaPago.checked);
-        buy()
+        buy();
 
     }
     
-    buyForm.classList.add('was-validated')
+    buyForm.classList.add('was-validated');
 
-})
+});
 
 function buy() {
     alertSuccess.classList.remove('d-none');
     alertSuccess.classList.add('fade-in');
-}
+};
 
 closeAlert.addEventListener('click', () => {
     alertSuccess.classList.add('d-none');

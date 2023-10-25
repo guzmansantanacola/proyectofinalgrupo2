@@ -117,27 +117,3 @@ transferenciaBancaria.addEventListener("change", ()=> {
 })
 
 
-
-// let buyForm = document.getElementById('buyForm')
-// let alertSuccess = document.getElementById('alertSuccess');
-// let closeAlert = document.getElementById('closeAlert');
-
-// buyForm.addEventListener('submit', (event) => {
-//   event.preventDefault();
-//   buy();
-// })
-
-// function buy(){
-// alertSuccess.classList.remove('d-none');
-// alertSuccess.classList.add('fade-in');
-// }
-
-// closeAlert.addEventListener('click', () => {
-//   alertSuccess.classList.add('d-none');
-//   itemsLocalStorage = [];
-//   localStorage.setItem("cartlist", JSON.stringify(itemsLocalStorage));
-//   window.location.reload();
-// });
-
- 
-

@@ -121,7 +121,7 @@
                     </div>
                     <div class="form-group">
                       <label for="numeroInput" class="caractenvio">Número:</label>
-                      <input type="text" class="form-control inputdirec" required>
+                      <input type="number" class="form-control inputdirec" required>
                       <div class="valid-feedback"></div>
                       <div class="invalid-feedback">Debe ingresar un número correcto.</div>
                     </div>
@@ -165,19 +165,20 @@
                               <div id="cardinputs" class="d-none">
                                 <div id="divTarjetNumb">
                                   <label for="numtarjeta">Número de tarjeta</label>
-                                  <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}"
-                                    autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"
-                                    class="form-control inputdirec" id="cardnumber"required>
+                                  <input type="number" inputmode="numeric" pattern="[0-9\s]{13,19}"
+                                    autocomplete="cc-number" minlength="1" maxlength="19"
+                                    placeholder="xxxx xxxx xxxx xxxx" class="form-control inputdirec" id="cardnumber"
+                                    required>
                                 </div>
-                                <div id="divCVV">
+                                <div id="divCVV" class="text-center">
                                   <label for="codigoseg">CVV</label>
-                                  <input type="tel" inputmode="numeric" class="form-control inputdirec" id="cardcode"
-                                    maxlength="3" required>
+                                  <input type="number" inputmode="numeric" class="form-control inputdirec" id="cardcode"
+                                    minlength="1" maxlength="3" required>
                                 </div>
                                 <div id="divExpirationDate">
                                   <label for="vencimientotarj">Vencimiento</label>
                                   <input type="tel" class="form-control inputdirec" id="cardven" placeholder="(mm/aa)"
-                                    maxlength="5" required>
+                                    minlength="1" maxlength="5" required>
 
                                 </div>
                                 <hr>
