@@ -1408,13 +1408,33 @@ p{
 
 .table{
   color: white;
-  background-color: #101012;
-  border-color: white;
+
 }
 
 input:checked~label {
     color: white;
 }
 
+#costosTotales{
+width: 100%;
+display: flex;
+margin: auto;
+justify-content: center;
+background-color: #101012;
+}
+#estilocosto{
+  width: 100%;
+  border: none;
+}
+@media(max-width: 767px){
+  #estilocostos{
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    }
+}
 
 
+#estiloscostos{
+  backdrop-filter: blur(2px);
+}
