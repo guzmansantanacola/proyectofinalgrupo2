@@ -2,6 +2,8 @@
 // Traer y maquetar el producto del servidor
 const url = `https://japceibal.github.io/emercado-api/user_cart/25801.json`;
 
+document.addEventListener("DOMContentLoaded", () => {
+
 fetch(url)
   .then((response) => response.json())
   .then((data) => cartArticulos(data));
@@ -35,9 +37,7 @@ function cartArticulos(data) {
 let itemsLocalStorage = JSON.parse(localStorage.getItem("cartlist")) || [];
 let tabla = document.getElementById("carrito");
 
-
-    
-
+setTimeout(() => {
 itemsLocalStorage.forEach((i, index) => {
   fetch(`https://japceibal.github.io/emercado-api/products/${i.id}.json`)
     .then((response) => response.json())
@@ -81,12 +81,14 @@ itemsLocalStorage.forEach((i, index) => {
         // sobreescribimos la cantidad en el LocalStorage
         itemsLocalStorage[index].mount = Number(cantidad);
         localStorage.setItem("cartlist", JSON.stringify(itemsLocalStorage)); // Sobreescribimos el subtotal cuando cambia la cantidad
+        
         precioFinal()
 
       });
 
     });
 });
+},800);
 
 const prodInCart = JSON.parse(localStorage.getItem("cartlist")) || []; // Trae los productos del localStorage (los que están en el carrito)
 
@@ -97,51 +99,57 @@ let check1 = document.getElementById('flexRadioDefault1');
 let check2 = document.getElementById('flexRadioDefault2');
 let check3 = document.getElementById('flexRadioDefault3');
 let checks = [check1, check2, check3];
-console.log(checks)
+console.log(checks);
 let subtotales = 0;
 let total = 0;
 let costoEnvio = 0;
-function precioFinal(){
+function precioFinal() {
   for (let i = 0; i < prodInCart.length; i++) {
     let productSubtotalArray = JSON.parse(localStorage.getItem(prodInCart[i].id))
     let productSubtotal = Number(productSubtotalArray.price);
-    if (productSubtotalArray.currency != "USD"){
+    if (productSubtotalArray.currency != "USD") {
       let productSubtotal = Number(productSubtotalArray.price) * toDolar;
       subtotales += productSubtotal;
     } else {
       subtotales += productSubtotal;
     }
   }
-  for (let check of checks){
-    if (check.checked){
+  for (let check of checks) {
+    if (check.checked) {
       total = subtotales * check.value;
       costoEnvio = (total - subtotales);
     }
-  check.addEventListener('click', () => {
-    total = subtotales * check.value;
-    costoEnvio = (total - subtotales);
-    console.log(total)
-    document.getElementById("costoEnvio").innerHTML = costoEnvio.toFixed(2);
-    document.getElementById("totalFinal").innerHTML = total.toFixed(2);
-  })}
+    check.addEventListener('click', () => {
+      total = subtotales * check.value;
+      costoEnvio = (total - subtotales);
+      console.log(total)
+      document.getElementById("costoEnvio").innerHTML = costoEnvio.toFixed(2);
+      document.getElementById("totalFinal").innerHTML = total.toFixed(2);
+    })
+  }
   console.log(total)
   console.log(subtotales);
-  
+
   document.getElementById("subTotalFinal").innerHTML = subtotales.toFixed(2);
   document.getElementById("costoEnvio").innerHTML = costoEnvio.toFixed(2)
   document.getElementById("totalFinal").innerHTML = total.toFixed(2);
 }
-precioFinal();
+
+setTimeout(() => {
+  precioFinal();
+},1300);
+
+
 
 
 // función para calcular el subtotal en el carrito traido del servidor
 function subTotal(data) {
   let inputPrueba = document.getElementById("inputExample");
   let partedelsubtotal = document.getElementById('subtotalExample');
-  let subTotalOfExample = data.articles[0].unitCost;
   inputPrueba.addEventListener("input", () => {
     let valornuevo = inputPrueba.value;
     partedelsubtotal.innerHTML = `<p id="subtotal" class="cantidad">Sub-Total: ${data.articles[0].currency} ${data.articles[0].unitCost * valornuevo}</p>`;
-    let subTotalOfExample = data.articles[0].unitCost * valornuevo;
   });
 }
+
+});
