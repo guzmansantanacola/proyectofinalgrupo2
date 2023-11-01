@@ -5,14 +5,18 @@ const url = `https://japceibal.github.io/emercado-api/user_cart/25801.json`;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  
+  if(localStorage.getItem('exampleExist')){  
   fetch(url)
     .then((response) => response.json())
     .then((data) => cartArticulos(data));
 
   function cartArticulos(data) {
     let tabla = document.getElementById("carrito");
-
+    let productExample = JSON.parse(localStorage.getItem(50924)) || {
+      price: data.articles[0].unitCost,
+      currency: data.articles[0].currency,
+      inputValue: 1
+    };
     // console.log(data.articles);
     //console.log(tabla);
     //let articulos = []
@@ -25,14 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
     <td><img class="imagencarrito"src="${data.articles[0].image}" style="width: 140px;"></td>
     <td><p> ${data.articles[0].name} </p></td>
     <td><p> ${data.articles[0].currency} ${data.articles[0].unitCost}</p></td>
-    <td><input id="inputExample" min="1" type="number" value="1" class="cantidad"></td>
-    <td><p class="subTotal">Sub-Total: ${data.articles[0].currency} <span id = "subtotalExample">${data.articles[0].unitCost}</span></p></td>
+    <td><input id="inputExample" min="1" type="number" value="${productExample.inputValue}" class="cantidad"></td>
+    <td><p class="subTotal">Sub-Total: ${data.articles[0].currency} <span id = "subtotalExample">${productExample.price}</span></p></td>
       </tr>
     <div> 
         `;
-    if(localStorage.getItem('exampleExist')){
       tabla.innerHTML = htmlContentToAppend;
-    }
+    
     let tabla2 = document.getElementById('productCardExample');
     let closeButton = document.createElement('button');
     closeButton.type = 'button';
@@ -45,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.reload();
     })
     subTotal(data);
-  }
+  }}
 
   // maquetar lo que esta en el LocalStorage
 
@@ -187,16 +190,20 @@ document.addEventListener("DOMContentLoaded", () => {
     let inputPrueba = document.getElementById("inputExample");
     let partedelsubtotal = document.getElementById('subtotalExample');
     let subTotalAlLocal = {
-      price: partedelsubtotal.textContent,
-      currency: data.articles[0].currency
+      price: data.articles[0].unitCost,
+      currency: data.articles[0].currency,
+      inputValue: 1
     };
+    if(localStorage.getItem(50924) == undefined){
     localStorage.setItem(data.articles[0].id, JSON.stringify(subTotalAlLocal))
+    }
     inputPrueba.addEventListener("input", () => {
       let valornuevo = inputPrueba.value;
       partedelsubtotal.innerHTML = `<span id = "subtotalExample">${data.articles[0].unitCost * valornuevo}</span>`;
       let subTotalAlLocal = {
         price: partedelsubtotal.textContent,
-        currency: data.articles[0].currency
+        currency: data.articles[0].currency,
+        inputValue: valornuevo
       };
       localStorage.setItem(data.articles[0].id, JSON.stringify(subTotalAlLocal));
       precioFinal();
