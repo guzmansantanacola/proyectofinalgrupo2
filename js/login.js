@@ -5,6 +5,7 @@ document
   .addEventListener("submit", function () {
     event.preventDefault();
     localStorage.setItem("sesionIniciada", "true");
+    localStorage.setItem("exampleExist", true);
     localStorage.setItem("nombredeusuario", document.getElementById("guardarusuario").value);
     window.location.href = "index.html";
   }); 
