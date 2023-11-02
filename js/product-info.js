@@ -11,7 +11,6 @@ fetch(URL_)
   .then((data) => infoProducts(data));
 
 function infoProducts(data) {
-  console.log(data);
   let htmlContentToAppend = "";
   let relacionadosToAppend = "";
 
@@ -114,7 +113,9 @@ let estrellaElegida;
 
 starInputs.forEach((input) => {
   input.addEventListener("click", () => {
+    console.log(starInputs)
     estrellaElegida = input.value;
+    checked = true;
   });
 });
 
@@ -140,13 +141,14 @@ submitcomment.addEventListener("click", (event) => {
   let date = new Date().toLocaleString();
   let comentario = document.getElementById("inputComentario").value;
 
-  if (commentArea.value.length < charLimit && commentArea.value.length > 1 && (starInputs.checked = true)) {
+  if (commentArea.value.length < charLimit && commentArea.value.length > 1 && (checked)) {
     document.getElementById("comments").innerHTML += `
       <div class="comentario">
         <p>${userName} | ${date} |  ${getStars(estrellaElegida)}   </p>
         <p>${comentario}</p>
       </div>
     `;
+    checked = false;
   } else {
     alert("No se pudo realizar comentario");
   }
