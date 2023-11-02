@@ -8,8 +8,7 @@ document
     localStorage.setItem("exampleExist", true); // Define preexistencia de artículo de ejemplo en carrito al iniciar sesión
     localStorage.setItem("nombredeusuario", document.getElementById("guardarusuario").value);
     window.location.href = "index.html";
-  }); 
-
+  });
 
   document
   .getElementById("googleImg")
