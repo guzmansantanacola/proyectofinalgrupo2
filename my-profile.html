@@ -26,26 +26,26 @@
   </style>
 </head>
 
-<body>
+<body id="body-profile">
   <nav class="general">
-    
+
     <section id="sectionNav">
       <a href="index.html"> <img src="img/logo_modif_loginprueba.png" alt="Jovenes a Comerciar"> </a>
-    <form id="formBusqueda" action="products.html" method="GET">
-      <input type="text" id="campoBusqueda" placeholder="Buscar...">
-    </form>
-    
-   
+      <form id="formBusqueda" action="products.html" method="GET">
+        <input type="text" id="campoBusqueda" placeholder="Buscar...">
+      </form>
+
+
       <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
       <div class="list">
-        <ul  class="posicion">
+        <ul class="posicion">
           <li class="inicio">
             <a href="categories.html"> Categorías </a>
           </li>
           <li class="inicio">
             <a href="sell.html"> Vender </a>
           </li>
-          <li id="nombreusuario" >
+          <li id="nombreusuario">
           </li>
         </ul>
       </div>
@@ -53,11 +53,70 @@
 
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="formularioPerfil container mt-5 rounded">
+      <form>
+        <div class="row justify-content-center">
+          <div class="col-md-4 ">
+            <div class="form-group  ">
+              <label for="input1">Primer nombre*</label>
+              <input type="text" class="form-control" id="primerNombre" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="input2">Segundo nombre</label>
+              <input type="text" class="form-control" id="segundoNombre">
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="input3">Primer apellido*</label>
+              <input type="text" class="form-control" id="primerApellido" value="" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="input4">Segundo apellido</label>
+              <input type="text" class="form-control" id="segundoApellido" value="">
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="input5">E-mail*</label>
+              <input type="text" class="form-control" id="mailPerfil" value="" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="input6">Telefono de contacto</label>
+              <input type="text" class="form-control" id="telefonoContacto" value="">
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="form-group">
+              <img
+                src="https://thumbs.dreamstime.com/z/imagen-de-usuario-vectorial-icono-perfil-avatar-predeterminada-predeterminado-179582665.jpg?w=768"
+                alt="avatar" id="imagenPerfil" />
+              <label for="input6">Imagen de perfil</label>
+              <input type="file" class="form-control" id="inputPerfil" accept="image/*" value="">
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary w-auto" id="cambiosProfile">Guardar cambios</button>
+        </div>
+      </form>
     </div>
+
+
+
+
   </main>
   <!-- <footer class="text-muted">
     <div class="container">
