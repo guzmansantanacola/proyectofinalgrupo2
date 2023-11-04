@@ -152,3 +152,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
+
+document.getElementById('cambiosProfile').addEventListener('click', function () {
+  let apellido = document.getElementById("primerApellido").value;
+  let nombre = document.getElementById("primerNombre").value;
+  let email = document.getElementById("mailPerfil").value;
+
+  if (apellido === "ok" && nombre === "ok" && email ==="ok") {
+    document.getElementById('modalerror').textContent = "Datos guardados con éxito";
+    document.getElementById('modalerror').style.color = "green";
+  } else {
+    document.getElementById('modalerror').textContent = "Debes ingresar los campos requeridos";
+    document.getElementById('modalerror').style.color = "red";
+  }
+});
