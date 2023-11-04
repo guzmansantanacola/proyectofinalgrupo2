@@ -53,13 +53,18 @@
 
   </nav>
   <main>
-    <div class="formularioPerfil container mt-5 rounded">
+
+    <div class="formularioPerfil container mt-5 rounded" novalidate >
       <form>
         <div class="row justify-content-center">
           <div class="col-md-4 ">
             <div class="form-group  ">
               <label for="input1">Primer nombre*</label>
+              
               <input type="text" class="form-control" id="primerNombre" required>
+ 
+              
+              
             </div>
           </div>
           <div class="col-md-4">
@@ -87,13 +92,13 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="input5">E-mail*</label>
-              <input type="text" class="form-control" id="mailPerfil" value="" required>
+              <input type="email" class="form-control" id="mailPerfil" value="" required>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label for="input6">Telefono de contacto</label>
-              <input type="text" class="form-control" id="telefonoContacto" value="">
+              <input type="number" class="form-control" id="telefonoContacto" value="">
             </div>
           </div>
         </div>
@@ -102,7 +107,7 @@
             <div class="form-group">
               <img
                 src="https://thumbs.dreamstime.com/z/imagen-de-usuario-vectorial-icono-perfil-avatar-predeterminada-predeterminado-179582665.jpg?w=768"
-                alt="avatar" id="imagenPerfil" />
+                alt="avatar" id="imagenPerfil" class="img-fluid" />
               <label for="input6">Imagen de perfil</label>
               <input type="file" class="form-control" id="inputPerfil" accept="image/*" value="">
             </div>
