@@ -7,22 +7,22 @@ const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
-let showSpinner = function(){
+let showSpinner = function() {
   document.getElementById("spinner-wrapper").style.display = "block";
 }
 
-let hideSpinner = function(){
+let hideSpinner = function() {
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-let getJSONData = function(url){
+let getJSONData = function(url) {
     let result = {};
     showSpinner();
     return fetch(url)
     .then(response => {
       if (response.ok) {
         return response.json();
-      }else{
+      } else {
         throw Error(response.statusText);
       }
     })
@@ -40,9 +40,6 @@ let getJSONData = function(url){
     });
 }
 
-
-// Funcion para redirigir al Login si no hay sesion
-
 function redireccionarAlLogin() {
   // obtenemos el valor en Local Storage
   const sesionIniciada = JSON.parse(localStorage.getItem("sesionIniciada"));
@@ -51,7 +48,6 @@ function redireccionarAlLogin() {
   if ((!sesionIniciada) || (JSON.parse(localStorage.getItem("sesionIniciada")) == null)) {
     // Redireccionar a la página de inicio de sesión
     window.location.href = "login.html";
-
   }
 }
 
