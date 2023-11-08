@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let productExample = JSON.parse(localStorage.getItem(50924)) || { // Comprueba si se ha modificado la cantidad, sino inserta un costo y cantidad unitarios
         price: data.articles[0].unitCost,
         currency: data.articles[0].currency,
-        inputValue: 1
+        cantidad: 1
       }
 
       let htmlContentToAppend = "";
@@ -30,8 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <td><img class="imagencarrito"src="${data.articles[0].image}" style="width: 140px;"></td>
         <td><p> ${data.articles[0].name} </p></td>
         <td><p> ${data.articles[0].currency} ${data.articles[0].unitCost}</p></td>
-        <td><input id="inputExample" min="1" type="number" value="${productExample.cantidad}" class="cantidad"></td>
+        <td><input id="inputExample" min="1" type="number" value="${productExample.cantidad}" class="cantidad w-75"></td>
         <td><p class="subTotal">Sub-Total: ${data.articles[0].currency} <span id="subtotalExample">${productExample.price}</span></p></td>
+        <td><button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
       </tr>
     <div> 
         `;
@@ -39,19 +40,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const exampleInHTML = document.getElementById('productCardExample'); // Recuperamos el artículo de ejemplo del HTML
 
-      const closeButton = document.createElement('button'); // Creamos el botón de eliminar artículo
-      closeButton.type = 'button';
-      closeButton.className = 'btn-close';
-      closeButton.setAttribute('aria-label', 'Close');
-      exampleInHTML.appendChild(closeButton);
+      const closeButton = document.getElementsByClassName('btn-close');
+      // closeButton.type = 'button';
+      // closeButton.className = 'btn-close btn-close-white';
+      // closeButton.setAttribute('aria-label', 'Close');
+      // exampleInHTML.appendChild(closeButton);
 
-      closeButton.addEventListener('click', () => { // Elimina el artículo de ejemplo del HTML y del Local Storage
+      closeButton[0].addEventListener('click', () => { // Elimina el artículo de ejemplo del HTML y del Local Storage
         exampleInHTML.innerHTML = "";
         localStorage.removeItem("exampleExist")
         window.location.reload();
       });
-
-      subTotalExample(data);
+      subTotalExample(data);    
     }
   }
   /*   ---------------   Fin del fetch del artículo de ejemplo   ---------------   */
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let subTotalAlLocal = { // la variable subTotalAlLocal se usa para guardar individualmente el subtotal y tipo de moneda de cada artículo
       price: data.articles[0].unitCost,
       currency: data.articles[0].currency,
-      inputValue: 1
+      cantidad: 1
     };
 
     if (localStorage.getItem(50924) == undefined) { // Si aún no se ha modificado la cantidad se setea al LocalStorage con valores unitarios
@@ -102,20 +102,26 @@ document.addEventListener("DOMContentLoaded", () => {
               <td><img class="imagencarrito" src="${data.images[0]}" style="width: 140px;"></td>
               <td class="nombre"><p >${data.name}</p></td>
               <td><p class="precioProducto">${data.currency} ${data.cost}</p></td>
-              <td><input min="1" type="number" value="${i.mount}" class="cantidad"></td>
+              <td><input min="1" type="number" value="${i.mount}" class="cantidad w-75"></td>
               <td><p class="subTotal">Sub-Total: ${data.currency} <span class="subtotal-valor">${data.cost * i.mount}</span></p></td>
+              <td><button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
             </tr>
           `
           productoHTML.innerHTML = htmlContentToAppend;
           tabla.appendChild(productoHTML);
 
-          const closeButton = document.createElement('button');
-          closeButton.type = 'button';
-          closeButton.className = 'btn-close';
-          closeButton.setAttribute('aria-label', 'Close');
-          productoHTML.cells[4].appendChild(closeButton);
-          closeButton.addEventListener('click', () => {
-            closeButton.parentElement.parentElement.remove();
+          const closeButton = document.getElementsByClassName('btn-close');
+          // closeButton.addEventListener('click', () => {
+          //   const productId = productoHTML.id;
+          //   const index = itemsLocalStorage.findIndex(item => item.id === productId);
+          //   if (index > -1) {
+          //     itemsLocalStorage.splice(index, 1);
+          //   }
+          //   localStorage.setItem('cartlist', JSON.stringify(itemsLocalStorage));
+          //   window.location.reload()
+          // })
+          for (let button of closeButton) {
+            button.addEventListener('click', () => {
             const productId = productoHTML.id;
             const index = itemsLocalStorage.findIndex(item => item.id === productId);
             if (index > -1) {
@@ -123,7 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             localStorage.setItem('cartlist', JSON.stringify(itemsLocalStorage));
             window.location.reload()
-          })
+            });
+          }
 
           const cantidadInput = productoHTML.querySelector(".cantidad");
           const subTotalArticle = productoHTML.querySelector(".subtotal-valor");

@@ -359,11 +359,12 @@ span {
 
 #divIndex {
   width: 100vw;
-  background-color: #101012;
+  background-color: rgba(0, 0, 0, .87);
+  backdrop-filter: blur(1px);
 }
 
 #divIndex.light {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
 
 }
 
@@ -436,7 +437,6 @@ span {
 
 #productos {
   display: flex;
-  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 32px;
   flex-wrap: wrap;
@@ -1111,19 +1111,15 @@ li {
 
 .form-check-input:checked {
   background-color: violet !important; 
-  
 }
-  
-
 
 .card-body h4 {
   font-size: 16px;
 }
 
 .form-check-label {
-  font-size: 14px;
+  font-size: 1rem;
 }
-
 
 @media (max-width: 1024px) {
 
@@ -1241,8 +1237,7 @@ li {
   border-collapse: collapse;
 }
 
-.table th, .table td {
- 
+.table th, .table td { 
   padding: 10px;
   text-align: center;
 }
@@ -1304,8 +1299,6 @@ li {
   }
 }
 
-
-
 @media (max-width: 767px) {
   .table-responsive {
       overflow-x: auto;
@@ -1337,12 +1330,32 @@ li {
 }
 
 .card-body-cart{
-  background-color: #101012;
+  background-color: rgba(0, 0, 0, .87);
+  backdrop-filter: blur(1px);
+  font-size: 1rem;
+  box-shadow: 0px 0px 10px #000000;
   color: white;
+  border-radius: 0.25rem;
 }
 
 .card-body-cart.light{
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(0, 0, 0);
+}
+
+.list-group{  
+  box-shadow: 0px 0px 10px #000000;
+}
+
+.list-group-item{
+  background-color: rgba(0, 0, 0, .87);
+  backdrop-filter: blur(1px);
+  color: white;
+}
+
+.list-group-item.light{
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1px);
   color: rgb(0, 0, 0);
 }
 
@@ -1354,14 +1367,17 @@ li {
 } 
 
 #tablacarrito{
-  background-color: #101012;
+  background-color: rgba(0, 0, 0, .87);
+  backdrop-filter: blur(1px);
   color: white;
   font-family: 'Montserrat', sans-serif;
   box-shadow: 0px 0px 10px #000000;
+  border-radius: 0.25rem;
 }
 
 #tablacarrito.light{
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1px);
   color: rgb(0, 0, 0);
   font-family: 'Montserrat', sans-serif;
   box-shadow: 0px 0px 10px #000000;
@@ -1516,10 +1532,9 @@ p{
 }
 
 .listaprecios{
-  background-color: #101012;
-  color: #ffffff;
   box-shadow: 0px 0px 10px #9d4edd(255, 255, 255);
 }
+
 #costocontainer{
   box-shadow: 0px 0px 10px #000000
 }
