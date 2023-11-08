@@ -28,14 +28,11 @@
 
 <body id="body-profile">
   <nav class="general">
-
     <section id="sectionNav">
       <a href="index.html"> <img src="img/logo_modif_loginprueba.png" alt="Jovenes a Comerciar"> </a>
       <form id="formBusqueda" action="products.html" method="GET">
         <input type="text" id="campoBusqueda" placeholder="Buscar...">
       </form>
-
-
       <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
       <div class="list">
         <ul class="posicion">
@@ -50,19 +47,18 @@
         </ul>
       </div>
     </section>
-
   </nav>
   <main>
-
     <div class="formularioPerfil container mt-5 rounded" >
-      <form novalidate>
+      <form class="need-validation" id="form-user" novalidate>
         <div class="row justify-content-center">
-          <div class="col-md-4 ">
-            <div class="form-group  ">
+          <div class="col-md-4">
+            <div class="form-group">
               <label for="input1">Primer nombre*</label>
-              
               <input type="text" class="form-control" id="primerNombre" required>
-
+              <div class="invalid-feedback">
+                  Por favor, ingrese un nombre.
+              </div>
             </div>
           </div>
           <div class="col-md-4">
@@ -77,6 +73,9 @@
             <div class="form-group">
               <label for="input3">Primer apellido*</label>
               <input type="text" class="form-control" id="primerApellido" value="" required>
+              <div class="invalid-feedback">
+                  Por favor, ingrese un apellido.
+              </div>
             </div>
           </div>
           <div class="col-md-4">
@@ -91,6 +90,9 @@
             <div class="form-group">
               <label for="input5">E-mail*</label>
               <input type="email" class="form-control" id="mailPerfil" value="" required>
+              <div class="invalid-feedback">
+                  Por favor, ingrese un email correcto.
+              </div>
             </div>
           </div>
           <div class="col-md-4">
@@ -116,10 +118,6 @@
         </div>
       </form>
     </div>
-
-
-
-
   </main>
   <!-- <footer class="text-muted">
     <div class="container">
@@ -131,7 +129,6 @@
   </footer> -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
+  <script src="js/my-profile.js" defer></script>
 </body>
-
 </html>
