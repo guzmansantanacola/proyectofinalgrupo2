@@ -7,18 +7,18 @@ const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
-let showSpinner = function() {
+let showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
 }
 
-let hideSpinner = function() {
+let hideSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-let getJSONData = function(url) {
-    let result = {};
-    showSpinner();
-    return fetch(url)
+let getJSONData = function (url) {
+  let result = {};
+  showSpinner();
+  return fetch(url)
     .then(response => {
       if (response.ok) {
         return response.json();
@@ -26,17 +26,17 @@ let getJSONData = function(url) {
         throw Error(response.statusText);
       }
     })
-    .then(function(response) {
-          result.status = 'ok';
-          result.data = response;
-          hideSpinner();
-          return result;
+    .then(function (response) {
+      result.status = 'ok';
+      result.data = response;
+      hideSpinner();
+      return result;
     })
-    .catch(function(error) {
-        result.status = 'error';
-        result.data = error;
-        hideSpinner();
-        return result;
+    .catch(function (error) {
+      result.status = 'error';
+      result.data = error;
+      hideSpinner();
+      return result;
     });
 }
 
@@ -65,15 +65,15 @@ document.getElementById("nombreusuario").textContent = usuarioguardado;
 
 document.addEventListener("DOMContentLoaded", function () {
   /*Desplegable*/
-let nombreUsuarioButton = document.getElementById("nombreusuario");
+  let nombreUsuarioButton = document.getElementById("nombreusuario");
 
-let menuDesplegable = document.createElement("ul");
+  let menuDesplegable = document.createElement("ul");
 
-menuDesplegable.id = "menu-desplegable";
+  menuDesplegable.id = "menu-desplegable";
 
-let menu = localStorage.getItem("menuVisible") === "true";
+  let menu = localStorage.getItem("menuVisible") === "true";
 
-menuDesplegable.innerHTML = `<div id="gene">
+  menuDesplegable.innerHTML = `<div id="gene">
       <li ><a href="cart.html">Mi Carrito</a></li>
       <li ><a href="my-profile.html">Mi Perfil</a></li>
       <li >
@@ -91,38 +91,55 @@ menuDesplegable.innerHTML = `<div id="gene">
         </div> 
   `;
 
-menuDesplegable.style.display = "none";
-nombreUsuarioButton.addEventListener("click", function () {
+  menuDesplegable.style.display = "none";
+  nombreUsuarioButton.addEventListener("click", function () {
 
-  const rect = nombreUsuarioButton.getBoundingClientRect();
-  const top = rect.bottom;
-  const left = rect.left;
-
-
-  menuDesplegable.style.position = "fixed";
-  menuDesplegable.style.top = `${top}px`;
-  menuDesplegable.style.left = `${left}px`;
+    const rect = nombreUsuarioButton.getBoundingClientRect();
+    const top = rect.bottom;
+    const left = rect.left;
 
 
-
-  /*OCULTAR O MOSTRAR MENU*/
-
-
-  if (menuDesplegable.style.display === "none") {
-    menuDesplegable.style.display = "block";
-    localStorage.setItem("menuVisible", "true")
-  } else {
-    menuDesplegable.style.display = "none";
-    localStorage.setItem("menuVisible", "false");
-  }
+    menuDesplegable.style.position = "fixed";
+    menuDesplegable.style.top = `${top}px`;
+    menuDesplegable.style.left = `${left}px`;
 
 
+
+    /*OCULTAR O MOSTRAR MENU*/
+
+
+    if (menuDesplegable.style.display === "none") {
+      menuDesplegable.style.display = "block";
+      localStorage.setItem("menuVisible", "true")
+    } else {
+      menuDesplegable.style.display = "none";
+      localStorage.setItem("menuVisible", "false");
+    }
 
 
 
 
 
 
-});
-document.body.appendChild(menuDesplegable);
+
+
+  });
+  document.body.appendChild(menuDesplegable);
+
+  let botonCerrarSesion = document.getElementById('cerrarSesion');
+
+  //creo array con los datos a borrar en el local storage para iterarlos
+  let datos = ['primerNombre', 'segundoNombre', 'primerApellido', 'segundoApellido', 'contacto', 'imgPerfil']
+
+  botonCerrarSesion.addEventListener("click", () => {
+    datos.map(i => {
+      localStorage.removeItem(i);
+    });
+    localStorage.setItem("sesionIniciada", JSON.stringify(false));
+    window.location.href = "login.html";
+
+  })
+
+
+
 })
