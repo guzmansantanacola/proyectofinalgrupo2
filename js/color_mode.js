@@ -19,7 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let tablacarrito = document.getElementById('tablacarrito');
+    //console.log(tablacarrito);
+
+    if (tablacarrito != null) {
       tablacarrito.classList.toggle('light');
+    }
+      
 
     let busquedaprecio = document.getElementsByClassName('busquedaprecio');
     for (let i = 0; i < busquedaprecio.length; i++) {

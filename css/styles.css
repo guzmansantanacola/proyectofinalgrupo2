@@ -1523,3 +1523,19 @@ p{
 #costocontainer{
   box-shadow: 0px 0px 10px #000000
 }
+
+#body-profile{
+  background-image: url("../img/fondo_login_para_responsive.jpg");
+  background-color: #101012;
+  background-attachment: fixed;
+  color: white;
+} 
+
+.formularioPerfil{
+  background-color: #000000;
+  width: 60%;
+}
+
+#imagenPerfil{
+  height: 200px;
+}
