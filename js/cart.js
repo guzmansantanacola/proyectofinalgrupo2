@@ -189,6 +189,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function subTotal(data) {
     let inputPrueba = document.getElementById("inputExample");
     let partedelsubtotal = document.getElementById('subtotalExample');
+
+    // esto (fijarse si al borrarlo sigue funcionando)
     let subTotalAlLocal = {
       price: data.articles[0].unitCost,
       currency: data.articles[0].currency,
@@ -196,7 +198,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     if(localStorage.getItem(50924) == undefined){
     localStorage.setItem(data.articles[0].id, JSON.stringify(subTotalAlLocal))
-    }
+    } // hasta acá
+    
     inputPrueba.addEventListener("input", () => {
       let valornuevo = inputPrueba.value;
       partedelsubtotal.innerHTML = `<span id = "subtotalExample">${data.articles[0].unitCost * valornuevo}</span>`;
@@ -209,9 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
       precioFinal();
     });
   }
-
-
-
 });
 
 

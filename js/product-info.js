@@ -147,6 +147,7 @@ submitcomment.addEventListener("click", (event) => {
   let userName = localStorage.getItem("nombredeusuario");
   let date = new Date().toLocaleString();
   let comentario = document.getElementById("inputComentario").value;
+  let commentError = document.getElementById("comment-error");
 
   if (commentArea.value.length < charLimit && commentArea.value.length > 1 && (starInputs.checked=true)) {
     document.getElementById("comments").innerHTML +=
@@ -157,7 +158,10 @@ submitcomment.addEventListener("click", (event) => {
     //console.log(comentario);
     //console.log(estrellaElegida);
   } else {
-    alert("guarda che");
+    commentError.style.display = "block";
+                setTimeout(() => {
+                    commentError.classList.add('fade');
+                }, 4000);
   }
   
   commentArea.value = "";
