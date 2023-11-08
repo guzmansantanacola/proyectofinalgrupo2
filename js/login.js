@@ -57,7 +57,7 @@
   }
 
   validationLogin();
-=======
+
 document
   .getElementById("formlogin")
   .addEventListener("submit", function () {
