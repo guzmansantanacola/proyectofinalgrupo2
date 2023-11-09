@@ -361,6 +361,7 @@ span {
   width: 100vw;
   background-color: rgba(0, 0, 0, .87);
   backdrop-filter: blur(1px);
+  box-shadow: 0px 0px 10px #000000;
 }
 
 #divIndex.light {
@@ -857,13 +858,9 @@ a:hover {
 }
 
 .com {
-
+  text-align: center;
   padding: 20px
 }
-
-/*.btn{
-  color: white;
-}*/
 
 #inputComentario {
   background-color: none;
@@ -921,7 +918,7 @@ a:hover {
   transition-duration: 400ms;
 }
 
-.mainproductos .star-widget input {
+.container .star-widget input {
   display: none;
 }
 
@@ -1347,7 +1344,7 @@ li {
   box-shadow: 0px 0px 10px #000000;
 }
 
-.list-group-item{
+.list-group-item{  
   background-color: rgba(0, 0, 0, .87);
   backdrop-filter: blur(1px);
   color: white;
@@ -1357,6 +1354,28 @@ li {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(1px);
   color: rgb(0, 0, 0);
+}
+
+#cat-list-container .list-group-item{  
+  background-color: rgba(0, 0, 0, .87);
+  backdrop-filter: blur(1px);
+  color: white;
+}
+
+#cat-list-container .list-group-item:hover{  
+  background-color: rgba(0, 0, 0, .75);
+  backdrop-filter: blur(5px);
+}
+
+#cat-list-container.light .list-group-item{
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1px);
+  color: rgb(0, 0, 0);
+}
+
+#cat-list-container.light .list-group-item:hover{
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
 }
 
 #bodycart{

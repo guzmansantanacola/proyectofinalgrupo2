@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const switchButton = document.getElementById('switch');
-  const main = document.getElementById('main');
 
   function toggleLightMode() {
     
@@ -16,12 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
       element.classList.toggle('light');
     }
 
+    if(window.location.href.includes("categories")) {
+      let catList = document.getElementById('cat-list-container');
+      catList.classList.toggle('light');
+    }
+
     let listGroup = document.getElementsByClassName('list-group-item');
     for (element of listGroup) {
       element.classList.toggle('light');
     }
-
-    console.log(bodyCart)
 
     let tablacarrito = document.getElementById('tablacarrito');
 
@@ -33,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let btn of btnClose) {
       btn.classList.toggle('btn-close-white')
     }
+    
 
     let busquedaprecio = document.getElementsByClassName('busquedaprecio');
     for (let i = 0; i < busquedaprecio.length; i++) {
@@ -49,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let divIndex = document.getElementById('divIndex');
       divIndex.classList.toggle('light');
     }
-
   }
 
   function saveMode() {
