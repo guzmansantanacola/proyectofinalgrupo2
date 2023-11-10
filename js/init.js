@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let botonCerrarSesion = document.getElementById('cerrarSesion');
 
   //creo array con los datos a borrar en el local storage para iterarlos
-  let datos = ['primerNombre', 'segundoNombre', 'primerApellido', 'segundoApellido', 'contacto', 'imgPerfil']
+  let datos = ['primerNombre','nombredeusuario', 'segundoNombre', 'primerApellido', 'segundoApellido', 'contacto', 'imgPerfil']
 
   botonCerrarSesion.addEventListener("click", () => {
     datos.map(i => {
