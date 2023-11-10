@@ -56,9 +56,12 @@
       <div id="comments">
       </div>
       <div id="formComent">
-        <form>
+        <form id="comment-form" novalidate>
           <div>
             <input id="inputComentario" type="textarea" placeholder="Escribe un comentario" name="comentario">
+            <div class="invalid-tooltip" id="comment-error">
+              Por favor, ingrese un comentario y seleccione un ranking válido.
+          </div>
             <p id="commentLimit"></p>
           </div>
           <div class="estrellas">
@@ -109,7 +112,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js" defer></script>
-  <script src="js/my-profile.js"></script>
+  <!-- <script src="js/my-profile.js"></script> -->
   <script src="js/search.js" defer></script>
   <script src="js/color_mode.js" defer></script>
 </body>
