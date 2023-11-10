@@ -11,8 +11,11 @@
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
 
+
+ 
 
   // /*Desplegable*/
   // let nombreUsuarioButton = document.getElementById("nombreusuario");
@@ -101,15 +104,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   //imagen de perfil
-   let seleccionPerfil = document.getElementById("inputPerfil");
-   let imagenPerfil = document.getElementById("imagenPerfil");
+  let seleccionPerfil = document.getElementById("inputPerfil");
+  let imagenPerfil = document.getElementById("imagenPerfil");
 
-   if (localStorage.getItem("imgPerfil") != null) {
+  if (localStorage.getItem("imgPerfil") != null) {
     imagenElegida = localStorage.getItem("imgPerfil");
     imagenPerfil.src = imagenElegida
-   }
-   
-   let imagenDefault = "img/usuario.png"
+  }
+
+  let imagenDefault = "img/usuario.png"
   seleccionPerfil.addEventListener('change', e => {
     if (e.target.files[0]) {
       const reader = new FileReader()
@@ -149,6 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("segundoApellido").value = segundoApellido
   document.getElementById("telefonoContacto").value = contacto
   //imagenPerfil.src = imagenElegida;
+
+ 
+
 });
 
 
@@ -186,10 +192,31 @@ function validationUser() {
       localStorage.setItem("contacto", document.getElementById("telefonoContacto").value);
       localStorage.setItem("imgPerfil", document.getElementById("imagenPerfil").src);
       //imagenPerfil.src = imagenElegida;
-      
+      savedSuccessfully()
+      cerraralerta()
     }
     formUser.classList.add('was-validated');
   });
 }
 
 validationUser();
+
+//Funciones de la alerta al guardar cambios exitosamente
+
+let alertSuccess = document.getElementById('alertSavedSuccessfully')
+let closeAlert = document.getElementById('closeAlert')
+function savedSuccessfully() {
+  alertSuccess.classList.remove('d-none');
+  alertSuccess.classList.add('fade-in');
+ 
+}
+function cerraralerta() {
+  setTimeout(function () {
+    alertSuccess.classList.add('d-none');
+}, 3000); 
+
+  closeAlert.addEventListener('click', () => {
+    alertSuccess.classList.add('d-none');
+  })
+}
+
