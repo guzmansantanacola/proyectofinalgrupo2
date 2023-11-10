@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleLightMode() {
     
-    main.classList.toggle('light');
+    if (main != null) {
+      main.classList.toggle('light');
+    }
+    
     switchButton.classList.toggle('active');
 
     let botonesorden = document.getElementsByClassName('botonesorden');

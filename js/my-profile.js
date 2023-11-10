@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
     imagenPerfil.src = imagenElegida
    }
    
-   let imagenDefault = "https://thumbs.dreamstime.com/z/imagen-de-usuario-vectorial-icono-perfil-avatar-predeterminada-predeterminado-179582665.jpg?w=768"
+   let imagenDefault = "img/usuario.png"
   seleccionPerfil.addEventListener('change', e => {
     if (e.target.files[0]) {
       const reader = new FileReader()
