@@ -184,6 +184,7 @@ function validationUser() {
       localStorage.setItem("primerApellido", document.getElementById("primerApellido").value);
       localStorage.setItem("segundoApellido", document.getElementById("segundoApellido").value);
       localStorage.setItem("contacto", document.getElementById("telefonoContacto").value);
+      localStorage.setItem("nombredeusuario", document.getElementById('mailPerfil').value);
       localStorage.setItem("imgPerfil", document.getElementById("imagenPerfil").src);
       //imagenPerfil.src = imagenElegida;
       
