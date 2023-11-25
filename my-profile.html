@@ -8,6 +8,10 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/my-profyle.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -28,14 +32,11 @@
 
 <body id="body-profile">
   <nav class="general">
-
     <section id="sectionNav">
       <a href="index.html"> <img src="img/logo_modif_loginprueba.png" alt="Jovenes a Comerciar"> </a>
       <form id="formBusqueda" action="products.html" method="GET">
         <input type="text" id="campoBusqueda" placeholder="Buscar...">
       </form>
-
-
       <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
       <div class="list">
         <ul class="posicion">
@@ -50,19 +51,35 @@
         </ul>
       </div>
     </section>
-
   </nav>
   <main>
+    <div class="formularioPerfil container mt-5 rounded card-body-cart" >
+      <form class="need-validation" id="form-user" novalidate>
 
-    <div class="formularioPerfil container mt-5 rounded" >
-      <form novalidate>
         <div class="row justify-content-center">
-          <div class="col-md-4 ">
-            <div class="form-group  ">
-              <label for="input1">Primer nombre*</label>
+          <div class="col-md-4 mb-4">
+            <div class="form-group text-center">
+              <img
+                src="img/usuario.png"
+                alt="avatar" id="imagenPerfil" class="img-fluid" />
               
-              <input type="text" class="form-control" id="primerNombre" required>
+                <label id="changePhoto" for="inputPerfil"> <img src="img/cambiar-de-foto.png" alt=""></label>
+              
+              <input type="file" class="form-control" id="inputPerfil" accept="image/*">
 
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="input1">Primer nombre*</label>
+              <input type="text" class="form-control" id="primerNombre" required>
+              <div class="invalid-feedback">
+                  Por favor, ingrese un nombre.
+              </div>
             </div>
           </div>
           <div class="col-md-4">
@@ -77,6 +94,9 @@
             <div class="form-group">
               <label for="input3">Primer apellido*</label>
               <input type="text" class="form-control" id="primerApellido" value="" required>
+              <div class="invalid-feedback">
+                  Por favor, ingrese un apellido.
+              </div>
             </div>
           </div>
           <div class="col-md-4">
@@ -91,6 +111,9 @@
             <div class="form-group">
               <label for="input5">E-mail*</label>
               <input type="email" class="form-control" id="mailPerfil" value="" required>
+              <div class="invalid-feedback">
+                  Por favor, ingrese un email correcto.
+              </div>
             </div>
           </div>
           <div class="col-md-4">
@@ -100,26 +123,18 @@
             </div>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-4">
-            <div class="form-group">
-              <img
-                src="https://thumbs.dreamstime.com/z/imagen-de-usuario-vectorial-icono-perfil-avatar-predeterminada-predeterminado-179582665.jpg?w=768"
-                alt="avatar" id="imagenPerfil" class="img-fluid" />
-              <label for="input6">Imagen de perfil</label>
-              <input type="file" class="form-control" id="inputPerfil" accept="image/*" value="">
-            </div>
-          </div>
-        </div>
+
+
         <div class="text-center">
           <button type="submit" class="btn btn-primary w-auto" id="cambiosProfile">Guardar cambios</button>
         </div>
+        <div class="alert alert-dark alert-dismissible text-center d-none " role="alert" id="alertSavedSuccessfully">
+          <h4 class="alert-heading">
+            </svg>¡Cambios guardados con éxito!</h4>
+          <button type="button" id="closeAlert" class="btn-close d-flex float-end " aria-label="Close"></button>
+        </div>
       </form>
     </div>
-
-
-
-
   </main>
   <!-- <footer class="text-muted">
     <div class="container">
@@ -131,7 +146,7 @@
   </footer> -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
+  <script src="js/my-profile.js" defer></script>
+  <script src="js/color_mode.js" defer></script>
 </body>
-
 </html>

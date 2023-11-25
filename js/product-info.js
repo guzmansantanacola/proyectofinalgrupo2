@@ -140,6 +140,7 @@ submitcomment.addEventListener("click", (event) => {
   let userName = localStorage.getItem("nombredeusuario");
   let date = new Date().toLocaleString();
   let comentario = document.getElementById("inputComentario").value;
+  let commentError = document.getElementById("comment-error");
 
   if (commentArea.value.length < charLimit && commentArea.value.length > 1 && (checked)) {
     document.getElementById("comments").innerHTML += `
@@ -150,7 +151,14 @@ submitcomment.addEventListener("click", (event) => {
     `;
     checked = false;
   } else {
-    alert("No se pudo realizar comentario");
+/* Feedback sobre comentario y ranking no válido */
+    commentError.style.display = "block";
+                setTimeout(() => {
+                    commentError.classList.add('fade');
+                }, 4000);
+
+    alert("Por favor, ingrese un comentario y seleccione un ranking válido.");
+
   }
 
   commentArea.value = "";

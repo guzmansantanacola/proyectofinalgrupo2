@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleLightMode() {
     
-    main.classList.toggle('light');
+    if (main != null) {
+      main.classList.toggle('light');
+    }
+    
     switchButton.classList.toggle('active');
 
     let botonesorden = document.getElementsByClassName('botonesorden');
@@ -19,7 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let tablacarrito = document.getElementById('tablacarrito');
+    //console.log(tablacarrito);
+
+    if (tablacarrito != null) {
       tablacarrito.classList.toggle('light');
+    }
+      
 
     let busquedaprecio = document.getElementsByClassName('busquedaprecio');
     for (let i = 0; i < busquedaprecio.length; i++) {
