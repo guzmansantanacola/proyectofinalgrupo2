@@ -39,7 +39,7 @@ function infoProducts(data) {
 
   data.relatedProducts.forEach((product) => { // creamos los productos relacionados
     relacionadosToAppend += `
-      <div setCatID(${product.id})" class="relacionado fondolista masInfo " type="button" id="${product.id}">              
+      <div setCatID(${product.id})" class="relacionado fondolista masInfo mx-4" type="button" id="${product.id}">              
         <div class="fila">
           <div class=imagenes>
             <img src="${product.image}">

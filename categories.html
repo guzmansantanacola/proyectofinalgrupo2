@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>eMercado - Todo lo que busques está aquí</title>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
-    />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        rel="stylesheet">
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>eMercado - Todo lo que busques está aquí</title>
 
-  <body id="bodyproducts">
-    <nav class="general">
-    
-      <section id="sectionNav">
-        <a href="index.html"> <img src="img/logo_modif_loginprueba.png" alt="Jovenes a Comerciar"> </a>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+</head>
+
+<body id="bodyproducts">
+  <nav class="general">
+
+    <section id="sectionNav">
+      <a href="index.html"> <img src="img/logo_modif_loginprueba.png" alt="Jovenes a Comerciar"> </a>
       <form id="formBusqueda" action="products.html" method="GET">
         <input type="text" id="campoBusqueda" placeholder="Buscar...">
       </form>
-      
-     
-        <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
-        <div class="list">
-          <ul  class="posicion">
-            <li class="inicio">
-              <a href="categories.html"> Categorías </a>
-            </li>
-            <li class="inicio">
-              <a href="sell.html"> Vender </a>
-            </li>
-            <li id="nombreusuario" >
-            </li>
-          </ul>
-        </div>
-      </section>
-  
-    </nav>
-    <main id="main" class="mainproductos">
+
+
+      <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
+      <div class="list">
+        <ul class="posicion">
+          <li class="inicio">
+            <a href="categories.html"> Categorías </a>
+          </li>
+          <li class="inicio">
+            <a href="sell.html"> Vender </a>
+          </li>
+          <li id="nombreusuario">
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </nav>
+  <main id="main" class="container">
+    <div class="card-body-cart mx-5 mb-2 mt-5 pb-5">
       <div class="text-center p-4">
         <h2 class="titulo">CATEGORÍAS</h2>
         <p class="lead">Verás aquí todas las categorías del sitio.</p>
@@ -128,48 +124,21 @@
 
       <div id="filtros">
         <section id="filtrosOrden">
-          <input
-            type="submit"
-            class="btn-check"
-            name="ordenAsc"
-            id="sortAsc"
-          />
+          <input type="submit" class="btn-check" name="ordenAsc" id="sortAsc" />
           <label class="botonesorden" for="sortAsc">A-Z</label>
-          <input
-            type="button"
-            class="btn-check"
-            name="ordenDesc"
-            id="sortDesc"
-          />
+          <input type="button" class="btn-check" name="ordenDesc" id="sortDesc" />
           <label class="botonesorden" for="sortDesc">Z-A</label>
-          <input
-            type="button"
-            class="btn-check"
-            name="ordenVendidos"
-            id="sortByCount"
-          />
-          <label class="botonesorden" for="sortByCount"
-            ><i class="fas fa-sort-amount-down mr-1"></i
-          ></label>
+          <input type="button" class="btn-check" name="ordenVendidos" id="sortByCount" />
+          <label class="botonesorden" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
         </section>
 
         <div id="filtroPrecios">
           <div class="barraprecio">
             <p>Cant.</p>
-            <input
-              class="busquedaprecio"
-              type="number"
-              placeholder="min."
-              id="rangeFilterCountMin"
-            />
-            <input
-              class="busquedaprecio"
-              type="number"
-              placeholder="máx."
-              id="rangeFilterCountMax"
-            />
-               <!-- boton de busqueda-->
-            
+            <input class="busquedaprecio" type="number" placeholder="min." id="rangeFilterCountMin" />
+            <input class="busquedaprecio" type="number" placeholder="máx." id="rangeFilterCountMax" />
+            <!-- boton de busqueda-->
+
           </div>
           <div>
             <div>
@@ -180,13 +149,14 @@
                 Limpiar
               </button>
             </div>
-            <div class="list-group" id="cat-list-container"></div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="list-group mx-5 mb-5" id="cat-list-container"></div>
 
-    </main>
-    <!-- <footer class="text-muted">
+  </main>
+  <!-- <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
@@ -194,19 +164,20 @@
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer> -->
-    <div id="spinner-wrapper">
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/categories.js"></script>
-    <!-- <script src="js/my-profile.js"></script> -->
-    <script src="js/search.js" defer></script>
-    <script src="js/color_mode.js" defer></script>
-  </body>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/categories.js" defer></script>
+  <!-- <script src="js/my-profile.js"></script> -->
+  <script src="js/search.js" defer></script>
+  <script src="js/color_mode.js" defer></script>
+</body>
+
 </html>

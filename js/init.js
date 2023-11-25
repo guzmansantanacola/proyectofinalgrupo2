@@ -116,6 +116,19 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("menuVisible", "false");
     }
 
+  let botonCerrarSesion = document.getElementById('cerrarSesion');
+
+  //creo array con los datos a borrar en el local storage para iterarlos
+  let datos = ['primerNombre', 'segundoNombre', 'primerApellido', 'segundoApellido', 'contacto', 'imgPerfil']
+
+  botonCerrarSesion.addEventListener("click", () => {
+    datos.map(i => {
+      localStorage.removeItem(i);
+    });
+    localStorage.setItem("sesionIniciada", JSON.stringify(false));
+    window.location.href = "login.html";
+
+  })
 
 
 

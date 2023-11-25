@@ -1,12 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const switchButton = document.getElementById('switch');
-  const main = document.getElementById('main');
 
   function toggleLightMode() {
-    
-    if (main != null) {
-      main.classList.toggle('light');
-    }
     
     switchButton.classList.toggle('active');
 
@@ -16,18 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let bodyCart = document.getElementsByClassName('card-body-cart');
-    console.log(bodyCart);
-    for (let i = 0; i < bodyCart.length; i++) {
-      bodyCart[i].classList.toggle('light');
+    for (element of bodyCart) {
+      element.classList.toggle('light');
+    }
+
+    if(window.location.href.includes("categories")) {
+      let catList = document.getElementById('cat-list-container');
+      catList.classList.toggle('light');
+    }
+
+    let listGroup = document.getElementsByClassName('list-group-item');
+    for (element of listGroup) {
+      element.classList.toggle('light');
     }
 
     let tablacarrito = document.getElementById('tablacarrito');
-    //console.log(tablacarrito);
 
     if (tablacarrito != null) {
       tablacarrito.classList.toggle('light');
     }
-      
+
+    let btnClose = document.getElementsByClassName('btn-close');
+    for (let btn of btnClose) {
+      btn.classList.toggle('btn-close-white')
+    }
+    
 
     let busquedaprecio = document.getElementsByClassName('busquedaprecio');
     for (let i = 0; i < busquedaprecio.length; i++) {
@@ -44,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
       let divIndex = document.getElementById('divIndex');
       divIndex.classList.toggle('light');
     }
-
   }
 
   function saveMode() {
