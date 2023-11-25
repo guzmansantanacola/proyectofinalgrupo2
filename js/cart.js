@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <td><p> ${data.articles[0].currency} ${data.articles[0].unitCost}</p></td>
         <td><input id="inputExample" min="1" type="number" value="${productExample.cantidad}" class="cantidad w-75"></td>
         <td><p class="subTotal">Sub-Total: ${data.articles[0].currency} <span id="subtotalExample">${productExample.price}</span></p></td>
-        <td><button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+        <td><button type="button" class="btn-close btn-close-example btn-close-white" aria-label="Close"></button>
       </tr>
     <div> 
         `;
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const exampleInHTML = document.getElementById('productCardExample'); // Recuperamos el artículo de ejemplo del HTML
 
-      const closeButton = document.getElementsByClassName('btn-close');
+      const closeButton = document.getElementsByClassName('btn-close-example');
       // closeButton.type = 'button';
       // closeButton.className = 'btn-close btn-close-white';
       // closeButton.setAttribute('aria-label', 'Close');
@@ -104,13 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
               <td><p class="precioProducto">${data.currency} ${data.cost}</p></td>
               <td><input min="1" type="number" value="${i.mount}" class="cantidad w-75"></td>
               <td><p class="subTotal">Sub-Total: ${data.currency} <span class="subtotal-valor">${data.cost * i.mount}</span></p></td>
-              <td><button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+              <td><button type="button" class="btn-close btn-close-fetch btn-close-white" aria-label="Close"></button>
             </tr>
           `
           productoHTML.innerHTML = htmlContentToAppend;
           tabla.appendChild(productoHTML);
 
-          const closeButton = document.getElementsByClassName('btn-close');
+          const closeButton = document.getElementsByClassName('btn-close-fetch');
           // closeButton.addEventListener('click', () => {
           //   const productId = productoHTML.id;
           //   const index = itemsLocalStorage.findIndex(item => item.id === productId);
