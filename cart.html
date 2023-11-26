@@ -38,225 +38,185 @@
         </ul>
       </div>
     </section>
-
   </nav>
-
-        <main id="main" class="container mt-4 mainCarrito">
-
-          <div class="text-center alert alert-dark alert-dismissible d-none buySucces" role="alert" id="alertSuccess">
-            <h4 class="alert-heading">
-              </svg>Compra realizada con éxito!</h4>
-            <button type="button" id="closeAlert" class="btn-close d-flex float-end" aria-label="Close"></button>
-          </div>
-          
-           
-          <div class="container mt-4 mainCarrito">
-
-              <div class="d-xl-flex mb-4">
-              <div class=" table-responsive p-xl-4 ">
-
-                <table id="tablacarrito" class="table rounded">
-                  <thead>
-                    <tr>
-                      <th scope="col"></th>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Costo</th>
-                      <th scope="col">Cantidad</th>
-                      <th scope="col">Subtotal</th>
-                    </tr>
-                  </thead>
-                  <tbody id="carrito" class="table">
-                  </tbody>
-
-                </table>
-          
-                <div class="list-group mt-3" id="costocontainer"> 
-                  <div class="list-group-item listaprecios d-flex justify-content-between align-items-center" id="estiloscostos"> 
-                    <span>Subtotal</span><span id="subTotalFinal" class="cantidad">>-</span> </div> 
-                    <div class="listaprecios list-group-item d-flex justify-content-between align-items-center"> <span>Costo de envío</span> 
-                      <span id="costoEnvio" class="cantidad"></span> </div>
-                       <div class="list-group-item listaprecios d-flex justify-content-between align-items-center"> <span>Total</span>  
-                        <span id="totalFinal" class="cantidad"></span> </div> </div>
-            
+  <main id="main" class="container mt-4 mainCarrito">
+    <div class="text-center alert alert-dark alert-dismissible d-none buySucces" role="alert" id="alertSuccess">
+      <h4 class="alert-heading">
+        </svg>Compra realizada con éxito!</h4>
+      <button type="button" id="closeAlert" class="btn-close d-flex float-end" aria-label="Close"></button>
+    </div>
+    <div class="container mt-4 mainCarrito">
+      <div class="row mb-4">
+        <div class=" table-responsive col-12 col-xl-8 mt-4">
+          <table id="tablacarrito" class="table rounded">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody id="carrito" class="table">
+            </tbody>
+          </table>
+          <div class="list-group mt-3" id="costocontainer">
+            <div class="list-group-item listaprecios d-flex justify-content-between align-items-center"
+              id="estiloscostos">
+              <span>Subtotal</span><span id="subTotalFinal" class="cantidad">>-</span>
             </div>
-
-
-
-
-
-          <div class="col-12 col-xl-4 bottom-0">
-
-
-            <div class="card  border-1">
-              <div class="card-body card-body-cart" id="sendcard"><br>
-
-
-                <h4 class="mb-4" style="font-weight: bold; position: center;">Tipo de envío</h4>
-
-                    <div class="form-check form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="1.15" required checked>
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Premium 2 a 5 días (15%)
-                      </label><br> <br>
-                    </div>
-
-                    <div class="form-check form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1.07" required>
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Express 5 a 8 días (7%)
-                      </label><br> <br>
-                    </div>
-
-                    <div class="form-check form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="1.05" required>
-                      <label class="form-check-label" for="flexRadioDefault3">
-                        Standard 12 a 15 días (5%)
-                      </label><br> <br>
-                    </div>
-
-
-                <h4 class="mt-5" style="font-weight: bold;">Dirección de envío</h4>
-                <div class="direnvio">
-                  <form id="buyForm" novalidate>
-                    <div class="form-group">
-                      <label for="calleInput" class="caractenvio">Calle:</label>
-                      <input type="text" class="form-control inputdirec" required>
+            <div class="list-group-item listaprecio d-flex justify-content-between align-items-center"> <span>Costo de
+                envío</span>
+              <span id="costoEnvio" class="cantidad"></span>
+            </div>
+            <div class="list-group-item listaprecios d-flex justify-content-between align-items-center">
+              <span>Total</span>
+              <span id="totalFinal" class="cantidad"></span>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-0 col-12 col-xl-4">
+          <div class="border-1 mt-4">
+            <div class="card-body card-body-cart" id="sendcard"><br>
+              <h4 class="mb-4" style="font-weight: bold; position: center;">Tipo de envío</h4>
+              <div class="form-check form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="1.15"
+                  required checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Premium 2 a 5 días (15%)
+                </label><br> <br>
+              </div>
+              <div class="form-check form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1.07"
+                  required>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Express 5 a 8 días (7%)
+                </label><br> <br>
+              </div>
+              <div class="form-check form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="1.05"
+                  required>
+                <label class="form-check-label" for="flexRadioDefault3">
+                  Standard 12 a 15 días (5%)
+                </label><br> <br>
+              </div>
+              <h4 class="mt-5" style="font-weight: bold;">Dirección de envío</h4>
+              <div class="direnvio">
+                <form id="buyForm" novalidate>
+                  <div class="form-group">
+                    <label for="calleInput" class="caractenvio">Calle:</label>
+                    <input type="text" class="form-control inputdirec" required>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Debe ingresar una Calle válida.</div>
+                  </div>
+                  <div class="form-group">
+                    <label for="numeroInput" class="caractenvio">Número:</label>
+                    <input type="number" class="form-control inputdirec" required>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Debe ingresar un número correcto.</div>
+                  </div>
+                  <div class="form-group">
+                    <label for="esquinaInput" class="caractenvio">Esquina:</label>
+                    <input type="text" class="form-control inputdirec" required>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Debe ingresar una esquina correcta.</div>
+                  </div>
+                  <div class="text-center mb-4">
+                    <h4 class="mb-2" style="font-weight: bold; position: center;">Forma de pago</h4>
+                    <div>
+                      <button id="formadepagoboton" type="button" class="btn btn-primary w-50" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        Seleccionar
+                      </button>
                       <div class="valid-feedback"></div>
-                      <div class="invalid-feedback">Debe ingresar una Calle válida.</div>
+                      <div class="invalid-feedback" id="metodosPagosError">Debe elegir un método de pago.</div>
                     </div>
-                    <div class="form-group">
-                      <label for="numeroInput" class="caractenvio">Número:</label>
-                      <input type="number" class="form-control inputdirec" required>
-                      <div class="valid-feedback"></div>
-                      <div class="invalid-feedback">Debe ingresar un número correcto.</div>
-                    </div>
-                    <div class="form-group">
-                      <label for="esquinaInput" class="caractenvio">Esquina:</label>
-                      <input type="text" class="form-control inputdirec" required>
-                      <div class="valid-feedback"></div>
-                      <div class="invalid-feedback">Debe ingresar una esquina correcta.</div>
-                    </div>
-
-                    <div class="text-center mb-4">
-                      <h4 class="mb-2" style="font-weight: bold; position: center;">Forma de pago</h4>
-
-                      <div>
-                        <button id="formadepagoboton" type="button" class="btn btn-primary w-50" data-bs-toggle="modal"
-                          data-bs-target="#staticBackdrop">
-                          Seleccionar
-                        </button>
-                        <div class="valid-feedback"></div>
-                        <div class="invalid-feedback" id="metodosPagosError">Debe elegir un método de pago.</div>
-                      </div>
-                    </div>
-
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                      <div class="modal-dialog" id="modalbg">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title formasdepago" id="staticBackdropLabel">Forma de pago</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body formasdepago">
-                            <div class="cardcontainer">
-                              <div>
-                                <input type="radio" id="radio1" name="opcion" value="opcion1" required>
-                                <label for="radio1">Tarjeta de crédito</label>
-
-
-                              </div>
-
-                              <div id="cardinputs" class="d-none">
-                                <div id="divTarjetNumb">
-                                  <label for="numtarjeta">Número de tarjeta</label>
-                                  <input type="number" inputmode="numeric" pattern="[0-9\s]{13,19}"
-                                    autocomplete="cc-number" minlength="1" maxlength="19"
-                                    placeholder="xxxx xxxx xxxx xxxx" class="form-control inputdirec" id="cardnumber"
-                                    required>
-                                </div>
-                                <div id="divCVV" class="text-center">
-                                  <label for="codigoseg">CVV</label>
-                                  <input type="number" inputmode="numeric" class="form-control inputdirec" id="cardcode"
-                                    minlength="1" maxlength="3" required>
-                                </div>
-                                <div id="divExpirationDate">
-                                  <label for="vencimientotarj">Vencimiento</label>
-                                  <input type="tel" class="form-control inputdirec" id="cardven" placeholder="(mm/aa)"
-                                    minlength="1" maxlength="5" required>
-
-                                </div>
-                                <hr>
-                                <br>
-                              </div>
-
+                  </div>
+                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog" id="modalbg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title formasdepago" id="staticBackdropLabel">Forma de pago</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body formasdepago">
+                          <div class="cardcontainer">
+                            <div>
+                              <input type="radio" id="radio1" name="opcion" value="opcion1" required>
+                              <label for="radio1">Tarjeta de crédito</label>
                             </div>
-
-                            <div class="accountcontainer">
-
-                              <div class="accradio">
-                                <input type="radio" id="radio2" name="opcion" value="opcion2" required>
-                                <label for="radio2">Transferencia bancaria</label>
+                            <div id="cardinputs" class="d-none">
+                              <div id="divTarjetNumb">
+                                <label for="numtarjeta">Número de tarjeta</label>
+                                <input type="number" inputmode="numeric" pattern="[0-9\s]{13,19}"
+                                  autocomplete="cc-number" minlength="1" maxlength="19"
+                                  placeholder="xxxx xxxx xxxx xxxx" class="form-control inputdirec" id="cardnumber"
+                                  required>
                               </div>
-
-                              <div id="accountinput" class="d-none">
-                                <label for="nrocuenta">Número de cuenta</label>
-                                <input type="text" id="accountnumber" class="form-control inputdirec" required><br>
+                              <div id="divCVV" class="text-center">
+                                <label for="codigoseg">CVV</label>
+                                <input type="number" inputmode="numeric" class="form-control inputdirec" id="cardcode"
+                                  minlength="1" maxlength="3" required>
                               </div>
+                              <div id="divExpirationDate">
+                                <label for="vencimientotarj">Vencimiento</label>
+                                <input type="tel" class="form-control inputdirec" id="cardven" placeholder="(mm/aa)"
+                                  minlength="1" maxlength="5" required>
+                              </div>
+                              <hr>
+                              <br>
                             </div>
-
                           </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <div class="accountcontainer">
+                            <div class="accradio">
+                              <input type="radio" id="radio2" name="opcion" value="opcion2" required>
+                              <label for="radio2">Transferencia bancaria</label>
+                            </div>
+                            <div id="accountinput" class="d-none">
+                              <label for="nrocuenta">Número de cuenta</label>
+                              <input type="text" id="accountnumber" class="form-control inputdirec" required><br>
+                            </div>
                           </div>
-
-
-
-
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         </div>
                       </div>
-
                     </div>
-                    <button id="buyButton" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
-                        viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                        <path
-                          d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" />
-                      </svg></button>
-                  </form>
-                </div>
-              </div>              
-             </div>
+                  </div>
+                  <button id="buyButton" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                      viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" />
+                    </svg></button>
+                </form>
+              </div>
             </div>
           </div>
-
-
         </div>
-
-        
-        </div>
-
-    </main>
-
-
-
-
-
-    </footer>
-    <div id="spinner-wrapper">
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
       </div>
     </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/productExample.js" defer></script>
-    <script src="js/validationBuy.js" defer></script>
-    <script src="js/cart.js" defer></script>
-    <!-- <script src="js/my-profile.js"></script> -->
-    <script src="js/color_mode.js" defer></script>
+    </div>
+  </main>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/productExample.js" defer></script>
+  <script src="js/validationBuy.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <!-- <script src="js/my-profile.js"></script> -->
+  <script src="js/color_mode.js" defer></script>
 </body>
 
 </html>

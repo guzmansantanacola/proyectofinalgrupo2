@@ -41,8 +41,8 @@
     </section>
 
   </nav>
-  <main id="main" class="mainproductos">
-    <div>
+  <main id="main" class="container">
+    <div class="card-body-cart mx-5 mb-2 mt-5 pb-5">
 
       <div id="producto"></div>
       <button id="cartadd" type="button">Agregar al carrito</button>
@@ -52,10 +52,12 @@
         <p>Vea su carrito de compras <a class="alert-link" href="cart.html">aquí</a></p>
         <button type="button" id="closeAlert" class="btn-close d-flex float-end" aria-label="Close"></button>
       </div>
+      </div>
+      <div class="card-body-cart mx-5 mb-5">
       <h1 class="com">Comentarios</h1>
       <div id="comments">
       </div>
-      <div id="formComent">
+      <div id="formComent" class="mt-4">
         <form id="comment-form" novalidate>
           <div>
             <input id="inputComentario" type="textarea" placeholder="Escribe un comentario" name="comentario">
@@ -83,14 +85,10 @@
             <div class="limpiarFloat"></div>
           </div>
         </form>
-
+      </div>        
+      <h3 class="com mt-5">Productos relacionados</h3>
+      <div class="d-flex justify-content-center pb-5" id="relacionados">
       </div>
-
-
-      <div class="d-flex justify-content-around" id="relacionados">
-
-      </div>
-
     </div>
   </main>
   <!-- <footer class="text-muted">
