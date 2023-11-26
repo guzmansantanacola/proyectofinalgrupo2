@@ -151,13 +151,13 @@ submitcomment.addEventListener("click", (event) => {
     `;
     checked = false;
   } else {
-
+/* Feedback sobre comentario y ranking no válido */
     commentError.style.display = "block";
                 setTimeout(() => {
                     commentError.classList.add('fade');
                 }, 4000);
 
-    alert("No se pudo realizar comentario");
+    alert("Por favor, ingrese un comentario y seleccione un ranking válido.");
 
   }
 

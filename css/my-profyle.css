@@ -1,0 +1,81 @@
+#body-profile {
+    background-image: url("../img/fondo_login_para_responsive.jpg");
+    background-color: #101012;
+    background-attachment: fixed;
+    color: white;
+}
+
+.formularioPerfil {
+   
+    width: 60%;
+}
+
+.card-body-cart {
+ background-color:  #101012bd;
+}
+
+#form-user {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#imagenPerfil {
+    width: 256px;
+    border-radius: 50%;
+        object-fit: cover;
+
+
+}
+
+
+#changePhoto {
+    display: block;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0px auto;
+    margin-top: -40px;
+}
+
+#changePhoto>img {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0px auto;
+
+}
+
+input[type="file"] {
+    display: none;
+}
+
+
+.formularioPerfil input {
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #9d4edd;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.formularioPerfil.light{
+    background-color: #ffffffc7;
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0px 0px 10px #000000;
+}
+
+.formularioPerfil.light input {
+    color: rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #9d4edd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#cambiosProfile {
+    background-color: #9d4edd;
+    border: none;
+}
