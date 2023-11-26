@@ -94,9 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch(`https://japceibal.github.io/emercado-api/products/${i.id}.json`)
         .then((response) => response.json())
         .then((data) => {
-          // se crea la estructura de la tabla en la constante productoHTML y se actualiza cuando otro producto se añade
           const productoHTML = document.createElement("tr");
-          productoHTML.id = data.id;
+          productoHTML.id = `product_${data.id}`;
           const htmlContentToAppend = `
             <tr clase="productCard">
               <td><img class="imagencarrito" src="${data.images[0]}" style="width: 140px;"></td>
@@ -104,33 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
               <td><p class="precioProducto">${data.currency} ${data.cost}</p></td>
               <td><input min="1" type="number" value="${i.mount}" class="cantidad w-75"></td>
               <td><p class="subTotal">Sub-Total: ${data.currency} <span class="subtotal-valor">${data.cost * i.mount}</span></p></td>
-              <td><button type="button" class="btn-close btn-close-fetch btn-close-white" aria-label="Close"></button>
-            </tr>
-          `
+              <td><button type="button" class="btn-close btn-close-fetch btn-close-white" aria-label="Close"></button></td>
+            </tr>`;
           productoHTML.innerHTML = htmlContentToAppend;
           tabla.appendChild(productoHTML);
 
-          const closeButton = document.getElementsByClassName('btn-close-fetch');
-          // closeButton.addEventListener('click', () => {
-          //   const productId = productoHTML.id;
-          //   const index = itemsLocalStorage.findIndex(item => item.id === productId);
-          //   if (index > -1) {
-          //     itemsLocalStorage.splice(index, 1);
-          //   }
-          //   localStorage.setItem('cartlist', JSON.stringify(itemsLocalStorage));
-          //   window.location.reload()
-          // })
-          for (let button of closeButton) {
-            button.addEventListener('click', () => {
-            const productId = productoHTML.id;
+          const closeButton = productoHTML.getElementsByClassName('btn-close-fetch');
+          closeButton[0].addEventListener('click', () => {
+            const productId = productoHTML.id.split('_')[1];
             const index = itemsLocalStorage.findIndex(item => item.id === productId);
             if (index > -1) {
               itemsLocalStorage.splice(index, 1);
             }
             localStorage.setItem('cartlist', JSON.stringify(itemsLocalStorage));
-            window.location.reload()
-            });
-          }
+            window.location.reload();
+          });
 
           const cantidadInput = productoHTML.querySelector(".cantidad");
           const subTotalArticle = productoHTML.querySelector(".subtotal-valor");
@@ -138,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             price: subTotalArticle.textContent,
             currency: data.currency
           };
-          localStorage.setItem(i.id, JSON.stringify(subTotalAlLocal)) // Guarda en localStorage el subtotal por elemento
+          localStorage.setItem(i.id, JSON.stringify(subTotalAlLocal));
 
           cantidadInput.addEventListener("input", () => {
             const cantidad = cantidadInput.value;
@@ -149,13 +136,10 @@ document.addEventListener("DOMContentLoaded", () => {
               price: subTotalArticle.textContent,
               currency: data.currency
             };
-            localStorage.setItem(i.id, JSON.stringify(subTotalAlLocal)) // Al modificarse la cantidad guardamos el valor en el Local Storage
-
-            // sobreescribimos la cantidad en el LocalStorage (para los productos agregados por el usuario la cantidad se guarda en cartlist)
+            localStorage.setItem(i.id, JSON.stringify(subTotalAlLocal));
             itemsLocalStorage[index].mount = Number(cantidad);
-            localStorage.setItem("cartlist", JSON.stringify(itemsLocalStorage)); // Sobreescribimos el subtotal cuando cambia la cantidad
-
-            precioFinal()
+            localStorage.setItem("cartlist", JSON.stringify(itemsLocalStorage));
+            precioFinal();
           });
 
         });
@@ -225,39 +209,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /*    --------------------    FIN DEL DOMContentLoaded    --------------------    */
-
-
-
-  // función para calcular el subtotal en el carrito traido del servidor
-  function subTotal(data) {
-    let inputPrueba = document.getElementById("inputExample");
-    let partedelsubtotal = document.getElementById('subtotalExample');
-
-    // esto (fijarse si al borrarlo sigue funcionando)
-    let subTotalAlLocal = {
-      price: data.articles[0].unitCost,
-      currency: data.articles[0].currency,
-      inputValue: 1
-    };
-    if(localStorage.getItem(50924) == undefined){
-    localStorage.setItem(data.articles[0].id, JSON.stringify(subTotalAlLocal))
-    } // hasta acá
-    
-    inputPrueba.addEventListener("input", () => {
-      let valornuevo = inputPrueba.value;
-      partedelsubtotal.innerHTML = `<span id = "subtotalExample">${data.articles[0].unitCost * valornuevo}</span>`;
-      let subTotalAlLocal = {
-        price: partedelsubtotal.textContent,
-        currency: data.articles[0].currency,
-        inputValue: valornuevo
-      };
-      localStorage.setItem(data.articles[0].id, JSON.stringify(subTotalAlLocal));
-      precioFinal();
-    });
-  }
-
-
-
 
 
 let formadepagoboton = document.getElementById('formadepagoboton');
