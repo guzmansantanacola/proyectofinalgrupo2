@@ -48,7 +48,32 @@ document.addEventListener("DOMContentLoaded", () => {
       subTotalExample(data);
     }
   }
+  function subTotalExample(data) { // función para calcular el subtotal del artículo de ejemplo
+    let inputExample = document.getElementById("inputExample"); // input de cantidad
+    let subTotalExample = document.getElementById('subtotalExample');
+    let subTotalAlLocal = { // la variable subTotalAlLocal se usa para guardar individualmente el subtotal y tipo de moneda de cada artículo
+      price: data.articles[0].unitCost,
+      currency: data.articles[0].currency,
+      cantidad: 1
+    };
 
+    if (localStorage.getItem(50924) == undefined) { // Si aún no se ha modificado la cantidad se setea al LocalStorage con valores unitarios
+      localStorage.setItem(data.articles[0].id, JSON.stringify(subTotalAlLocal))
+    }
+
+    inputExample.addEventListener("input", () => {
+      let cantidadExample = inputExample.value;
+      subTotalExample.innerHTML = `<span id="subtotalExample">${data.articles[0].unitCost * cantidadExample}</span>`;
+      let subTotalAlLocal = {
+        price: subTotalExample.textContent,
+        currency: data.articles[0].currency,
+        cantidad: cantidadExample
+      }
+      localStorage.setItem(data.articles[0].id, JSON.stringify(subTotalAlLocal)); // Al modificarse la cantidad guardamos el valor en el Local Storage
+
+      precioFinal();
+    });
+  }
   let itemsLocalStorage = JSON.parse(localStorage.getItem("cartlist")) || [];
   let tabla = document.getElementById("carrito");
 
