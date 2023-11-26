@@ -2,7 +2,7 @@ let buyForm = document.getElementById('buyForm')
 let alertSuccess = document.getElementById('alertSuccess');
 let closeAlert = document.getElementById('closeAlert');
 
-buyForm.addEventListener('submit', (event) => {
+buyForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     let metodosPagosError = document.getElementById('metodosPagosError')
     let tarjetaDeCredito = document.getElementById('radio1');
@@ -18,23 +18,55 @@ buyForm.addEventListener('submit', (event) => {
         }
         else {
             metodosPagosError.style.display = 'none';
-            
+
         }
 
     } else {
-        
+
         console.log('se realiza la compra');
-        buy();
+        await buy();
 
     }
     
+
+
     buyForm.classList.add('was-validated');
 
 });
 
-function buy() {
+let token = localStorage.getItem("token")
+    let items = localStorage.getItem("cartlist")
+    let itemsObject = {items}
+
+
+async function buy() {
     alertSuccess.classList.remove('d-none');
     alertSuccess.classList.add('fade-in');
+
+    console.log(token);
+    try {
+        let response = await fetch("http://localhost:3000/cart", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(itemsObject)
+        });
+
+        // Manejar la respuesta del servidor
+        if (response.ok) {
+            // La solicitud fue exitosa (código de estado 2xx)
+            let data = await response.json();
+            console.log(data);
+        } else {
+            // La solicitud no fue exitosa, manejar el error
+            console.error(`Error en la solicitud: ${response.status} - ${response.statusText}`);
+        }
+    } catch (error) {
+        // Manejar errores de red u otros errores durante la solicitud
+        console.error('Error durante la solicitud:', error);
+    }
 };
 
 closeAlert.addEventListener('click', () => {

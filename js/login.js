@@ -25,7 +25,7 @@ function validationLogin() {
   let formLogin = document.getElementById('formlogin');
   let warningEmail = document.getElementById('warningEmail');
   let warningPassword = document.getElementById('warningPassword');
-  formLogin.addEventListener("submit", (event) => {
+  formLogin.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!formLogin.checkValidity()) {
       event.stopPropagation();
@@ -36,6 +36,10 @@ function validationLogin() {
       localStorage.setItem("sesionIniciada", "true");
       localStorage.setItem("exampleExist", true);
       localStorage.setItem("nombredeusuario", document.getElementById("guardarusuario").value);
+      
+      await getToken()
+      
+
       window.location.href = "index.html";
     }
     formLogin.classList.add('was-validated')
@@ -43,6 +47,33 @@ function validationLogin() {
 }
 
 validationLogin();
+
+
+async function getToken() {
+  let username = document.getElementById("guardarusuario").value;
+  let password = document.getElementById("password").value;
+  data = {username, password};
+  try {
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      localStorage.setItem('token', data.token);
+      console.log('Inicio de sesión exitoso. Token guardado en localStorage.');
+    } else {
+      console.error('Error en el inicio de sesión:', response.statusText);
+    }
+  } catch (error) {
+    console.error('Error en la solicitud:', error);
+  }
+}
+
 
 
 

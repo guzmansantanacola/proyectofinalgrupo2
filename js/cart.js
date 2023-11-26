@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setTimeout(() => {
     itemsLocalStorage.forEach((i, index) => {
-      fetch(`https://japceibal.github.io/emercado-api/products/${i.id}.json`)
+      fetch(`http://localhost:3000/products/${i.id}.json`)
         .then((response) => response.json())
         .then((data) => {
           // se crea la estructura de la tabla en la constante productoHTML y se actualiza cuando otro producto se añade

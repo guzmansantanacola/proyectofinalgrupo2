@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     let catID = JSON.parse(localStorage.getItem("catID"));
-    const URL_PRODUCTS = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
+    const URL_PRODUCTS = `http://localhost:3000/cats_products/${catID}.json`;
     let infoProduct;
 
     const productosNoEncontrados = document.getElementById("productosNoEncontrados");

@@ -1,8 +1,8 @@
 const product = localStorage.getItem("productId");
 
 /* DEFINIMOS URL's NECESARIAS PARA LOS DISTINTOS FETCH */
-const URL_ = `https://japceibal.github.io/emercado-api/products/${product}.json`;
-const COMMENT_URL = `https://japceibal.github.io/emercado-api/products_comments/${product}.json`;
+const URL_ = `http://localhost:3000/products/${product}.json`;
+const COMMENT_URL =`http://localhost:3000/products_comments/${product}.json`;
 
 /* ----------     AGREGAMOS LOS PRODUCTOS AL HTML     ---------- */
 
